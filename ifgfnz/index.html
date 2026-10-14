@@ -15,7 +15,7 @@
             ifgf: {
               blue: '#0072CE',       // Corporate IFGF Blue
               darkblue: '#003B73',   // Deep Corporate Navy
-              navy: '#0A192F',       // Background dark accents
+              navy: '#0A192F',       // Dark background accents
               slatebg: '#F8FAFC',
               sky: '#00A3E0',
               gold: '#FFB800'
@@ -43,11 +43,9 @@
     .ifgf-gradient {
       background: linear-gradient(135deg, #0072CE 0%, #003B73 100%);
     }
-    /* Hide scrollbar for Chrome, Safari and Opera */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
-    /* Hide scrollbar for IE, Edge and Firefox */
     .no-scrollbar {
       -ms-overflow-style: none;
       scrollbar-width: none;
@@ -59,12 +57,11 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col selection:bg-ifgf-blue selection:text-white pb-20 md:pb-0">
 
-  <!-- HEADER & NAVIGATION (DESKTOP + MOBILE HEADER) -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
         
-        <!-- Logo Branding with Vision Lines -->
+        <!-- Logo Branding with 2-line Vision Statement -->
         <div class="flex items-center gap-3 cursor-pointer" onclick="switchView('public')">
           <img src="./IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" alt="IFGF New Zealand Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover shadow-sm flex-shrink-0" style="width: 44px; height: 44px; min-width: 44px; min-height: 44px;">
           <div class="flex flex-col justify-center border-l border-slate-200 pl-3">
@@ -73,7 +70,6 @@
           </div>
         </div>
 
-        <!-- Desktop Navigation Links -->
         <nav class="hidden md:flex items-center gap-2">
           <button onclick="switchView('public'); scrollToSection('hero')" class="px-3.5 py-2 rounded-lg text-xs font-bold text-slate-700 hover:text-ifgf-blue hover:bg-slate-50 transition">
             Home
@@ -98,7 +94,7 @@
             <i class="fa-regular fa-handshake"></i> Connect & iCare
           </button>
 
-          <!-- Status badge if leader logged in -->
+          <!-- Status badge when leader logged in -->
           <div id="loggedInLeaderBadge" class="hidden items-center gap-2 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-xl text-xs">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             <span id="headerLeaderCity" class="font-bold text-slate-700">Auckland Admin</span>
@@ -110,7 +106,6 @@
     </div>
   </header>
 
-  <!-- MOBILE FLOATING NAVIGATION DOCK (BOTTOM BAR FOR PHONE USERS) -->
   <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-slate-200 px-3 py-2 flex items-center justify-around shadow-2xl">
     <button onclick="switchView('public'); scrollToSection('hero')" class="flex flex-col items-center gap-1 text-slate-600 hover:text-ifgf-blue focus:text-ifgf-blue">
       <i class="fa-solid fa-house text-base"></i>
@@ -138,16 +133,14 @@
     </button>
   </div>
 
-  <!-- MAIN CONTAINER -->
   <main class="flex-grow">
 
     <!-- PUBLIC WEBSITE VIEW -->
     <div id="publicView" class="space-y-12 sm:space-y-20 pb-16">
       
-      <!-- HERO BANNER SECTION (MOBILE-FIRST FULL BLEED VISUAL HERO) -->
       <section id="hero" class="relative bg-slate-900 overflow-hidden">
         
-        <!-- MOBILE HERO VISUAL (Full Bleed Immersive Background for Phones) -->
+        <!-- MOBILE HERO VISUAL (Full Bleed Immersive Background) -->
         <div class="block lg:hidden relative min-h-[520px] flex flex-col justify-end p-6 text-white">
           <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80" alt="IFGF Community NZ" class="absolute inset-0 w-full h-full object-cover opacity-50">
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
@@ -167,7 +160,6 @@
               Empowering communities from North Island to South Island through vibrant Sunday services, care groups (iCare), and national leaders gatherings.
             </p>
 
-            <!-- Quick Horizontal Swipe Pills for Cities -->
             <div class="pt-2">
               <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">Our Presence (Swipe):</div>
               <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
@@ -193,7 +185,6 @@
           </div>
         </div>
 
-        <!-- DESKTOP HERO VIEW (Clean Editorial Layout) -->
         <div class="hidden lg:block bg-white pt-12 pb-20 border-b border-slate-100 relative">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-12 gap-12 items-center">
@@ -213,7 +204,6 @@
                   Empowering communities from North Island to South Island. Discover vibrant local church services, care groups (iCare), and live stories from our cities.
                 </p>
 
-                <!-- Quick City Pill Tags -->
                 <div class="pt-2">
                   <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Churches & iCares in NZ:</p>
                   <div class="flex flex-wrap gap-2 text-xs font-bold">
@@ -222,9 +212,9 @@
                     <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200"><i class="fa-solid fa-church text-ifgf-blue mr-1"></i> Palmerston North</span>
                     <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200"><i class="fa-solid fa-church text-ifgf-blue mr-1"></i> Wellington</span>
                     <span class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200"><i class="fa-solid fa-church text-ifgf-blue mr-1"></i> Christchurch</span>
-                    <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-heart text-emerald-600 mr-1"></i> Dunedin (iCare)</span>
-                    <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-heart text-emerald-600 mr-1"></i> Invercargill (iCare)</span>
-                    <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-heart text-emerald-600 mr-1"></i> Queenstown (iCare)</span>
+                    <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-heart text-emerald-600 mr-1"></i> Dunedin</span>
+                    <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-heart text-emerald-600 mr-1"></i> Invercargill</span>
+                    <span class="bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-heart text-emerald-600 mr-1"></i> Queenstown</span>
                   </div>
                 </div>
 
@@ -293,7 +283,6 @@
         </div>
       </section>
 
-      <!-- NATIONAL EVENTS & LEADERS SPOTLIGHT -->
       <section id="national-events" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-gradient-to-r from-ifgf-darkblue via-ifgf-blue to-sky-700 rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
           <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
@@ -325,14 +314,13 @@
         </div>
       </section>
 
-      <!-- CITIES & ICARE DIRECTORY (SWIPE CAROUSEL ON MOBILE, GRID ON DESKTOP) -->
       <section id="cities-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
           <div>
             <span class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-ifgf-blue bg-ifgf-blue/10 px-3 py-1 rounded-full">Local Communities</span>
             <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mt-2">IFGF Churches & iCares</h2>
           </div>
-          <p class="text-xs text-slate-500 max-w-sm">Tap any city to view local services, care groups, and stories.</p>
+          <p class="text-xs text-slate-500 max-w-sm">Tap any city to view local services, care groups, and venue details.</p>
         </div>
 
         <!-- Filter Horizontal Scroll Pills -->
@@ -340,13 +328,12 @@
           <!-- Dynamic Buttons -->
         </div>
 
-        <!-- Cities Wrapper: Touch-friendly Horizontal Snap Scroll on Mobile, Grid on Desktop -->
+        <!-- Cities Cards Container -->
         <div class="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 overflow-x-auto snap-x snap-mandatory no-scrollbar -mx-4 px-4 md:mx-0 md:px-0 pb-4" id="cityCardsGrid">
           <!-- Dynamic Content -->
         </div>
       </section>
 
-      <!-- CITY ACTIVITIES & MEDIA FEED (PORTRAIT MOBILE CARDS & MAGAZINE JOURNAL) -->
       <section id="news-feed" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4 border-b border-slate-200 pb-5">
           <div>
@@ -374,13 +361,11 @@
           </div>
         </div>
 
-        <!-- Feed Grid Container -->
         <div id="postsFeedContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           <!-- Dynamic Posts -->
         </div>
       </section>
 
-      <!-- GLOBAL VISION BANNER -->
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="ifgf-gradient rounded-3xl p-6 sm:p-12 text-white shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
           <div class="space-y-3 sm:space-y-4 max-w-2xl relative z-10 text-center sm:text-left">
@@ -406,7 +391,6 @@
 
     </div>
 
-    <!-- CITY LEADER LOGIN VIEW -->
     <div id="loginView" class="hidden max-w-md mx-auto px-4 py-16 sm:py-24">
       <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6">
         <div class="text-center space-y-2">
@@ -432,7 +416,7 @@
         </form>
 
         <div class="pt-4 border-t border-slate-100 bg-slate-50 rounded-2xl p-4 text-[11px] space-y-2">
-          <p class="font-bold text-slate-800">Demo City Email Logins (Password: <code class="bg-white px-1 py-0.5 rounded border">leader123</code>):</p>
+          <p class="font-bold text-slate-800">Demo City Logins (Password: <code class="bg-white px-1 py-0.5 rounded border">leader123</code>):</p>
           <div class="grid grid-cols-2 gap-1 text-slate-600 font-mono text-[10px]">
             <button type="button" onclick="fillDemoLogin('auckland@ifgf.nz')" class="text-left hover:text-ifgf-blue hover:underline">auckland@ifgf.nz</button>
             <button type="button" onclick="fillDemoLogin('wellington@ifgf.nz')" class="text-left hover:text-ifgf-blue hover:underline">wellington@ifgf.nz</button>
@@ -449,7 +433,6 @@
       </div>
     </div>
 
-    <!-- CITY LEADER / LOCAL ADMIN APP VIEW -->
     <div id="adminView" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
       
       <!-- App Header Banner -->
@@ -466,7 +449,6 @@
             <p class="text-xs text-slate-500 mt-0.5">Post stories, photos, videos, or edit published updates for your assigned city.</p>
           </div>
 
-          <!-- Active Authenticated City Leader Box -->
           <div class="bg-slate-100 p-3.5 rounded-xl border border-slate-200 flex items-center justify-between gap-4">
             <div>
               <div class="text-[9px] uppercase font-bold text-slate-400">Logged in Leader:</div>
@@ -481,10 +463,8 @@
         </div>
       </div>
 
-      <!-- App Content Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8">
         
-        <!-- Left: Upload/Publish New Activity Form -->
         <div class="lg:col-span-7 space-y-6">
           <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200">
             <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-200">
@@ -502,7 +482,7 @@
 
               <div>
                 <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Post Title *</label>
-                <input type="text" id="postTitle" required placeholder="e.g. Easter Sunday Celebration & Community Lunch" class="w-full text-xs sm:text-sm p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-ifgf-blue focus:outline-none">
+                <input type="text" id="postTitle" required placeholder="e.g. Easter Sunday Service & Community Lunch" class="w-full text-xs sm:text-sm p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-ifgf-blue focus:outline-none">
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -521,7 +501,6 @@
                 </div>
               </div>
 
-              <!-- Media Attachment / AI Generator -->
               <div class="p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-3">
                 <div class="flex items-center justify-between">
                   <label class="text-xs font-bold text-slate-700 uppercase">Media Image / Thumbnail URL</label>
@@ -532,7 +511,6 @@
 
                 <input type="url" id="postMediaUrl" placeholder="https://images.unsplash.com/... or paste image link" class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-ifgf-blue focus:outline-none">
 
-                <!-- Collapsible Gemini AI Generator Tool -->
                 <div id="aiGeneratorBox" class="hidden p-3 bg-sky-50 rounded-lg border border-sky-200 space-y-2">
                   <div class="flex items-center justify-between">
                     <span class="text-xs font-bold text-ifgf-darkblue flex items-center gap-1">
@@ -551,7 +529,6 @@
                 </div>
               </div>
 
-              <!-- Content Description + AI Assistant -->
               <div>
                 <div class="flex items-center justify-between mb-1">
                   <label class="block text-xs font-bold text-slate-700 uppercase">Description & Details *</label>
@@ -575,7 +552,6 @@
           </div>
         </div>
 
-        <!-- Right: Manage City Posts -->
         <div class="lg:col-span-5 space-y-6">
           <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200">
             <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-200">
@@ -585,9 +561,8 @@
               <span class="text-xs text-slate-500"><span id="adminCityFilterLabel" class="font-bold text-ifgf-blue">Auckland</span></span>
             </div>
 
-            <!-- List of posts for selected city -->
             <div id="adminPostsList" class="space-y-3 max-h-[500px] overflow-y-auto pr-1">
-              <!-- Dynamic admin post item cards -->
+              <!-- Dynamic admin post items -->
             </div>
           </div>
         </div>
@@ -597,7 +572,6 @@
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="bg-ifgf-navy text-slate-300 text-xs py-10 sm:py-12 border-t border-slate-800 mt-auto">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
@@ -650,7 +624,6 @@
     </div>
   </footer>
 
-  <!-- CONNECT MODAL -->
   <div id="connectModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
     <div class="bg-white rounded-2xl max-w-lg w-full p-5 sm:p-6 shadow-2xl space-y-4 relative border border-slate-100 max-h-[90vh] overflow-y-auto">
       <button onclick="closeConnectModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
@@ -682,9 +655,9 @@
               <option value="Palmerston North">Palmerston North</option>
               <option value="Wellington">Wellington</option>
               <option value="Christchurch">Christchurch</option>
-              <option value="Dunedin">Dunedin (iCare)</option>
-              <option value="Invercargill">Invercargill (iCare)</option>
-              <option value="Queenstown">Queenstown (iCare)</option>
+              <option value="Dunedin">Dunedin</option>
+              <option value="Invercargill">Invercargill</option>
+              <option value="Queenstown">Queenstown</option>
             </select>
           </div>
           <div>
@@ -716,7 +689,6 @@
     </div>
   </div>
 
-  <!-- NOTIFICATION TOAST UI -->
   <div id="toast" class="fixed bottom-16 sm:bottom-5 right-4 sm:right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl text-xs font-medium flex items-center gap-3 transition-all duration-300 transform translate-y-10 opacity-0 pointer-events-none">
     <i id="toastIcon" class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
     <span id="toastMsg">Action completed successfully!</span>
@@ -724,7 +696,7 @@
 
   <script>
     /* =========================================================================
-       DATA STRUCTURES & INITIAL MOCK DATA
+       DATA STRUCTURES & OFFICIAL CITY SCHEDULES / VENUES
        ========================================================================= */
 
     const CITIES_DATA = [
@@ -733,24 +705,24 @@
         name: 'Auckland',
         type: 'Church',
         region: 'North Island',
-        schedule: 'Sundays @ 10:30 AM',
-        address: 'Central Auckland Hub, Auckland',
+        schedule: 'Sundays @ 4:00 PM',
+        address: '9 Karaka Street, Eden Terrace, Auckland 1010',
         lead: 'Ps. Auckland Ministry Team',
         image: 'Auckland.jpeg',
         fallbackImage: 'ifgfnz/Auckland.jpeg',
-        icaredescription: 'Multiple weekly iCare groups for students, young adults, and families across Auckland.'
+        icaredescription: 'Weekly Sunday worship service at Eden Terrace, along with midweek iCare fellowship groups across Auckland.'
       },
       {
         id: 'Hamilton',
         name: 'Hamilton',
         type: 'Church',
         region: 'North Island',
-        schedule: 'Sundays @ 10:00 AM',
-        address: 'Waikato Worship Center, Hamilton',
+        schedule: 'Sundays @ 9:30 AM',
+        address: 'The Pavilion, Hamilton Gardens, Hamilton',
         lead: 'IFGF Hamilton Team',
         image: 'Hamilton.jpeg',
         fallbackImage: 'ifgfnz/Hamilton.jpeg',
-        icaredescription: 'Waikato campus students & young professional iCare fellowship groups.'
+        icaredescription: 'Sunday morning worship at Hamilton Gardens Pavilion & student & young professional iCares.'
       },
       {
         id: 'Palmerston North',
@@ -762,67 +734,67 @@
         lead: 'IFGF Palmy Care Team',
         image: 'PalmerstonNorth.jpeg',
         fallbackImage: 'ifgfnz/PalmerstonNorth.jpeg',
-        icaredescription: 'Student & family fellowships across Manawatu region at 35 Matipo St.'
+        icaredescription: 'Worship service at 35 Matipo St, serving university students and families across the Manawatu region.'
       },
       {
         id: 'Wellington',
         name: 'Wellington',
         type: 'Church',
         region: 'North Island',
-        schedule: 'Sundays @ 10:30 AM',
-        address: 'Capital City Center, Wellington',
+        schedule: 'Sundays @ 4:30 PM',
+        address: '61 Hopper Street, Mount Cook, Wellington 6011',
         lead: 'Ps. Wellington Team',
         image: 'Wellington.jpeg',
         fallbackImage: 'ifgfnz/Wellington.jpeg',
-        icaredescription: 'Central & Hutt Valley iCare fellowship groups.'
+        icaredescription: 'Sunday afternoon worship service in Mount Cook & Hutt Valley fellowship groups.'
       },
       {
         id: 'Christchurch',
         name: 'Christchurch',
         type: 'Church',
         region: 'South Island',
-        schedule: 'Sundays @ 11:00 AM',
-        address: 'Canterbury Community Hub, Christchurch',
+        schedule: 'Sundays @ 2:30 PM',
+        address: '50 Lincoln Road, Spreydon, Christchurch 8024',
         lead: 'Ps. Christchurch Team',
         image: 'Christchurch.jpeg',
         fallbackImage: 'ifgfnz/Christchurch.jpeg',
-        icaredescription: 'South Island main worship center & family iCare groups.'
+        icaredescription: 'Main South Island Sunday worship center at Spreydon & family iCare fellowships.'
       },
       {
         id: 'Dunedin',
         name: 'Dunedin',
-        type: 'iCare',
+        type: 'Church & iCare',
         region: 'South Island',
-        schedule: 'Fridays @ 6:30 PM (iCare)',
-        address: 'Otago Campus Area, Dunedin',
-        lead: 'Otago Student iCare Leaders',
+        schedule: '4th Sun @ 3PM (Service) | 2nd Sun @ 3PM (iCare)',
+        address: 'Service: Dunedin Community House (43 Princes St, Lvl 6) | iCare: North Dunedin / St. Clair / St. Kilda',
+        lead: 'Otago Ministry & iCare Leaders',
         image: 'Dunedin.jpeg',
         fallbackImage: 'ifgfnz/Dunedin.jpeg',
-        icaredescription: 'Vibrant university student & young adult iCare gathering.'
+        icaredescription: 'Monthly Sunday Service on the 4th Sunday @ 3PM (43 Princes St, Level 6). Monthly iCare Fellowships on the 2nd Sunday @ 3PM across North Dunedin, St. Clair, and St. Kilda.'
       },
       {
         id: 'Invercargill',
         name: 'Invercargill',
         type: 'iCare',
         region: 'South Island',
-        schedule: 'Fortnightly Saturdays (iCare)',
-        address: 'Invercargill Southland Hub',
+        schedule: 'Monthly Gathering (Updated Monthly)',
+        address: 'Invercargill Hub (Venue updated monthly)',
         lead: 'Southland iCare Fellowship',
         image: 'Invercargill.jpeg',
         fallbackImage: 'ifgfnz/Invercargill.jpeg',
-        icaredescription: 'Warm fellowship group serving the Southland community.'
+        icaredescription: 'Warm fellowship group serving Southland. Date, time, and venue are updated monthly. Connect with us to join this month\'s gathering!'
       },
       {
         id: 'Queenstown',
         name: 'Queenstown',
         type: 'iCare',
         region: 'South Island',
-        schedule: 'Mid-week Evenings (iCare)',
-        address: 'Queenstown Central, Lakes District',
+        schedule: 'Monthly Gathering (Updated Monthly)',
+        address: 'Lakes District Hub (Venue updated monthly)',
         lead: 'Lakes iCare Team',
         image: 'Queenstown.jpeg',
         fallbackImage: 'ifgfnz/Queenstown.jpeg',
-        icaredescription: 'Connecting hospitality workers, locals, and newcomers.'
+        icaredescription: 'Connecting hospitality workers, locals, and newcomers in Queenstown. Meeting dates and venues are updated monthly.'
       }
     ];
 
@@ -834,7 +806,7 @@
         type: 'Event',
         author: 'IFGF NZ National Board',
         date: '2026-09-30',
-        description: 'Leaders from all across New Zealand gathered in Wellington from 30 September to 1 October for strategy, prayer, and alignment for the year ahead.',
+        description: 'Leaders from all across New Zealand gathered in Wellington at 61 Hopper St from 30 September to 1 October for strategy, prayer, and alignment for the year ahead.',
         mediaUrl: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80',
         likes: 45
       },
@@ -852,33 +824,33 @@
       {
         id: 'post-1',
         city: 'Auckland',
-        title: 'Auckland Sunday Worship & Community Fellowship',
+        title: 'Auckland Sunday Service & Fellowship at Eden Terrace',
         type: 'Photo',
         author: 'Ps. Auckland Media',
         date: '2026-10-10',
-        description: 'An inspiring worship service followed by our monthly fellowship lunch. Over 120 members gathered to give thanks and connect in our iCares.',
+        description: 'Inspiring Sunday 4:00 PM worship service followed by community tea at 9 Karaka Street, Eden Terrace.',
         mediaUrl: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80',
         likes: 24
       },
       {
         id: 'post-2',
         city: 'Christchurch',
-        title: 'Spring Youth Retreat & Praise Highlights',
+        title: 'Christchurch Praise & Worship Highlights',
         type: 'Video',
-        author: 'Christchurch Youth Team',
+        author: 'Christchurch Media Team',
         date: '2026-10-08',
-        description: 'Watch the highlights reel from our Christchurch youth camp! Young people worshipping and building lifelong friendships.',
+        description: 'Watch highlights from our Sunday 2:30 PM service at 50 Lincoln Road, Spreydon!',
         mediaUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80',
         likes: 38
       },
       {
         id: 'post-3',
         city: 'Dunedin',
-        title: 'Otago Campus iCare Welcome Night',
+        title: 'Otago Campus & Dunedin Community House Gathering',
         type: 'iCare',
         author: 'Dunedin iCare Host',
         date: '2026-10-05',
-        description: 'Welcoming new students in Dunedin! Delicious potluck dinner and heartfelt prayer worship night at Otago.',
+        description: 'Welcoming Otago students and locals! Monthly Sunday Service on 4th Sunday at Level 6, 43 Princes St.',
         mediaUrl: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80',
         likes: 19
       }
@@ -887,11 +859,10 @@
     let activeCityFilter = 'all';
     let activeTypeFilter = 'all';
     let currentAdminCity = 'Auckland';
-    let loggedInUser = null; // { email, city }
+    let loggedInUser = null;
     let currentView = 'public';
 
     window.addEventListener('DOMContentLoaded', () => {
-      // Check URL hash for leader mode direct link (#leader)
       if (window.location.hash === '#leader') {
         switchView('login');
       }
@@ -909,7 +880,6 @@
       e.preventDefault();
       const email = document.getElementById('loginEmail').value.trim().toLowerCase();
 
-      // Map leader email domain/prefix to specific city
       let assignedCity = 'Auckland';
       if (email.includes('hamilton')) assignedCity = 'Hamilton';
       else if (email.includes('palmy') || email.includes('palmerston')) assignedCity = 'Palmerston North';
@@ -973,7 +943,7 @@
 
       let html = '';
       filtered.forEach(c => {
-        const isChurch = c.type === 'Church';
+        const isChurch = c.type.includes('Church');
         const absoluteUrl = `https://targetedscripts.com/ifgfnz/${c.image}`;
         const placeholderUrl = `https://placehold.co/600x400/0072CE/ffffff?text=IFGF+${encodeURIComponent(c.name)}`;
 
@@ -986,7 +956,7 @@
                    class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
               <div class="absolute top-3 left-3 flex gap-1">
                 <span class="px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-bold ${isChurch ? 'bg-ifgf-blue text-white' : 'bg-emerald-600 text-white'} shadow-md">
-                  ${isChurch ? '<i class="fa-solid fa-church mr-1"></i> Main Church' : '<i class="fa-solid fa-heart mr-1"></i> iCare Group'}
+                  ${isChurch ? '<i class="fa-solid fa-church mr-1"></i> ' + c.type : '<i class="fa-solid fa-heart mr-1"></i> iCare Group'}
                 </span>
               </div>
               <div class="absolute bottom-2 right-2 bg-slate-900/80 backdrop-blur-sm text-white text-[10px] px-2 py-0.5 rounded font-semibold">
@@ -998,12 +968,12 @@
               <div>
                 <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mb-1">IFGF ${c.name}</h3>
                 <p class="text-xs text-ifgf-blue font-bold mb-1"><i class="fa-regular fa-clock mr-1"></i> ${c.schedule}</p>
-                <p class="text-[11px] text-slate-500 font-medium mb-2"><i class="fa-solid fa-location-dot mr-1 text-rose-500"></i> ${c.address}</p>
+                <p class="text-[11px] text-slate-600 font-medium mb-2 leading-tight"><i class="fa-solid fa-location-dot mr-1 text-rose-500"></i> ${c.address}</p>
                 <p class="text-xs text-slate-600 leading-relaxed line-clamp-3">${c.icaredescription}</p>
               </div>
 
               <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span class="text-slate-500 font-medium truncate max-w-[130px] text-[11px]"><i class="fa-solid fa-user-gear mr-1 text-slate-400"></i> ${c.lead}</span>
+                <span class="text-slate-500 font-medium truncate max-w-[140px] text-[11px]"><i class="fa-solid fa-user-gear mr-1 text-slate-400"></i> ${c.lead}</span>
                 <button onclick="filterCity('${c.id}'); scrollToSection('news-feed')" class="font-bold text-ifgf-blue hover:underline text-xs">
                   Explore →
                 </button>
@@ -1280,7 +1250,6 @@
     }
 
     function deletePost(id) {
-      // Replaced window.confirm with in-app prompt/action for rule compliance
       const post = postsDatabase.find(p => p.id === id);
       if (!post) return;
 
