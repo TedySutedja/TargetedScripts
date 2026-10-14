@@ -66,7 +66,7 @@
         
         <!-- Logo Branding with Vision Lines -->
         <div class="flex items-center gap-3 cursor-pointer" onclick="switchView('public')">
-          <img src="IFGFNZlogo.jpeg" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/IFGFNZlogo.jpeg';}else{this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';}" alt="IFGF New Zealand Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover shadow-sm flex-shrink-0" style="width: 44px; height: 44px; min-width: 44px; min-height: 44px;">
+          <img src="./IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" alt="IFGF New Zealand Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover shadow-sm flex-shrink-0" style="width: 44px; height: 44px; min-width: 44px; min-height: 44px;">
           <div class="flex flex-col justify-center border-l border-slate-200 pl-3">
             <span class="text-[11px] sm:text-sm font-black tracking-wider text-slate-900 uppercase leading-none">PEOPLE IS OUR MISSION</span>
             <span class="text-[9px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-tight mt-1 leading-none">CONNECT WITH GOD, MAKE DISCIPLES</span>
@@ -235,7 +235,7 @@
                 <div class="relative w-full max-w-sm bg-white rounded-3xl p-6 text-slate-800 editorial-shadow border border-slate-100">
                   <div class="mb-4 rounded-2xl overflow-hidden shadow-sm border border-slate-100">
                     <div class="aspect-square w-full bg-ifgf-blue relative flex items-center justify-center">
-                      <img src="IFGFNZlogo.jpeg" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/IFGFNZlogo.jpeg';}else{this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';}" alt="IFGF New Zealand Logo" class="w-full h-full object-cover">
+                      <img src="./IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" alt="IFGF New Zealand Logo" class="w-full h-full object-cover">
                     </div>
                   </div>
 
@@ -370,7 +370,7 @@
     <div id="loginView" class="hidden max-w-md mx-auto px-4 py-16 sm:py-24">
       <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6">
         <div class="text-center space-y-2">
-          <img src="IFGFNZlogo.jpeg" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/IFGFNZlogo.jpeg';}else{this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';}" class="w-16 h-16 mx-auto rounded-2xl shadow-sm object-cover">
+          <img src="./IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" class="w-16 h-16 mx-auto rounded-2xl shadow-sm object-cover">
           <h2 class="text-2xl font-black text-slate-900">City Leader Portal</h2>
           <p class="text-xs text-slate-500">Sign in with your registered city email to update news, photos, and media for your location.</p>
         </div>
@@ -564,7 +564,7 @@
         
         <div class="space-y-3 sm:col-span-2 md:col-span-1">
           <div class="flex items-center gap-2">
-            <img src="IFGFNZlogo.jpeg" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/IFGFNZlogo.jpeg';}else{this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';}" alt="IFGF New Zealand Logo" class="w-9 h-9 rounded-lg object-cover flex-shrink-0">
+            <img src="./IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" alt="IFGF New Zealand Logo" class="w-9 h-9 rounded-lg object-cover flex-shrink-0">
             <span class="font-bold text-white text-base">IFGF New Zealand</span>
           </div>
           <p class="text-slate-400 text-xs leading-relaxed">
@@ -934,11 +934,16 @@
       let html = '';
       filtered.forEach(c => {
         const isChurch = c.type === 'Church';
-        const liveUrl = `https://targetedscripts.com/ifgfnz/${c.image}`;
+        const absoluteUrl = `https://targetedscripts.com/ifgfnz/${c.image}`;
+        const placeholderUrl = `https://placehold.co/600x400/0072CE/ffffff?text=IFGF+${encodeURIComponent(c.name)}`;
+
         html += `
           <div class="snap-center flex-shrink-0 w-[280px] sm:w-[320px] md:w-auto bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 hover:shadow-xl transition duration-300 flex flex-col group">
             <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
-              <img src="${c.image}" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/${c.image}';}else{this.src='${liveUrl}';}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <img src="./${c.image}" 
+                   onerror="if(!this.dataset.triedAbs){this.dataset.triedAbs=true; this.src='${absoluteUrl}';}else{this.onerror=null; this.src='${placeholderUrl}';}" 
+                   alt="${c.name}" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
               <div class="absolute top-3 left-3 flex gap-1">
                 <span class="px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-bold ${isChurch ? 'bg-ifgf-blue text-white' : 'bg-emerald-600 text-white'} shadow-md">
                   ${isChurch ? '<i class="fa-solid fa-church mr-1"></i> Main Church' : '<i class="fa-solid fa-heart mr-1"></i> iCare Group'}
