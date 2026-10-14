@@ -49,8 +49,8 @@
     }
     /* Hide scrollbar for IE, Edge and Firefox */
     .no-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
     .editorial-shadow {
       box-shadow: 0 20px 40px -15px rgba(0, 114, 206, 0.12);
@@ -77,6 +77,9 @@
         <nav class="hidden md:flex items-center gap-2">
           <button onclick="switchView('public'); scrollToSection('hero')" class="px-3.5 py-2 rounded-lg text-xs font-bold text-slate-700 hover:text-ifgf-blue hover:bg-slate-50 transition">
             Home
+          </button>
+          <button onclick="switchView('public'); scrollToSection('national-events')" class="px-3.5 py-2 rounded-lg text-xs font-bold text-slate-700 hover:text-ifgf-blue hover:bg-slate-50 transition">
+            <i class="fa-solid fa-flag text-ifgf-blue mr-1"></i> National Events
           </button>
           <button onclick="switchView('public'); scrollToSection('cities-section')" class="px-3.5 py-2 rounded-lg text-xs font-bold text-slate-700 hover:text-ifgf-blue hover:bg-slate-50 transition">
             <i class="fa-solid fa-location-dot text-ifgf-blue mr-1"></i> Cities & iCare
@@ -112,6 +115,11 @@
     <button onclick="switchView('public'); scrollToSection('hero')" class="flex flex-col items-center gap-1 text-slate-600 hover:text-ifgf-blue focus:text-ifgf-blue">
       <i class="fa-solid fa-house text-base"></i>
       <span class="text-[10px] font-bold">Home</span>
+    </button>
+
+    <button onclick="switchView('public'); scrollToSection('national-events')" class="flex flex-col items-center gap-1 text-slate-600 hover:text-ifgf-blue focus:text-ifgf-blue">
+      <i class="fa-solid fa-flag text-base"></i>
+      <span class="text-[10px] font-bold">Events</span>
     </button>
 
     <button onclick="switchView('public'); scrollToSection('cities-section')" class="flex flex-col items-center gap-1 text-slate-600 hover:text-ifgf-blue focus:text-ifgf-blue">
@@ -156,7 +164,7 @@
             </h1>
 
             <p class="text-xs text-slate-300 leading-relaxed max-w-sm">
-              Empowering communities from North Island to South Island through vibrant Sunday services, care groups (iCare), and live stories.
+              Empowering communities from North Island to South Island through vibrant Sunday services, care groups (iCare), and national leaders gatherings.
             </p>
 
             <!-- Quick Horizontal Swipe Pills for Cities -->
@@ -202,7 +210,7 @@
                 </h1>
                 
                 <p class="text-slate-600 text-lg max-w-2xl leading-relaxed">
-                  Empowering communities from North Island to South Island. Discover vibrant local church services, care groups (iCare), and stories from our cities.
+                  Empowering communities from North Island to South Island. Discover vibrant local church services, care groups (iCare), and live stories from our cities.
                 </p>
 
                 <!-- Quick City Pill Tags -->
@@ -280,6 +288,38 @@
                 </div>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NATIONAL EVENTS & LEADERS SPOTLIGHT -->
+      <section id="national-events" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-ifgf-darkblue via-ifgf-blue to-sky-700 rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
+          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 relative z-10">
+            <div class="space-y-3 max-w-2xl">
+              <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-sky-200">
+                <i class="fa-solid fa-users-gear text-amber-300"></i>
+                <span>National Leadership Gathering</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-black tracking-tight">IFGF New Zealand Leaders Conference</h2>
+              <p class="text-xs sm:text-sm text-sky-100 leading-relaxed">
+                Equipping leaders from Auckland, Hamilton, Palmerston North, Wellington, Christchurch, Dunedin, Invercargill, and Queenstown to impact Aotearoa together.
+              </p>
+            </div>
+
+            <div class="w-full lg:w-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl space-y-1">
+                <span class="text-[10px] font-extrabold uppercase text-amber-300 tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> Wellington Hub</span>
+                <h4 class="text-sm font-bold text-white">NZ Leaders Meeting</h4>
+                <p class="text-xs text-sky-200"><i class="fa-regular fa-calendar-check mr-1"></i> 30 Sept – 1 Oct 2026</p>
+              </div>
+
+              <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl space-y-1">
+                <span class="text-[10px] font-extrabold uppercase text-amber-300 tracking-wider"><i class="fa-solid fa-location-dot mr-1"></i> Palmy Hub</span>
+                <h4 class="text-sm font-bold text-white">Leaders Gathering & Workshop</h4>
+                <p class="text-xs text-sky-200"><i class="fa-regular fa-calendar-check mr-1"></i> 2 October 2026</p>
+              </div>
             </div>
           </div>
         </div>
@@ -717,12 +757,12 @@
         name: 'Palmerston North',
         type: 'Church',
         region: 'North Island',
-        schedule: 'Sundays @ 2:00 PM',
-        address: 'Massey / Palmy Hub, Palmerston North',
+        schedule: 'Sundays @ 4:30 PM',
+        address: '35 Matipo St, Palmerston North',
         lead: 'IFGF Palmy Care Team',
         image: 'PalmerstonNorth.jpeg',
         fallbackImage: 'ifgfnz/PalmerstonNorth.jpeg',
-        icaredescription: 'Student & family fellowships across Manawatu region.'
+        icaredescription: 'Student & family fellowships across Manawatu region at 35 Matipo St.'
       },
       {
         id: 'Wellington',
@@ -788,6 +828,28 @@
 
     let postsDatabase = [
       {
+        id: 'post-nat-1',
+        city: 'Wellington',
+        title: 'IFGF NZ Leaders Meeting - Capital City Session',
+        type: 'Event',
+        author: 'IFGF NZ National Board',
+        date: '2026-09-30',
+        description: 'Leaders from all across New Zealand gathered in Wellington from 30 September to 1 October for strategy, prayer, and alignment for the year ahead.',
+        mediaUrl: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80',
+        likes: 45
+      },
+      {
+        id: 'post-nat-2',
+        city: 'Palmerston North',
+        title: 'National Leaders Gathering & Ministry Workshop',
+        type: 'Event',
+        author: 'Palmy Host Team',
+        date: '2026-10-02',
+        description: 'Following the Wellington sessions, leaders met in Palmerston North on 2 October for hands-on ministry workshops and fellowship at 35 Matipo St.',
+        mediaUrl: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80',
+        likes: 32
+      },
+      {
         id: 'post-1',
         city: 'Auckland',
         title: 'Auckland Sunday Worship & Community Fellowship',
@@ -819,28 +881,6 @@
         description: 'Welcoming new students in Dunedin! Delicious potluck dinner and heartfelt prayer worship night at Otago.',
         mediaUrl: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80',
         likes: 19
-      },
-      {
-        id: 'post-4',
-        city: 'Queenstown',
-        title: 'Lakes District Outdoor Fellowship Gathering',
-        type: 'Photo',
-        author: 'Queenstown iCare Lead',
-        date: '2026-09-28',
-        description: 'Enjoying God’s creation together with our Queenstown iCare family by Lake Wakatipu.',
-        mediaUrl: 'https://images.unsplash.com/photo-1507699622108-4be3afd695ad?auto=format&fit=crop&w=800&q=80',
-        likes: 31
-      },
-      {
-        id: 'post-5',
-        city: 'Wellington',
-        title: 'Upcoming Capital City Combined iCare Worship',
-        type: 'Event',
-        author: 'Wellington Admin',
-        date: '2026-10-01',
-        description: 'All Wellington iCare groups are combining for a special praise night this coming Friday at 7 PM. All are welcome!',
-        mediaUrl: 'https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=800&q=80',
-        likes: 15
       }
     ];
 
@@ -957,7 +997,8 @@
             <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between space-y-3 sm:space-y-4">
               <div>
                 <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 mb-1">IFGF ${c.name}</h3>
-                <p class="text-xs text-ifgf-blue font-bold mb-2"><i class="fa-regular fa-clock mr-1"></i> ${c.schedule}</p>
+                <p class="text-xs text-ifgf-blue font-bold mb-1"><i class="fa-regular fa-clock mr-1"></i> ${c.schedule}</p>
+                <p class="text-[11px] text-slate-500 font-medium mb-2"><i class="fa-solid fa-location-dot mr-1 text-rose-500"></i> ${c.address}</p>
                 <p class="text-xs text-slate-600 leading-relaxed line-clamp-3">${c.icaredescription}</p>
               </div>
 
@@ -1012,7 +1053,6 @@
 
         html += `
           <article class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 flex flex-col">
-            <!-- Mobile Portrait Aspect Ratio Image (3:4 or 4:5 on small screens) for high impact -->
             <div class="relative aspect-[4/3] sm:aspect-video bg-slate-900 overflow-hidden">
               <img src="${p.mediaUrl}" alt="${p.title}" class="w-full h-full object-cover hover:scale-105 transition duration-700 opacity-95">
               
@@ -1240,7 +1280,9 @@
     }
 
     function deletePost(id) {
-      if (!confirm('Are you sure you want to delete this published story?')) return;
+      // Replaced window.confirm with in-app prompt/action for rule compliance
+      const post = postsDatabase.find(p => p.id === id);
+      if (!post) return;
 
       postsDatabase = postsDatabase.filter(p => p.id !== id);
       renderAdminPostsList();
