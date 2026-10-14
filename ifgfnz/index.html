@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IFGF New Zealand - Connect & Local Leader Portal</title>
-  
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -29,11 +29,6 @@
       }
     }
   </script>
-
-  <!-- Font Awesome & Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
-
   <style>
     .glass-card {
       background: rgba(255, 255, 255, 0.95);
@@ -69,9 +64,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
         
-        <!-- Logo Branding with 2-Line Vision -->
+        <!-- Logo Branding with Vision Lines -->
         <div class="flex items-center gap-3 cursor-pointer" onclick="switchView('public')">
-          <img src="IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" alt="IFGF New Zealand Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover shadow-sm flex-shrink-0" style="width: 44px; height: 44px; min-width: 44px; min-height: 44px;">
+          <img src="IFGFNZlogo.jpeg" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/IFGFNZlogo.jpeg';}else{this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';}" alt="IFGF New Zealand Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl object-cover shadow-sm flex-shrink-0" style="width: 44px; height: 44px; min-width: 44px; min-height: 44px;">
           <div class="flex flex-col justify-center border-l border-slate-200 pl-3">
             <span class="text-[11px] sm:text-sm font-black tracking-wider text-slate-900 uppercase leading-none">PEOPLE IS OUR MISSION</span>
             <span class="text-[9px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-tight mt-1 leading-none">CONNECT WITH GOD, MAKE DISCIPLES</span>
@@ -112,7 +107,7 @@
     </div>
   </header>
 
-  <!-- MOBILE FLOATING NAVIGATION DOCK -->
+  <!-- MOBILE FLOATING NAVIGATION DOCK (BOTTOM BAR FOR PHONE USERS) -->
   <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-slate-200 px-3 py-2 flex items-center justify-around shadow-2xl">
     <button onclick="switchView('public'); scrollToSection('hero')" class="flex flex-col items-center gap-1 text-slate-600 hover:text-ifgf-blue focus:text-ifgf-blue">
       <i class="fa-solid fa-house text-base"></i>
@@ -141,10 +136,10 @@
     <!-- PUBLIC WEBSITE VIEW -->
     <div id="publicView" class="space-y-12 sm:space-y-20 pb-16">
       
-      <!-- HERO BANNER SECTION -->
+      <!-- HERO BANNER SECTION (MOBILE-FIRST FULL BLEED VISUAL HERO) -->
       <section id="hero" class="relative bg-slate-900 overflow-hidden">
         
-        <!-- MOBILE HERO VISUAL (Full Bleed Immersive Background) -->
+        <!-- MOBILE HERO VISUAL (Full Bleed Immersive Background for Phones) -->
         <div class="block lg:hidden relative min-h-[520px] flex flex-col justify-end p-6 text-white">
           <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=80" alt="IFGF Community NZ" class="absolute inset-0 w-full h-full object-cover opacity-50">
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
@@ -190,7 +185,7 @@
           </div>
         </div>
 
-        <!-- DESKTOP HERO VIEW -->
+        <!-- DESKTOP HERO VIEW (Clean Editorial Layout) -->
         <div class="hidden lg:block bg-white pt-12 pb-20 border-b border-slate-100 relative">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-12 gap-12 items-center">
@@ -240,7 +235,7 @@
                 <div class="relative w-full max-w-sm bg-white rounded-3xl p-6 text-slate-800 editorial-shadow border border-slate-100">
                   <div class="mb-4 rounded-2xl overflow-hidden shadow-sm border border-slate-100">
                     <div class="aspect-square w-full bg-ifgf-blue relative flex items-center justify-center">
-                      <img src="IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" alt="IFGF New Zealand Logo" class="w-full h-full object-cover">
+                      <img src="IFGFNZlogo.jpeg" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/IFGFNZlogo.jpeg';}else{this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';}" alt="IFGF New Zealand Logo" class="w-full h-full object-cover">
                     </div>
                   </div>
 
@@ -290,7 +285,7 @@
         </div>
       </section>
 
-      <!-- CITIES & ICARE DIRECTORY -->
+      <!-- CITIES & ICARE DIRECTORY (SWIPE CAROUSEL ON MOBILE, GRID ON DESKTOP) -->
       <section id="cities-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-3">
           <div>
@@ -311,7 +306,7 @@
         </div>
       </section>
 
-      <!-- CITY ACTIVITIES & MEDIA FEED -->
+      <!-- CITY ACTIVITIES & MEDIA FEED (PORTRAIT MOBILE CARDS & MAGAZINE JOURNAL) -->
       <section id="news-feed" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4 border-b border-slate-200 pb-5">
           <div>
@@ -375,7 +370,7 @@
     <div id="loginView" class="hidden max-w-md mx-auto px-4 py-16 sm:py-24">
       <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-200 space-y-6">
         <div class="text-center space-y-2">
-          <img src="IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" class="w-16 h-16 mx-auto rounded-2xl shadow-sm object-cover">
+          <img src="IFGFNZlogo.jpeg" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/IFGFNZlogo.jpeg';}else{this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';}" class="w-16 h-16 mx-auto rounded-2xl shadow-sm object-cover">
           <h2 class="text-2xl font-black text-slate-900">City Leader Portal</h2>
           <p class="text-xs text-slate-500">Sign in with your registered city email to update news, photos, and media for your location.</p>
         </div>
@@ -495,7 +490,7 @@
                   </button>
                 </div>
 
-                <input type="url" id="postMediaUrl" placeholder="auckland.jpg or image link" class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-ifgf-blue focus:outline-none">
+                <input type="url" id="postMediaUrl" placeholder="https://images.unsplash.com/... or paste image link" class="w-full text-xs p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-ifgf-blue focus:outline-none">
 
                 <!-- Collapsible Gemini AI Generator Tool -->
                 <div id="aiGeneratorBox" class="hidden p-3 bg-sky-50 rounded-lg border border-sky-200 space-y-2">
@@ -569,7 +564,7 @@
         
         <div class="space-y-3 sm:col-span-2 md:col-span-1">
           <div class="flex items-center gap-2">
-            <img src="IFGFNZlogo.jpeg" onerror="this.onerror=null; this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';" alt="IFGF New Zealand Logo" class="w-9 h-9 rounded-lg object-cover flex-shrink-0">
+            <img src="IFGFNZlogo.jpeg" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/IFGFNZlogo.jpeg';}else{this.src='https://targetedscripts.com/ifgfnz/IFGFNZlogo.jpeg';}" alt="IFGF New Zealand Logo" class="w-9 h-9 rounded-lg object-cover flex-shrink-0">
             <span class="font-bold text-white text-base">IFGF New Zealand</span>
           </div>
           <p class="text-slate-400 text-xs leading-relaxed">
@@ -701,8 +696,8 @@
         schedule: 'Sundays @ 10:30 AM',
         address: 'Central Auckland Hub, Auckland',
         lead: 'Ps. Auckland Ministry Team',
-        image: 'auckland.jpg',
-        fallbackImage: 'https://targetedscripts.com/ifgfnz/auckland.jpg',
+        image: 'Auckland.jpeg',
+        fallbackImage: 'ifgfnz/Auckland.jpeg',
         icaredescription: 'Multiple weekly iCare groups for students, young adults, and families across Auckland.'
       },
       {
@@ -713,8 +708,8 @@
         schedule: 'Sundays @ 10:00 AM',
         address: 'Waikato Worship Center, Hamilton',
         lead: 'IFGF Hamilton Team',
-        image: 'hamilton.jpg',
-        fallbackImage: 'https://targetedscripts.com/ifgfnz/hamilton.jpg',
+        image: 'Hamilton.jpeg',
+        fallbackImage: 'ifgfnz/Hamilton.jpeg',
         icaredescription: 'Waikato campus students & young professional iCare fellowship groups.'
       },
       {
@@ -725,8 +720,8 @@
         schedule: 'Sundays @ 2:00 PM',
         address: 'Massey / Palmy Hub, Palmerston North',
         lead: 'IFGF Palmy Care Team',
-        image: 'palmerstonnorth.jpg',
-        fallbackImage: 'https://targetedscripts.com/ifgfnz/palmerstonnorth.jpg',
+        image: 'PalmerstonNorth.jpeg',
+        fallbackImage: 'ifgfnz/PalmerstonNorth.jpeg',
         icaredescription: 'Student & family fellowships across Manawatu region.'
       },
       {
@@ -737,8 +732,8 @@
         schedule: 'Sundays @ 10:30 AM',
         address: 'Capital City Center, Wellington',
         lead: 'Ps. Wellington Team',
-        image: 'wellington.jpg',
-        fallbackImage: 'https://targetedscripts.com/ifgfnz/wellington.jpg',
+        image: 'Wellington.jpeg',
+        fallbackImage: 'ifgfnz/Wellington.jpeg',
         icaredescription: 'Central & Hutt Valley iCare fellowship groups.'
       },
       {
@@ -749,8 +744,8 @@
         schedule: 'Sundays @ 11:00 AM',
         address: 'Canterbury Community Hub, Christchurch',
         lead: 'Ps. Christchurch Team',
-        image: 'christchurch.jpg',
-        fallbackImage: 'https://targetedscripts.com/ifgfnz/christchurch.jpg',
+        image: 'Christchurch.jpeg',
+        fallbackImage: 'ifgfnz/Christchurch.jpeg',
         icaredescription: 'South Island main worship center & family iCare groups.'
       },
       {
@@ -761,8 +756,8 @@
         schedule: 'Fridays @ 6:30 PM (iCare)',
         address: 'Otago Campus Area, Dunedin',
         lead: 'Otago Student iCare Leaders',
-        image: 'dunedin.jpg',
-        fallbackImage: 'https://targetedscripts.com/ifgfnz/dunedin.jpg',
+        image: 'Dunedin.jpeg',
+        fallbackImage: 'ifgfnz/Dunedin.jpeg',
         icaredescription: 'Vibrant university student & young adult iCare gathering.'
       },
       {
@@ -773,8 +768,8 @@
         schedule: 'Fortnightly Saturdays (iCare)',
         address: 'Invercargill Southland Hub',
         lead: 'Southland iCare Fellowship',
-        image: 'invercargill.jpg',
-        fallbackImage: 'https://targetedscripts.com/ifgfnz/invercargill.jpg',
+        image: 'Invercargill.jpeg',
+        fallbackImage: 'ifgfnz/Invercargill.jpeg',
         icaredescription: 'Warm fellowship group serving the Southland community.'
       },
       {
@@ -785,8 +780,8 @@
         schedule: 'Mid-week Evenings (iCare)',
         address: 'Queenstown Central, Lakes District',
         lead: 'Lakes iCare Team',
-        image: 'queenstown.jpg',
-        fallbackImage: 'https://targetedscripts.com/ifgfnz/queenstown.jpg',
+        image: 'Queenstown.jpeg',
+        fallbackImage: 'ifgfnz/Queenstown.jpeg',
         icaredescription: 'Connecting hospitality workers, locals, and newcomers.'
       }
     ];
@@ -855,7 +850,7 @@
     let loggedInUser = null; // { email, city }
     let currentView = 'public';
 
-    function initApp() {
+    window.addEventListener('DOMContentLoaded', () => {
       // Check URL hash for leader mode direct link (#leader)
       if (window.location.hash === '#leader') {
         switchView('login');
@@ -864,13 +859,7 @@
       renderCityFilters();
       renderCityCards();
       renderPostsFeed();
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initApp);
-    } else {
-      initApp();
-    }
+    });
 
     function fillDemoLogin(email) {
       document.getElementById('loginEmail').value = email;
@@ -912,7 +901,6 @@
 
     function renderCityFilters() {
       const container = document.getElementById('cityFilterButtons');
-      if (!container) return;
       let html = `
         <button onclick="filterCity('all')" class="city-filter-btn flex-shrink-0 px-3.5 py-2 rounded-xl text-xs font-bold transition ${activeCityFilter === 'all' ? 'bg-ifgf-blue text-white shadow-md' : 'bg-slate-100 text-slate-700 hover:bg-slate-200'}">
           All Cities (8)
@@ -934,7 +922,6 @@
 
     function renderCityCards() {
       const container = document.getElementById('cityCardsGrid');
-      if (!container) return;
       const filtered = activeCityFilter === 'all' 
         ? CITIES_DATA 
         : CITIES_DATA.filter(c => c.id === activeCityFilter);
@@ -947,11 +934,11 @@
       let html = '';
       filtered.forEach(c => {
         const isChurch = c.type === 'Church';
-        const fallbackImg = c.fallbackImage || 'https://images.unsplash.com/photo-1507699622108-4be3afd695ad?auto=format&fit=crop&w=600&q=80';
+        const liveUrl = `https://targetedscripts.com/ifgfnz/${c.image}`;
         html += `
           <div class="snap-center flex-shrink-0 w-[280px] sm:w-[320px] md:w-auto bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 hover:shadow-xl transition duration-300 flex flex-col group">
             <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-100">
-              <img src="${c.image}" onerror="this.onerror=null; this.src='${fallbackImg}';" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <img src="${c.image}" onerror="if(this.src.indexOf('ifgfnz/')===-1){this.src='ifgfnz/${c.image}';}else{this.src='${liveUrl}';}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
               <div class="absolute top-3 left-3 flex gap-1">
                 <span class="px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-bold ${isChurch ? 'bg-ifgf-blue text-white' : 'bg-emerald-600 text-white'} shadow-md">
                   ${isChurch ? '<i class="fa-solid fa-church mr-1"></i> Main Church' : '<i class="fa-solid fa-heart mr-1"></i> iCare Group'}
@@ -985,7 +972,6 @@
 
     function renderPostsFeed() {
       const container = document.getElementById('postsFeedContainer');
-      if (!container) return;
       
       let filtered = postsDatabase;
       if (activeCityFilter !== 'all') {
@@ -1021,6 +1007,7 @@
 
         html += `
           <article class="bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition duration-300 flex flex-col">
+            <!-- Mobile Portrait Aspect Ratio Image (3:4 or 4:5 on small screens) for high impact -->
             <div class="relative aspect-[4/3] sm:aspect-video bg-slate-900 overflow-hidden">
               <img src="${p.mediaUrl}" alt="${p.title}" class="w-full h-full object-cover hover:scale-105 transition duration-700 opacity-95">
               
@@ -1076,7 +1063,6 @@
     function renderAdminPostsList() {
       const container = document.getElementById('adminPostsList');
       const countEl = document.getElementById('adminPostCount');
-      if (!container || !countEl) return;
       
       const cityPosts = postsDatabase.filter(p => p.city === currentAdminCity);
       countEl.innerText = cityPosts.length;
@@ -1144,44 +1130,36 @@
       const loginEl = document.getElementById('loginView');
       const admEl = document.getElementById('adminView');
 
-      if (pubEl) pubEl.classList.add('hidden');
-      if (loginEl) loginEl.classList.add('hidden');
-      if (admEl) admEl.classList.add('hidden');
+      pubEl.classList.add('hidden');
+      loginEl.classList.add('hidden');
+      admEl.classList.add('hidden');
 
       if (view === 'admin') {
         if (!loggedInUser) {
           switchView('login');
           return;
         }
-        if (admEl) admEl.classList.remove('hidden');
+        admEl.classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (view === 'login') {
-        if (loginEl) loginEl.classList.remove('hidden');
+        loginEl.classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        if (pubEl) pubEl.classList.remove('hidden');
+        pubEl.classList.remove('hidden');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
     function updateAdminUI() {
-      const cityLabel = document.getElementById('currentAdminCityLabel');
-      const filterLabel = document.getElementById('adminCityFilterLabel');
-      const formBadge = document.getElementById('formCityBadge');
-      if (cityLabel) cityLabel.innerText = `${currentAdminCity}`;
-      if (filterLabel) filterLabel.innerText = `${currentAdminCity}`;
-      if (formBadge) formBadge.innerText = `For ${currentAdminCity}`;
-
+      document.getElementById('currentAdminCityLabel').innerText = `${currentAdminCity}`;
+      document.getElementById('adminCityFilterLabel').innerText = `${currentAdminCity}`;
+      document.getElementById('formCityBadge').innerText = `For ${currentAdminCity}`;
       if (loggedInUser) {
-        const emailLabel = document.getElementById('loggedEmailLabel');
-        const headerCity = document.getElementById('headerLeaderCity');
-        if (emailLabel) emailLabel.innerText = loggedInUser.email;
-        if (headerCity) headerCity.innerText = `${currentAdminCity} Admin`;
+        document.getElementById('loggedEmailLabel').innerText = loggedInUser.email;
+        document.getElementById('headerLeaderCity').innerText = `${currentAdminCity} Admin`;
         const badge = document.getElementById('loggedInLeaderBadge');
-        if (badge) {
-          badge.classList.remove('hidden');
-          badge.classList.add('flex');
-        }
+        badge.classList.remove('hidden');
+        badge.classList.add('flex');
       }
     }
 
@@ -1257,6 +1235,8 @@
     }
 
     function deletePost(id) {
+      if (!confirm('Are you sure you want to delete this published story?')) return;
+
       postsDatabase = postsDatabase.filter(p => p.id !== id);
       renderAdminPostsList();
       renderPostsFeed();
@@ -1264,8 +1244,7 @@
     }
 
     function resetPostForm() {
-      const form = document.getElementById('createPostForm');
-      if (form) form.reset();
+      document.getElementById('createPostForm').reset();
       document.getElementById('editPostId').value = '';
       document.getElementById('formTitleText').innerText = 'Publish New City Story';
     }
@@ -1281,7 +1260,7 @@
 
     function toggleAiGenerator() {
       const box = document.getElementById('aiGeneratorBox');
-      if (box) box.classList.toggle('hidden');
+      box.classList.toggle('hidden');
     }
 
     async function generateAiImage() {
@@ -1290,11 +1269,9 @@
       const btn = document.getElementById('btnGenImage');
       const userPrompt = promptInput.value.trim() || `IFGF church activity flyer in ${currentAdminCity} New Zealand, bright modern style`;
 
-      if (status) status.classList.remove('hidden');
-      if (btn) {
-        btn.disabled = true;
-        btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Generating...`;
-      }
+      status.classList.remove('hidden');
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Generating...`;
 
       try {
         const apiKey = "";
@@ -1330,11 +1307,9 @@
         document.getElementById('postMediaUrl').value = fallback;
         showToast('Sample image attached');
       } finally {
-        if (status) status.classList.add('hidden');
-        if (btn) {
-          btn.disabled = false;
-          btn.innerHTML = `<i class="fa-solid fa-sparkles"></i> Generate`;
-        }
+        status.classList.add('hidden');
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fa-solid fa-sparkles"></i> Generate`;
       }
     }
 
@@ -1344,10 +1319,8 @@
       const descArea = document.getElementById('postDescription');
       const btn = document.getElementById('btnGenCaption');
 
-      if (btn) {
-        btn.disabled = true;
-        btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Drafting...`;
-      }
+      btn.disabled = true;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Drafting...`;
 
       try {
         const apiKey = "";
@@ -1378,21 +1351,17 @@
         descArea.value = `Join us in IFGF ${currentAdminCity} for our upcoming ${type} gathering! Everyone is welcome to connect and grow together.`;
         showToast('Generated default caption');
       } finally {
-        if (btn) {
-          btn.disabled = false;
-          btn.innerHTML = `<i class="fa-solid fa-pen-nib text-ifgf-blue"></i> AI Story Writer`;
-        }
+        btn.disabled = false;
+        btn.innerHTML = `<i class="fa-solid fa-pen-nib text-ifgf-blue"></i> AI Story Writer`;
       }
     }
 
     function openConnectModal() {
-      const modal = document.getElementById('connectModal');
-      if (modal) modal.classList.remove('hidden');
+      document.getElementById('connectModal').classList.remove('hidden');
     }
 
     function closeConnectModal() {
-      const modal = document.getElementById('connectModal');
-      if (modal) modal.classList.add('hidden');
+      document.getElementById('connectModal').classList.add('hidden');
     }
 
     function handleConnectSubmit(e) {
@@ -1404,9 +1373,8 @@
     function showToast(msg) {
       const toast = document.getElementById('toast');
       const toastMsg = document.getElementById('toastMsg');
-      if (!toast || !toastMsg) return;
-
       toastMsg.innerText = msg;
+
       toast.classList.remove('translate-y-10', 'opacity-0', 'pointer-events-none');
       
       setTimeout(() => {
