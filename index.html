@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Targeted Scripts | Custom Web Design, Executive Dashboards & Automation Services</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#142d42',
+                            900: '#0F2537',
+                            950: '#0a1a28',
+                        },
+                        vgreen: {
+                            500: '#00cc5e',
+                            600: '#00B050',
+                            700: '#008a3e',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-vgreen-600 selection:text-white flex flex-col min-h-screen">
+
+    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-navy-800 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Inline Logo TARGETED } • { SCRIPTS -->
+            <a href="#" class="flex items-center space-x-1 group">
+                <span class="text-xl sm:text-2xl font-extrabold tracking-wider text-white">TARGETED</span>
+                <div class="inline-flex items-center text-xl sm:text-2xl font-black px-0.5">
+                    <span class="text-white">}</span>
+                    <span class="text-vgreen-600 mx-0.5">•</span>
+                    <span class="text-vgreen-600">{</span>
+                </div>
+                <span class="text-xl sm:text-2xl font-extrabold tracking-wider text-vgreen-600">SCRIPTS</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors">About Us</a>
+                <a href="#services" class="text-slate-300 hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="text-slate-300 hover:text-white transition-colors">Portfolio</a>
+                <a href="#dashboards" class="text-slate-300 hover:text-white transition-colors">Dashboards</a>
+                <a href="#calculator" class="text-slate-300 hover:text-white transition-colors">Savings Calculator</a>
+                <a href="#pricing" class="text-slate-300 hover:text-white transition-colors">Care Plans</a>
+                <a href="#faq" class="text-slate-300 hover:text-white transition-colors">FAQ</a>
+                <a href="tel:+64226562882" class="text-vgreen-500 hover:text-white font-semibold transition-colors flex items-center gap-1">
+                    <span>📞</span> 022 656 2882
+                </a>
+                <a href="#contact" class="bg-vgreen-600 hover:bg-vgreen-700 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Book Consultation
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="p-2 text-slate-300 hover:text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-950 border-b border-navy-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block text-slate-300 hover:text-white py-2 font-medium">About Us</a>
+            <a href="#services" class="block text-slate-300 hover:text-white py-2 font-medium">Services</a>
+            <a href="#portfolio" class="block text-slate-300 hover:text-white py-2 font-medium">Portfolio</a>
+            <a href="#dashboards" class="block text-slate-300 hover:text-white py-2 font-medium">Dashboards</a>
+            <a href="#calculator" class="block text-slate-300 hover:text-white py-2 font-medium">Savings Calculator</a>
+            <a href="#pricing" class="block text-slate-300 hover:text-white py-2 font-medium">Care Plans</a>
+            <a href="#faq" class="block text-slate-300 hover:text-white py-2 font-medium">FAQ</a>
+            <a href="tel:+64226562882" class="block text-vgreen-500 hover:text-white py-2 font-medium">📞 Call: +64 22 656 2882</a>
+            <a href="#contact" class="block w-full text-center bg-vgreen-600 hover:bg-vgreen-700 text-white font-semibold py-3 rounded-lg shadow mt-2">
+                Book Consultation
+            </a>
+        </div>
+    </header>
+
+    <section class="relative bg-navy-900 text-white pt-12 pb-20 md:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00B050_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-navy-800 border border-navy-800 text-vgreen-600 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full shadow-inner">
+                        <span class="w-2 h-2 rounded-full bg-vgreen-600 animate-pulse"></span>
+                        <span>New Zealand Custom Software, Web &amp; Automation Services</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+                        Custom Websites, Visual Dashboards &amp; <span class="text-vgreen-600">Smart Automation</span>
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-slate-300 max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
+                        We design lightweight, responsive websites, build interactive executive dashboards, and automate repetitive workflows for businesses and organizations across New Zealand.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-3 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" class="w-full sm:w-auto text-center bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-vgreen-600/30 transition-all transform hover:-translate-y-0.5">
+                            Start Free Consultation
+                        </a>
+                        <a href="tel:+64226562882" class="w-full sm:w-auto text-center bg-navy-800 hover:bg-navy-800/80 border border-slate-700 text-slate-200 font-semibold text-base px-6 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2">
+                            <span>📞</span> Call +64 22 656 2882
+                        </a>
+                    </div>
+
+                    <div class="pt-6 border-t border-navy-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-slate-400">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-vgreen-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Web Design &amp; Apps</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-vgreen-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Executive Dashboards</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-vgreen-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Custom Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Brand Pillar Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-800/90 border border-navy-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+                        <div class="text-center pb-6 border-b border-navy-800">
+                            <p class="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Our Core Identity</p>
+                            <div class="inline-flex items-center text-4xl sm:text-5xl font-black tracking-wider py-2">
+                                <span class="text-white">}</span>
+                                <span class="text-vgreen-600 mx-2">•</span>
+                                <span class="text-vgreen-600">{</span>
+                            </div>
+                            <p class="text-sm font-medium text-slate-300 italic mt-1">"Where meaningful conversations spark precise digital solutions."</p>
+                        </div>
+
+                        <!-- 3 Pillars breakdown -->
+                        <div class="mt-6 space-y-4">
+                            <div class="flex items-start space-x-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-800">
+                                <div class="bg-navy-800 p-2 rounded-lg text-white font-bold text-sm">} {</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Human Collaboration</h4>
+                                    <p class="text-xs text-slate-300">Listening closely to understand your real operational challenges.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-800">
+                                <div class="bg-vgreen-600/20 p-2 rounded-lg text-vgreen-600 font-bold text-sm">•</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Targeted Precision</h4>
+                                    <p class="text-xs text-slate-300">Building lightweight, accurate web tools aimed straight at the problem.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 bg-navy-950/60 p-3.5 rounded-xl border border-navy-800">
+                                <div class="bg-navy-800 p-2 rounded-lg text-vgreen-600 font-bold text-xs">code</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Automated Progress</h4>
+                                    <p class="text-xs text-slate-300">Saving hours of weekly repetitive administration automatically.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-xs font-extrabold text-vgreen-600 tracking-wider uppercase">What We Offer</h2>
+                <p class="mt-2 text-3xl font-extrabold text-navy-900 sm:text-4xl">
+                    Tailored Digital Solutions Built For Your Workflow
+                </p>
+                <p class="mt-4 text-lg text-slate-600">
+                    From clean web design to live executive analytics and background automation, we solve real bottlenecks without requiring expensive enterprise platforms.
+                </p>
+            </div>
+
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Service 1: Custom Web Design & Web Apps -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-vgreen-600 flex items-center justify-center font-bold text-xl mb-6 shadow">
+                            🌐
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-vgreen-600 transition-colors">
+                            Web Design &amp; Web Apps
+                        </h3>
+                        <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                            Fast, modern, single-page or multi-page websites optimized for mobile devices. Perfect for small businesses, restaurants, and non-profit organizations.
+                        </p>
+                    </div>
+                    <ul class="mt-6 pt-6 border-t border-slate-200 text-xs font-medium text-slate-600 space-y-2">
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Mobile-first responsive layouts</li>
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Zero broken links or bloated PDFs</li>
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Fast loading &amp; SEO ready</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Interactive Executive Dashboards -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-vgreen-600 flex items-center justify-center font-bold text-xl mb-6 shadow">
+                            📊
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-vgreen-600 transition-colors">
+                            Executive Dashboards
+                        </h3>
+                        <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                            Turn raw spreadsheets or accounting data into clean, visual dashboards. Monitor cash runway, net surplus, expense allocation, and attendance trends at a glance.
+                        </p>
+                    </div>
+                    <ul class="mt-6 pt-6 border-t border-slate-200 text-xs font-medium text-slate-600 space-y-2">
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Real-time KPI summary cards</li>
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Financial &amp; attendance charts</li>
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Sleek Dark or Light Mode UI</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Google Workspace Automation -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-vgreen-600 flex items-center justify-center font-bold text-xl mb-6 shadow">
+                            &lt;/&gt;
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-vgreen-600 transition-colors">
+                            Google Apps Script
+                        </h3>
+                        <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                            Transform Google Sheets, Gmail, Docs, and Forms into interconnected workflows. Automatically generate PDF reports and issue automated email dispatches.
+                        </p>
+                    </div>
+                    <ul class="mt-6 pt-6 border-t border-slate-200 text-xs font-medium text-slate-600 space-y-2">
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Automated Google Sheets scripts</li>
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Automated PDF dispatch</li>
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Google Forms custom logic</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Python Tools & Care Plans -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-vgreen-600 flex items-center justify-center font-bold text-xl mb-6 shadow">
+                            🐍
+                        </div>
+                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-vgreen-600 transition-colors">
+                            Python &amp; Support Care
+                        </h3>
+                        <p class="mt-3 text-slate-600 text-sm leading-relaxed">
+                            Custom Python scripts for data transformation, API integrations, plus ongoing care plans to keep your scripts and website updated smoothly.
+                        </p>
+                    </div>
+                    <ul class="mt-6 pt-6 border-t border-slate-200 text-xs font-medium text-slate-600 space-y-2">
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> CSV &amp; Excel data pipelines</li>
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Third-party API connectors</li>
+                        <li class="flex items-center"><span class="text-vgreen-600 mr-2">✓</span> Monthly health checks &amp; support</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO / FEATURED PROJECTS SECTION -->
+    <section id="portfolio" class="py-16 md:py-24 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-extrabold text-vgreen-600 tracking-wider uppercase">Proof of Work</h2>
+                <p class="mt-2 text-3xl font-extrabold text-navy-900 sm:text-4xl">
+                    Featured Client Projects
+                </p>
+                <p class="mt-4 text-lg text-slate-600">
+                    Real web solutions engineered for community organizations and growing businesses across New Zealand.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Project 1: IFGF Palmy -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="bg-navy-950 p-6 flex items-center justify-center min-h-[180px] border-b border-navy-900 relative">
+                            <img src="Images/IFGFPalmy.png" alt="IFGF Palmerston North Logo" class="max-h-28 w-auto object-contain">
+                            <span class="absolute top-4 right-4 bg-vgreen-600/20 text-vgreen-500 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-vgreen-500/30">
+                                Live Website
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-vgreen-600 transition-colors">
+                                IFGF Palmerston North
+                            </h3>
+                            <p class="text-xs font-semibold text-vgreen-700 mt-1 uppercase tracking-wider">Local Community Web Solution</p>
+                            
+                            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                                A responsive local hub engineered for the Palmerston North community, making service times, connect group details, and local event updates easy to access on mobile devices.
+                            </p>
+
+                            <div class="mt-6 pt-4 border-t border-slate-100">
+                                <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Key Delivered Features:</h4>
+                                <ul class="text-xs text-slate-600 space-y-2">
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> Mobile-optimized service schedule &amp; directions</li>
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> Interactive care group / iCare connection form</li>
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> Fast loading with zero clutter</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="https://www.ifgfpalmy.org" target="_blank" class="inline-flex items-center text-xs font-bold text-vgreen-600 hover:text-vgreen-700 gap-1 underline">
+                            <span>Visit ifgfpalmy.org</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: IFGF New Zealand -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="bg-[#006699] p-6 flex items-center justify-center min-h-[180px] border-b border-blue-900 relative">
+                            <img src="Images/IFGFNZ.png" alt="IFGF New Zealand Logo" class="max-h-28 w-auto object-contain">
+                            <span class="absolute top-4 right-4 bg-white/20 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-white/30">
+                                Live Website
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-vgreen-600 transition-colors">
+                                IFGF New Zealand
+                            </h3>
+                            <p class="text-xs font-semibold text-vgreen-700 mt-1 uppercase tracking-wider">National Network Portal</p>
+                            
+                            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                                A unified national web portal connecting multiple regional locations across New Zealand (Auckland, Hamilton, Palmerston North, Wellington, Christchurch).
+                            </p>
+
+                            <div class="mt-6 pt-4 border-t border-slate-100">
+                                <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Key Delivered Features:</h4>
+                                <ul class="text-xs text-slate-600 space-y-2">
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> Multi-location directory &amp; interactive city map links</li>
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> National event highlights &amp; leadership contacts</li>
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> Custom domain integration (`ifgf.nz`)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <a href="https://www.ifgf.nz" target="_blank" class="inline-flex items-center text-xs font-bold text-vgreen-600 hover:text-vgreen-700 gap-1 underline">
+                            <span>Visit ifgf.nz</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: HeyyitsMe -->
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="bg-slate-900 p-6 flex items-center justify-center min-h-[180px] border-b border-slate-800 relative">
+                            <img src="Images/HeyyitsMe.png" alt="HeyyitsMe Audio Guestbook Logo" class="max-h-28 w-auto object-contain">
+                            <span class="absolute top-4 right-4 bg-amber-500/20 text-amber-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-amber-500/30">
+                                In Progress
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-navy-900 group-hover:text-vgreen-600 transition-colors">
+                                HeyyitsMe Audio Guestbook
+                            </h3>
+                            <p class="text-xs font-semibold text-vgreen-700 mt-1 uppercase tracking-wider">Commercial Event Web Platform</p>
+                            
+                            <p class="mt-4 text-slate-600 text-sm leading-relaxed">
+                                A modern brand and web platform for an audio guestbook service, enabling event hosts to rent vintage phone audio recorders for weddings and special celebrations.
+                            </p>
+
+                            <div class="mt-6 pt-4 border-t border-slate-100">
+                                <h4 class="text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Key Delivered Features:</h4>
+                                <ul class="text-xs text-slate-600 space-y-2">
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> Modern retro aesthetic design</li>
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> Online rental inquiry &amp; booking workflow</li>
+                                    <li class="flex items-start"><span class="text-vgreen-600 font-bold mr-2">✓</span> Audio sample showcase &amp; event package display</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-2">
+                        <span class="inline-flex items-center text-xs font-semibold text-slate-400 gap-1">
+                            <span>🚀 Launching Soon</span>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboards" class="py-16 md:py-24 bg-navy-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="bg-vgreen-600/20 text-vgreen-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                    Executive Analytics
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">
+                    Visual Dashboards Built for Clear Decisions
+                </h2>
+                <p class="text-slate-300 mt-3 text-base">
+                    Replace cluttered spreadsheets with elegant executive reporting tools that highlight cash runway, net surplus, expense allocation, and operational trends.
+                </p>
+            </div>
+
+            <!-- Mock Interactive Dashboard Preview UI -->
+            <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-8">
+                <!-- Dashboard Header Bar -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-navy-800 gap-4">
+                    <div>
+                        <div class="inline-block px-2.5 py-0.5 rounded bg-vgreen-600/20 text-vgreen-600 text-xs font-bold uppercase mb-1">
+                            Executive Overview
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">Financial &amp; Operational Health Dashboard</h3>
+                        <p class="text-xs text-slate-400">Sample Live View • Updated Real-Time from Google Sheets Data Pipeline</p>
+                    </div>
+                    <div class="bg-navy-900 border border-navy-800 px-4 py-2 rounded-xl text-xs font-semibold text-slate-300">
+                        Period: YTD 2026
+                    </div>
+                </div>
+
+                <!-- Top KPI Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-navy-900/90 border border-navy-800 p-5 rounded-2xl">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Total Cash Balance</p>
+                        <p class="text-2xl font-black text-white mt-2">$20,144.49 <span class="text-xs text-slate-400 font-normal">NZD</span></p>
+                        <p class="text-xs text-vgreen-500 mt-1 font-medium">✓ Fully Reconciled</p>
+                    </div>
+
+                    <div class="bg-navy-900/90 border border-navy-800 p-5 rounded-2xl">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Cash Runway</p>
+                        <p class="text-2xl font-black text-rose-500 mt-2">69 Days</p>
+                        <p class="text-xs text-slate-400 mt-1">Based on YTD Burn Rate</p>
+                    </div>
+
+                    <div class="bg-navy-900/90 border border-navy-800 p-5 rounded-2xl">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Efficiency Ratio</p>
+                        <p class="text-2xl font-black text-vgreen-500 mt-2">90.0%</p>
+                        <p class="text-xs text-slate-400 mt-1">Target &gt; 85% Achieved</p>
+                    </div>
+
+                    <div class="bg-navy-900/90 border border-navy-800 p-5 rounded-2xl">
+                        <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Net Surplus (YTD)</p>
+                        <p class="text-2xl font-black text-vgreen-500 mt-2">+NZD 2,601</p>
+                        <p class="text-xs text-slate-400 mt-1">Positive Operational Margin</p>
+                    </div>
+                </div>
+
+                <!-- Executive Summary Box -->
+                <div class="bg-navy-900 border border-vgreen-600/40 rounded-2xl p-5 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 bottom-0 w-1.5 bg-vgreen-600"></div>
+                    <h4 class="text-xs font-bold text-vgreen-500 uppercase tracking-wider mb-2">Automated Executive Summary</h4>
+                    <p class="text-sm text-slate-200 leading-relaxed">
+                        For the current YTD period, operations achieved a net surplus of <strong>+NZD 2,601.33</strong> with an efficiency ratio of <strong>90.0%</strong>. Cash reserves stand at <strong>NZD 20,144.49</strong> maintaining a healthy runway of <strong>69 days</strong>. Operational metrics remain stable across all key performance areas.
+                    </p>
+                </div>
+
+                <!-- Charts Breakdown Mock -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Income vs Expense Chart Container -->
+                    <div class="bg-navy-900/90 border border-navy-800 p-5 rounded-2xl">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Income vs Expenses (YTD)</h4>
+                            <span class="text-xs text-slate-400">YTD Comparison</span>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-slate-300">Total Income</span>
+                                    <span class="text-vgreen-500">$26,450 NZD</span>
+                                </div>
+                                <div class="w-full bg-navy-950 rounded-full h-3">
+                                    <div class="bg-vgreen-600 h-3 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-slate-300">Total Expenses</span>
+                                    <span class="text-rose-400">$23,848 NZD</span>
+                                </div>
+                                <div class="w-full bg-navy-950 rounded-full h-3">
+                                    <div class="bg-rose-500 h-3 rounded-full" style="width: 76%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attendance Trend Line Preview -->
+                    <div class="bg-navy-900/90 border border-navy-800 p-5 rounded-2xl">
+                        <div class="flex justify-between items-center mb-4">
+                            <h4 class="text-sm font-bold text-white uppercase tracking-wider">Attendance &amp; Engagement Trend</h4>
+                            <span class="text-xs font-semibold text-vgreen-500">Avg: ~28 Attendees</span>
+                        </div>
+                        <div class="h-24 bg-navy-950 rounded-xl p-3 flex items-end justify-between space-x-1">
+                            <div class="w-full bg-vgreen-600/40 hover:bg-vgreen-600 rounded-t h-[40%]" title="Jan"></div>
+                            <div class="w-full bg-vgreen-600/40 hover:bg-vgreen-600 rounded-t h-[55%]" title="Feb"></div>
+                            <div class="w-full bg-vgreen-600/40 hover:bg-vgreen-600 rounded-t h-[45%]" title="Mar"></div>
+                            <div class="w-full bg-vgreen-600/40 hover:bg-vgreen-600 rounded-t h-[60%]" title="Apr"></div>
+                            <div class="w-full bg-vgreen-600/40 hover:bg-vgreen-600 rounded-t h-[50%]" title="May"></div>
+                            <div class="w-full bg-vgreen-600/40 hover:bg-vgreen-600 rounded-t h-[35%]" title="Jun"></div>
+                            <div class="w-full bg-vgreen-600 hover:bg-vgreen-500 rounded-t h-[95%]" title="Peak July"></div>
+                            <div class="w-full bg-vgreen-600/40 hover:bg-vgreen-600 rounded-t h-[50%]" title="Aug"></div>
+                            <div class="w-full bg-vgreen-600/40 hover:bg-vgreen-600 rounded-t h-[45%]" title="Sep"></div>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-3 text-center">Custom charts integrated directly into web apps or Google Sheets.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="py-16 bg-navy-900 text-white border-t border-navy-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="text-center max-w-2xl mx-auto">
+                    <span class="bg-vgreen-600/20 text-vgreen-600 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Interactive Estimator
+                    </span>
+                    <h2 class="mt-3 text-2xl sm:text-3xl font-extrabold text-white">
+                        How Much Time Can You Reclaim?
+                    </h2>
+                    <p class="mt-2 text-sm text-slate-400">
+                        Adjust the slider below to see how custom automation impacts your business operations over a full year.
+                    </p>
+                </div>
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Controls -->
+                    <div class="md:col-span-7 space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="hours-slider" class="text-sm font-semibold text-slate-300">
+                                    Hours spent on manual admin per week:
+                                </label>
+                                <span id="hours-display" class="text-2xl font-black text-vgreen-600 bg-navy-800 px-3 py-1 rounded-lg">
+                                    5 hrs
+                                </span>
+                            </div>
+                            <input type="range" id="hours-slider" min="1" max="30" value="5" 
+                                class="w-full h-2 bg-navy-800 rounded-lg appearance-none cursor-pointer accent-vgreen-600">
+                            <div class="flex justify-between text-xs text-slate-500 mt-1">
+                                <span>1 hr/wk</span>
+                                <span>15 hrs/wk</span>
+                                <span>30 hrs/wk</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="rate-slider" class="text-sm font-semibold text-slate-300">
+                                    Estimated staff cost per hour (NZD):
+                                </label>
+                                <span id="rate-display" class="text-2xl font-black text-white bg-navy-800 px-3 py-1 rounded-lg">
+                                    $35 / hr
+                                </span>
+                            </div>
+                            <input type="range" id="rate-slider" min="25" max="100" step="5" value="35" 
+                                class="w-full h-2 bg-navy-800 rounded-lg appearance-none cursor-pointer accent-vgreen-600">
+                        </div>
+                    </div>
+
+                    <!-- Output Card -->
+                    <div class="md:col-span-5 bg-navy-800/80 border border-navy-800 rounded-2xl p-6 text-center space-y-4">
+                        <div>
+                            <p class="text-xs uppercase font-bold text-slate-400 tracking-wider">Annual Hours Reclaimed</p>
+                            <p id="annual-hours" class="text-4xl font-black text-vgreen-600 mt-1">208 Hours</p>
+                            <p class="text-xs text-slate-400 mt-0.5">(Equivalent to ~5 full working weeks)</p>
+                        </div>
+                        <div class="pt-4 border-t border-navy-800">
+                            <p class="text-xs uppercase font-bold text-slate-400 tracking-wider">Estimated Value Reclaimed</p>
+                            <p id="annual-savings" class="text-3xl font-bold text-white mt-1">$7,280 NZD</p>
+                            <p class="text-xs text-slate-400 mt-1">Redirected to higher-value growth activities.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-xs font-extrabold text-vgreen-600 tracking-wider uppercase">Simple &amp; Predictable</h2>
+                <p class="mt-2 text-3xl font-extrabold text-navy-900 sm:text-4xl">
+                    Care Plans &amp; Project Investment
+                </p>
+                <p class="mt-4 text-lg text-slate-600">
+                    Transparent pricing options designed to fit small business and non-profit budgets in New Zealand.
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Plan 1: Monthly Retainer -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-vgreen-600 shadow-xl relative flex flex-col justify-between">
+                    <div class="absolute -top-4 right-8 bg-vgreen-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Most Popular
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-extrabold text-navy-900">Essential Care Plan</h3>
+                        <p class="text-sm text-slate-500 mt-1">Ongoing maintenance, website updates, and script health.</p>
+                        
+                        <div class="mt-6 flex items-baseline">
+                            <span class="text-4xl font-extrabold text-navy-900">$250</span>
+                            <span class="text-slate-500 font-medium text-sm ml-2">NZD / month (~$60/wk)</span>
+                        </div>
+                        
+                        <!-- Coffee Reframing Subtext -->
+                        <div class="mt-2 text-xs font-semibold text-vgreen-700 bg-vgreen-50 p-2.5 rounded-lg border border-vgreen-200 inline-flex items-center">
+                            <span class="mr-1.5 text-base">☕</span>
+                            <span>Less than the cost of 2 Flat Whites a day for total peace of mind.</span>
+                        </div>
+
+                        <ul class="mt-6 space-y-4 text-sm text-slate-600">
+                            <li class="flex items-center">
+                                <span class="w-5 h-5 rounded-full bg-vgreen-600/10 text-vgreen-600 flex items-center justify-center font-bold mr-3 text-xs">✓</span>
+                                Priority bug fixes &amp; dashboard maintenance
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-5 h-5 rounded-full bg-vgreen-600/10 text-vgreen-600 flex items-center justify-center font-bold mr-3 text-xs">✓</span>
+                                Includes 1 hour/month for minor feature adjustments
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-5 h-5 rounded-full bg-vgreen-600/10 text-vgreen-600 flex items-center justify-center font-bold mr-3 text-xs">✓</span>
+                                Direct email &amp; phone/WhatsApp support
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="mt-8 block w-full text-center bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold py-3.5 rounded-xl shadow transition-colors">
+                        Select Essential Care
+                    </a>
+                </div>
+
+                <!-- Plan 2: Custom Project -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-md flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-extrabold text-navy-900">Custom Project Build</h3>
+                        <p class="text-sm text-slate-500 mt-1">One-off website design, dashboard build, or script automation.</p>
+                        
+                        <div class="mt-6 flex items-baseline">
+                            <span class="text-4xl font-extrabold text-navy-900">Fixed Quote</span>
+                        </div>
+
+                        <ul class="mt-8 space-y-4 text-sm text-slate-600">
+                            <li class="flex items-center">
+                                <span class="w-5 h-5 rounded-full bg-navy-900/10 text-navy-900 flex items-center justify-center font-bold mr-3 text-xs">✓</span>
+                                In-depth operational workflow analysis
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-5 h-5 rounded-full bg-navy-900/10 text-navy-900 flex items-center justify-center font-bold mr-3 text-xs">✓</span>
+                                Custom Website, Executive Dashboard, or Script build
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-5 h-5 rounded-full bg-navy-900/10 text-navy-900 flex items-center justify-center font-bold mr-3 text-xs">✓</span>
+                                User training &amp; clear documentation included
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-5 h-5 rounded-full bg-navy-900/10 text-navy-900 flex items-center justify-center font-bold mr-3 text-xs">✓</span>
+                                30-day post-launch warranty period
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="mt-8 block w-full text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3.5 rounded-xl shadow transition-colors">
+                        Get Custom Quote
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 md:py-24 bg-white border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-extrabold text-vgreen-600 tracking-wider uppercase">Got Questions?</h2>
+                <p class="mt-2 text-3xl font-extrabold text-navy-900 sm:text-4xl">
+                    Frequently Asked Questions
+                </p>
+                <p class="mt-3 text-slate-600">
+                    Everything you need to know about our web design, custom analytics dashboards, and automation services.
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80">
+                    <h3 class="text-lg font-bold text-navy-900">
+                        How is Targeted Scripts different from cheap $199 website builders or rigid templates?
+                    </h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Cheap templates usually copy-paste text into static pages that are hard to update and prone to broken links. At Targeted Scripts, we don't just build static pages—we engineer custom, ultra-fast web tools, interactive executive dashboards, and background automations tailored to your exact operational workflow, backed by direct local support here in New Zealand.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80">
+                    <h3 class="text-lg font-bold text-navy-900">
+                        Do I need coding or technical skills to update my website or view my dashboards?
+                    </h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Not at all. Everything we build is designed for complete simplicity. Your executive dashboards feed automatically from raw Google Sheets or financial files, and we handle all underlying code maintenance so you can focus entirely on running your business.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80">
+                    <h3 class="text-lg font-bold text-navy-900">
+                        What exactly is covered under the $250/month Essential Care Plan?
+                    </h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        The Essential Care Plan ensures your digital tools operate flawlessly. It includes priority bug fixes, regular monitoring of your automation data pipelines, website updates, and 1 hour of minor feature adjustments each month—for less than the cost of two daily Flat Whites.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200/80">
+                    <h3 class="text-lg font-bold text-navy-900">
+                        Can you connect custom dashboards to my existing spreadsheets or Google Workspace?
+                    </h3>
+                    <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+                        Yes! We specialize in turning cluttered Excel spreadsheets and Google Sheets into visual, real-time dashboards (highlighting cash runway, net surplus, expense breakdowns, and operational metrics) using Google Apps Script and custom web frameworks.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5">
+                    <div class="bg-navy-900 text-white rounded-3xl p-8 relative overflow-hidden shadow-2xl">
+                        <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl font-black text-vgreen-600">
+                            }•{
+                        </div>
+                        <span class="text-vgreen-600 font-bold text-xs uppercase tracking-widest">Principal Consultant</span>
+                        <h3 class="text-2xl font-extrabold text-white mt-1">Tedy Sutedja</h3>
+                        <p class="text-sm text-slate-300 mt-1">Founder &amp; Automation Specialist</p>
+                        
+                        <p class="text-slate-300 text-sm leading-relaxed mt-6">
+                            Based in Palmerston North, New Zealand, I bridge the gap between human operational needs and clean, lightweight technology. 
+                        </p>
+
+                        <div class="mt-6 pt-6 border-t border-navy-800 space-y-3 text-xs text-slate-300">
+                            <p class="flex items-center"><span class="text-vgreen-600 font-bold mr-2">📍</span> Palmerston North, Manawatū, NZ</p>
+                            <p class="flex items-center"><span class="text-vgreen-600 font-bold mr-2">📞</span> <a href="tel:+64226562882" class="hover:text-vgreen-500 font-semibold underline decoration-vgreen-600">+64 22 656 2882</a> (Call / WhatsApp)</p>
+                            <p class="flex items-center"><span class="text-vgreen-600 font-bold mr-2">✉️</span> <a href="mailto:info@targetedscripts.com" class="hover:text-vgreen-500 font-semibold underline decoration-vgreen-600">info@targetedscripts.com</a></p>
+                            <p class="flex items-center"><span class="text-vgreen-600 font-bold mr-2">⚙️</span> Web Design, Dashboards &amp; Automation Specialist</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <h2 class="text-xs font-extrabold text-vgreen-600 tracking-wider uppercase">Our Philosophy</h2>
+                    <h3 class="text-3xl font-extrabold text-navy-900">
+                        Technology built for humans, not complex data overloads.
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Small businesses and non-profits often struggle with repetitive administration or bloated software because enterprise solutions are too expensive or overly complicated. 
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        At <strong>Targeted Scripts</strong>, we take a conversation-first approach. We listen to how your team works, identify manual pain points, and engineer responsive websites, visual dashboards, and custom scripts—allowing you to focus on growing your core business.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-navy-900 text-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-vgreen-600 font-extrabold text-xs tracking-wider uppercase">Let's Connect</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">
+                    Ready to Automate &amp; Streamline Your Business?
+                </h2>
+                <p class="text-slate-300 mt-3 text-sm sm:text-base">
+                    Send us a quick message or call us directly. We'll respond promptly to discuss your web design, dashboard, or automation needs.
+                </p>
+
+                <!-- Direct Contact Badges -->
+                <div class="mt-6 flex flex-wrap justify-center gap-4 text-xs font-semibold">
+                    <a href="tel:+64226562882" class="bg-navy-800 hover:bg-navy-800/80 border border-slate-700 text-slate-200 px-4 py-2.5 rounded-xl flex items-center gap-2 transition-all">
+                        <span class="text-vgreen-500 text-base">📞</span> Call: +64 22 656 2882
+                    </a>
+                    <a href="https://wa.me/64226562882" target="_blank" class="bg-navy-800 hover:bg-navy-800/80 border border-slate-700 text-slate-200 px-4 py-2.5 rounded-xl flex items-center gap-2 transition-all">
+                        <span class="text-vgreen-500 text-base">💬</span> WhatsApp Chat
+                    </a>
+                    <a href="mailto:info@targetedscripts.com" class="bg-navy-800 hover:bg-navy-800/80 border border-slate-700 text-slate-200 px-4 py-2.5 rounded-xl flex items-center gap-2 transition-all">
+                        <span class="text-vgreen-500 text-base">✉️</span> info@targetedscripts.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-navy-950 border border-navy-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <!-- Form handler for direct dispatch to info@targetedscripts.com -->
+                <form id="contact-form" action="https://formsubmit.co/info@targetedscripts.com" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                    <!-- FormSubmit Configuration Hidden Fields -->
+                    <input type="hidden" name="_subject" value="Targeted Scripts New Enquiry">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="name">
+                                Your Name *
+                            </label>
+                            <input type="text" id="name" name="Name" required placeholder="e.g. John Doe"
+                                class="w-full bg-navy-900 border border-navy-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-vgreen-600 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="email">
+                                Email Address *
+                            </label>
+                            <input type="email" id="email" name="Email" required placeholder="e.g. john@business.co.nz"
+                                class="w-full bg-navy-900 border border-navy-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-vgreen-600 transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="phone">
+                                Phone Number
+                            </label>
+                            <input type="tel" id="phone" name="Phone" placeholder="e.g. 021 123 4567"
+                                class="w-full bg-navy-900 border border-navy-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-vgreen-600 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="subject">
+                                Primary Interest
+                            </label>
+                            <select id="subject" name="Interest" 
+                                class="w-full bg-navy-900 border border-navy-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-vgreen-600 transition-colors">
+                                <option value="Web Design / Mobile-Friendly Website">Custom Web Design / Mobile-Friendly Website</option>
+                                <option value="Executive Dashboard & Analytics Build">Executive Dashboard &amp; Analytics Build</option>
+                                <option value="Google Workspace / Apps Script Automation">Google Workspace / Apps Script Automation</option>
+                                <option value="Custom Python Automation Tool">Custom Python Automation Tool</option>
+                                <option value="Essential Care Plan ($250/mo)">Essential Care Plan ($250/mo)</option>
+                                <option value="General Enquiry">General Enquiry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2" for="message">
+                            Describe Your Project / Process Needs *
+                        </label>
+                        <textarea id="message" name="Message" rows="4" required placeholder="Tell us about the website, dashboard, or manual spreadsheet process you would like to build..."
+                            class="w-full bg-navy-900 border border-navy-800 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-vgreen-600 transition-colors"></textarea>
+                    </div>
+
+                    <button type="submit" 
+                        class="w-full bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
+                        <span>✉️</span>
+                        <span>Send Enquiry to info@targetedscripts.com</span>
+                    </button>
+                </form>
+
+                <div id="form-success" class="hidden mt-6 bg-vgreen-600/20 border border-vgreen-600 text-vgreen-500 p-6 rounded-xl text-center space-y-2">
+                    <p class="font-bold text-lg">Thank you for getting in touch!</p>
+                    <p class="text-sm text-slate-200">Your enquiry has been prepared for dispatch to <strong>info@targetedscripts.com</strong>.</p>
+                    <p class="text-xs text-slate-400">If your email client did not open automatically, you can email Tedy directly at <a href="mailto:info@targetedscripts.com" class="text-vgreen-400 underline font-semibold">info@targetedscripts.com</a> or call <a href="tel:+64226562882" class="text-vgreen-400 underline font-semibold">+64 22 656 2882</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-navy-950 border-t border-navy-800 text-slate-400 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                
+                <div>
+                    <a href="#" class="flex items-center justify-center md:justify-start space-x-1">
+                        <span class="text-lg font-extrabold tracking-wider text-white">TARGETED</span>
+                        <div class="inline-flex items-center text-lg font-black">
+                            <span class="text-white">}</span>
+                            <span class="text-vgreen-600 mx-0.5">•</span>
+                            <span class="text-vgreen-600">{</span>
+                        </div>
+                        <span class="text-lg font-extrabold tracking-wider text-vgreen-600">SCRIPTS</span>
+                    </a>
+                    <p class="text-xs text-slate-400 mt-1">Tailored code, targeted results.</p>
+                </div>
+
+                <div class="text-xs text-slate-400 space-y-1">
+                    <p>&copy; 2026 Targeted Scripts. All rights reserved.</p>
+                    <p>Palmerston North, New Zealand • Phone: <a href="tel:+64226562882" class="hover:text-vgreen-500 underline">+64 22 656 2882</a> • Email: <a href="mailto:info@targetedscripts.com" class="hover:text-vgreen-500 underline">info@targetedscripts.com</a></p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Interactive Savings Calculator Logic
+            const hoursSlider = document.getElementById('hours-slider');
+            const rateSlider = document.getElementById('rate-slider');
+            const hoursDisplay = document.getElementById('hours-display');
+            const rateDisplay = document.getElementById('rate-display');
+            const annualHoursOutput = document.getElementById('annual-hours');
+            const annualSavingsOutput = document.getElementById('annual-savings');
+
+            function updateCalculator() {
+                const hours = parseInt(hoursSlider.value);
+                const rate = parseInt(rateSlider.value);
+
+                // Assuming ~80% time reclaimed via custom automation/web tools
+                const annualHoursSaved = Math.round(hours * 52 * 0.8);
+                const annualDollarSaved = annualHoursSaved * rate;
+
+                hoursDisplay.textContent = hours + (hours === 1 ? ' hr' : ' hrs');
+                rateDisplay.textContent = '$' + rate + ' / hr';
+                
+                annualHoursOutput.textContent = annualHoursSaved.toLocaleString() + ' Hours';
+                annualSavingsOutput.textContent = '$' + annualDollarSaved.toLocaleString() + ' NZD';
+            }
+
+            if (hoursSlider && rateSlider) {
+                hoursSlider.addEventListener('input', updateCalculator);
+                rateSlider.addEventListener('input', updateCalculator);
+                updateCalculator();
+            }
+        });
+
+        // Contact Form Submission Handler sending to info@targetedscripts.com
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Construct mailto link as direct client fallback
+            const emailSubject = encodeURIComponent(`Targeted Scripts Enquiry: ${subject} - ${name}`);
+            const emailBody = encodeURIComponent(
+                `Hello Tedy,\n\nYou have received a new enquiry from the Targeted Scripts website:\n\n` +
+                `Name: ${name}\n` +
+                `Email: ${email}\n` +
+                `Phone: ${phone || 'Not provided'}\n` +
+                `Interest: ${subject}\n\n` +
+                `Message / Project Details:\n${message}\n\n` +
+                `---\nSent via targetedscripts.com`
+            );
+
+            // Trigger mailto client to open directly with pre-filled content to info@targetedscripts.com
+            window.location.href = `mailto:info@targetedscripts.com?subject=${emailSubject}&body=${emailBody}`;
+
+            // Show UI success box
+            const form = document.getElementById('contact-form');
+            const successBox = document.getElementById('form-success');
+
+            if (form && successBox) {
+                form.classList.add('hidden');
+                successBox.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
