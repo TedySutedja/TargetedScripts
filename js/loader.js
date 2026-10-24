@@ -13,15 +13,21 @@ async function loadComponent(elementId, filePath) {
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
-    // Memuat seluruh komponen secara paralel
+    // Memuat seluruh komponen modular secara paralel
     await Promise.all([
         loadComponent('header-root', 'components/header.html'),
+        loadComponent('hero-root', 'components/hero.html'),
+        loadComponent('services-root', 'components/services.html'),
+        loadComponent('dashboards-root', 'components/dashboards.html'),
         loadComponent('portfolio-root', 'components/portfolio.html'),
+        loadComponent('pricing-root', 'components/pricing.html'),
+        loadComponent('faq-root', 'components/faq.html'),
+        loadComponent('about-root', 'components/about.html'),
         loadComponent('contact-root', 'components/contact.html'),
         loadComponent('footer-root', 'components/footer.html')
     ]);
 
-    // Inisialisasi event listener SETELAH komponen HTML terpasang di DOM
+    // Inisialisasi logika interaktif
     initMobileMenu();
     initCalculator();
 });
@@ -36,7 +42,6 @@ function initMobileMenu() {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Tutup menu otomatis saat salah satu link navigasi diklik
         const navLinks = mobileMenu.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -93,53 +98,3 @@ function handleFormSubmit(e) {
     document.getElementById('contact-form')?.classList.add('hidden');
     document.getElementById('form-success')?.classList.remove('hidden');
 }
-
-document.addEventListener("DOMContentLoaded", async function() {
-    // Memuat seluruh komponen
-    await Promise.all([
-        loadComponent('header-root', 'components/header.html'),
-        loadComponent('hero-root', 'components/hero.html'),
-        loadComponent('services-root', 'components/services.html'),
-        loadComponent('portfolio-root', 'components/portfolio.html'),
-        loadComponent('contact-root', 'components/contact.html')
-    ]);
-
-    // Inisialisasi logika interaktif
-    initMobileMenu();
-    initCalculator();
-});
-
-document.addEventListener("DOMContentLoaded", async function() {
-    // Memuat seluruh komponen
-    await Promise.all([
-        loadComponent('header-root', 'components/header.html'),
-        loadComponent('hero-root', 'components/hero.html'),
-        loadComponent('services-root', 'components/services.html'),
-        loadComponent('dashboards-root', 'components/dashboards.html'),
-        loadComponent('portfolio-root', 'components/portfolio.html'),
-        loadComponent('pricing-root', 'components/pricing.html'),
-        loadComponent('faq-root', 'components/faq.html'),
-        loadComponent('contact-root', 'components/contact.html')
-    ]);
-
-    // Inisialisasi logika interaktif
-    initMobileMenu();
-    initCalculator();
-});
-
-document.addEventListener("DOMContentLoaded", async function() {
-    await Promise.all([
-        loadComponent('header-root', 'components/header.html'),
-        loadComponent('hero-root', 'components/hero.html'),
-        loadComponent('services-root', 'components/services.html'),
-        loadComponent('dashboards-root', 'components/dashboards.html'),
-        loadComponent('portfolio-root', 'components/portfolio.html'),
-        loadComponent('pricing-root', 'components/pricing.html'),
-        loadComponent('faq-root', 'components/faq.html'),
-        loadComponent('about-root', 'components/about.html'),
-        loadComponent('contact-root', 'components/contact.html')
-    ]);
-
-    initMobileMenu();
-    initCalculator();
-});
