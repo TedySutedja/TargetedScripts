@@ -1,0 +1,57 @@
+<!-- NAVIGATION HEADER -->
+<header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur-md border-b border-navy-800 text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <!-- Inline Logo TARGETED } • { SCRIPTS -->
+        <a href="#" class="flex items-center space-x-1 group shrink-0">
+            <span class="text-xl sm:text-2xl font-extrabold tracking-wider text-white">TARGETED</span>
+            <div class="inline-flex items-center text-xl sm:text-2xl font-black px-0.5">
+                <span class="text-white">}</span>
+                <span class="text-vgreen-600 mx-0.5">•</span>
+                <span class="text-vgreen-600">{</span>
+            </div>
+            <span class="text-xl sm:text-2xl font-extrabold tracking-wider text-vgreen-600">SCRIPTS</span>
+        </a>
+
+        <!-- Desktop Nav Links (Hanya muncul di layar laptop/desktop besar lg:) -->
+        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+            <a href="#services" class="text-slate-300 hover:text-white transition-colors">Services</a>
+            <a href="#portfolio" class="text-slate-300 hover:text-white transition-colors">Portfolio</a>
+            <a href="#dashboards" class="text-slate-300 hover:text-white transition-colors">Dashboards</a>
+            <a href="#pricing" class="text-slate-300 hover:text-white transition-colors">Pricing &amp; Calculator</a>
+            <a href="#about" class="text-slate-300 hover:text-white transition-colors">About</a>
+            
+            <a href="tel:+64226562882" class="text-vgreen-500 hover:text-white font-semibold transition-colors flex items-center gap-1 ml-2">
+                <span>📞</span> 022 656 2882
+            </a>
+            <a href="#contact" class="bg-vgreen-600 hover:bg-vgreen-700 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                Book Consultation
+            </a>
+        </nav>
+
+        <!-- Mobile & Tablet Menu Button (Muncul di HP dan iPad/Tablet) -->
+        <div class="lg:hidden flex items-center gap-3">
+            <a href="tel:+64226562882" class="text-vgreen-500 font-semibold text-xs flex items-center gap-1 sm:hidden">
+                <span>📞</span> Call
+            </a>
+            <button id="mobile-menu-btn" class="p-2 text-slate-300 hover:text-white focus:outline-none bg-navy-800 rounded-lg border border-navy-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-navy-950 border-b border-navy-800 px-4 pt-2 pb-6 space-y-3">
+        <a href="#services" class="block text-slate-300 hover:text-white py-2 font-medium border-b border-navy-900">Services</a>
+        <a href="#portfolio" class="block text-slate-300 hover:text-white py-2 font-medium border-b border-navy-900">Portfolio</a>
+        <a href="#dashboards" class="block text-slate-300 hover:text-white py-2 font-medium border-b border-navy-900">Dashboards</a>
+        <a href="#pricing" class="block text-slate-300 hover:text-white py-2 font-medium border-b border-navy-900">Pricing &amp; Calculator</a>
+        <a href="#about" class="block text-slate-300 hover:text-white py-2 font-medium border-b border-navy-900">About Us</a>
+        <a href="#faq" class="block text-slate-300 hover:text-white py-2 font-medium border-b border-navy-900">FAQ</a>
+        <a href="tel:+64226562882" class="block text-vgreen-500 hover:text-white py-2 font-medium">📞 Call: +64 22 656 2882</a>
+        <a href="#contact" class="block w-full text-center bg-vgreen-600 hover:bg-vgreen-700 text-white font-semibold py-3 rounded-lg shadow mt-2">
+            Book Consultation
+        </a>
+    </div>
+</header>

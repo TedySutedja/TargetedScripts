@@ -13,10 +13,15 @@ async function loadComponent(elementId, filePath) {
 }
 
 document.addEventListener("DOMContentLoaded", async function() {
-    // Memuat komponen portfolio terpisah
-    await loadComponent('portfolio-root', 'components/portfolio.html');
+    // Memuat seluruh komponen secara paralel
+    await Promise.all([
+        loadComponent('header-root', 'components/header.html'),
+        loadComponent('portfolio-root', 'components/portfolio.html'),
+        loadComponent('contact-root', 'components/contact.html'),
+        loadComponent('footer-root', 'components/footer.html')
+    ]);
 
-    // Inisialisasi logika interaktif
+    // Inisialisasi event listener SETELAH komponen HTML terpasang di DOM
     initMobileMenu();
     initCalculator();
 });
@@ -24,8 +29,20 @@ document.addEventListener("DOMContentLoaded", async function() {
 function initMobileMenu() {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+
     if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup menu otomatis saat salah satu link navigasi diklik
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     }
 }
 
@@ -44,10 +61,10 @@ function initCalculator() {
         const annualHoursSaved = Math.round(hours * 52 * 0.8);
         const annualDollarSaved = annualHoursSaved * rate;
 
-        hoursDisplay.textContent = hours + (hours === 1 ? ' hr' : ' hrs');
-        rateDisplay.textContent = '$' + rate + ' / hr';
-        annualHoursOutput.textContent = annualHoursSaved.toLocaleString() + ' Hours';
-        annualSavingsOutput.textContent = '$' + annualDollarSaved.toLocaleString() + ' NZD';
+        if (hoursDisplay) hoursDisplay.textContent = hours + (hours === 1 ? ' hr' : ' hrs');
+        if (rateDisplay) rateDisplay.textContent = '$' + rate + ' / hr';
+        if (annualHoursOutput) annualHoursOutput.textContent = annualHoursSaved.toLocaleString() + ' Hours';
+        if (annualSavingsOutput) annualSavingsOutput.textContent = '$' + annualDollarSaved.toLocaleString() + ' NZD';
     }
 
     if (hoursSlider && rateSlider) {
