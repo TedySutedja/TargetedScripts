@@ -1,158 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <!-- Favicon Configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- PRIMARY SEO META TAGS -->
+    <title>Targeted Scripts | Custom Web, Dashboards &amp; Automation NZ</title>
+    <meta name="title" content="Targeted Scripts | Custom Web, Dashboards &amp; Automation NZ">
+    <meta name="description" content="Lightweight custom websites with zero monthly hosting, interactive executive visual dashboards, and Google Workspace process automation in Palmerston North, New Zealand.">
+    <meta name="keywords" content="Targeted Scripts, Custom Web Design NZ, Google Apps Script Palmerston North, Visual Dashboards New Zealand, n8n Automation NZ, Business Process Automation">
+    <meta name="author" content="Tedy Sutedja">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://targetedscripts.com/">
+
+    <!-- OPEN GRAPH / FACEBOOK / WHATSAPP PREVIEW -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://targetedscripts.com/">
+    <meta property="og:title" content="Targeted Scripts | Custom Web &amp; Automation Solutions">
+    <meta property="og:description" content="Tailored web design, executive analytics dashboards, and smart process automation for businesses across New Zealand.">
+    <meta property="og:image" content="https://targetedscripts.com/Images/favico/android-chrome-512x512.png">
+
+    <!-- TWITTER CARD PREVIEW -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://targetedscripts.com/">
+    <meta property="twitter:title" content="Targeted Scripts | Custom Web &amp; Automation Solutions">
+    <meta property="twitter:description" content="Tailored web design, executive analytics dashboards, and smart process automation for businesses across New Zealand.">
+    <meta property="twitter:image" content="https://targetedscripts.com/Images/favico/android-chrome-512x512.png">
+
+    <!-- FAVICON CONFIGURATION -->
     <link rel="icon" type="image/x-icon" href="Images/favico/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="Images/favico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Images/favico/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Images/favico/apple-touch-icon.png">
-    <link rel="manifest" href="Images/favico/site.webmanifest">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Targeted Scripts | Custom Web Design, Executive Dashboards & Automation Services</title>
-    <!-- Tailwind CSS CDN -->
+
+    <!-- GOOGLE FONTS (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- TAILWIND CSS CDN & CUSTOM BRAND COLOR CONFIGURATION -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
                     colors: {
                         navy: {
                             800: '#142d42',
                             900: '#0F2537',
-                            950: '#0a1a28',
+                            950: '#0a1a28'
                         },
                         vgreen: {
                             500: '#00cc5e',
                             600: '#00B050',
-                            700: '#008a3e',
+                            700: '#008a3e'
                         }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+
+    <!-- SCHEMA.ORG STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Targeted Scripts",
+      "url": "https://targetedscripts.com",
+      "logo": "https://targetedscripts.com/Images/favico/android-chrome-512x512.png",
+      "description": "Custom Web Design, Executive Dashboards, and Process Automation Services in New Zealand.",
+      "telephone": "+64226562882",
+      "email": "info@targetedscripts.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Palmerston North",
+        "addressRegion": "Manawatu",
+        "addressCountry": "NZ"
+      },
+      "priceRange": "$$"
+    }
+    </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-vgreen-600 selection:text-white flex flex-col min-h-screen">
+<body class="bg-slate-50 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
 
-    <!-- NAVIGATION HEADER -->
+    <!-- WADAH KOMPONEN MODULAR -->
     <div id="header-root"></div>
-
-    <!-- HERO SECTION -->
     <div id="hero-root"></div>
-
-    <!-- SERVICES SECTION -->
     <div id="services-root"></div>
-
-    <!-- PORTFOLIO / FEATURED PROJECTS SECTION -->
     <div id="portfolio-root"></div>
-
-    <!-- EXECUTIVE DASHBOARDS SECTION -->
     <div id="dashboards-root"></div>
-
-    <!-- Pricing & CALCULATOR SECTION -->
     <div id="pricing-root"></div>
-
-    <!-- FAQ SECTION -->
     <div id="faq-root"></div>
-
-    <!-- ABOUT CONSULTANT SECTION -->
     <div id="about-root"></div>
-
-    <!-- CONTACT SECTION -->
     <div id="contact-root"></div>
-
-    <!-- FOOTER -->
     <div id="footer-root"></div>
 
-    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Menu Toggle
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileBtn && mobileMenu) {
-                mobileBtn.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Interactive Savings Calculator Logic
-            const hoursSlider = document.getElementById('hours-slider');
-            const rateSlider = document.getElementById('rate-slider');
-            const hoursDisplay = document.getElementById('hours-display');
-            const rateDisplay = document.getElementById('rate-display');
-            const annualHoursOutput = document.getElementById('annual-hours');
-            const annualSavingsOutput = document.getElementById('annual-savings');
-
-            function updateCalculator() {
-                const hours = parseInt(hoursSlider.value);
-                const rate = parseInt(rateSlider.value);
-
-                // Assuming ~80% time reclaimed via custom automation/web tools
-                const annualHoursSaved = Math.round(hours * 52 * 0.8);
-                const annualDollarSaved = annualHoursSaved * rate;
-
-                hoursDisplay.textContent = hours + (hours === 1 ? ' hr' : ' hrs');
-                rateDisplay.textContent = '$' + rate + ' / hr';
-                
-                annualHoursOutput.textContent = annualHoursSaved.toLocaleString() + ' Hours';
-                annualSavingsOutput.textContent = '$' + annualDollarSaved.toLocaleString() + ' NZD';
-            }
-
-            if (hoursSlider && rateSlider) {
-                hoursSlider.addEventListener('input', updateCalculator);
-                rateSlider.addEventListener('input', updateCalculator);
-                updateCalculator();
-            }
-        });
-
-        // Contact Form Submission Handler sending to info@targetedscripts.com
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            // Construct mailto link as direct client fallback
-            const emailSubject = encodeURIComponent(`Targeted Scripts Enquiry: ${subject} - ${name}`);
-            const emailBody = encodeURIComponent(
-                `Hello Tedy,\n\nYou have received a new enquiry from the Targeted Scripts website:\n\n` +
-                `Name: ${name}\n` +
-                `Email: ${email}\n` +
-                `Phone: ${phone || 'Not provided'}\n` +
-                `Interest: ${subject}\n\n` +
-                `Message / Project Details:\n${message}\n\n` +
-                `---\nSent via targetedscripts.com`
-            );
-
-            // Trigger mailto client to open directly with pre-filled content to info@targetedscripts.com
-            window.location.href = `mailto:info@targetedscripts.com?subject=${emailSubject}&body=${emailBody}`;
-
-            // Show UI success box
-            const form = document.getElementById('contact-form');
-            const successBox = document.getElementById('form-success');
-
-            if (form && successBox) {
-                form.classList.add('hidden');
-                successBox.classList.remove('hidden');
-            }
-        }
-    </script>
     <script src="js/loader.js"></script>
 </body>
 </html>
