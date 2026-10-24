@@ -126,3 +126,20 @@ document.addEventListener("DOMContentLoaded", async function() {
     initMobileMenu();
     initCalculator();
 });
+
+document.addEventListener("DOMContentLoaded", async function() {
+    await Promise.all([
+        loadComponent('header-root', 'components/header.html'),
+        loadComponent('hero-root', 'components/hero.html'),
+        loadComponent('services-root', 'components/services.html'),
+        loadComponent('dashboards-root', 'components/dashboards.html'),
+        loadComponent('portfolio-root', 'components/portfolio.html'),
+        loadComponent('pricing-root', 'components/pricing.html'),
+        loadComponent('faq-root', 'components/faq.html'),
+        loadComponent('about-root', 'components/about.html'),
+        loadComponent('contact-root', 'components/contact.html')
+    ]);
+
+    initMobileMenu();
+    initCalculator();
+});
