@@ -1,114 +1,110 @@
-<!-- PRICING & SAVINGS CALCULATOR SECTION -->
-<section id="pricing" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- PRICING SECTION -->
+<section id="pricing" class="py-20 bg-navy-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <!-- Section Header -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-xs font-extrabold text-vgreen-600 tracking-wider uppercase">Transparent Value</h2>
-            <p class="mt-2 text-3xl font-extrabold text-navy-900 sm:text-4xl">
-                Essential Care Plans &amp; ROI Calculator
-            </p>
-            <p class="mt-4 text-lg text-slate-600">
-                Calculate how much time and money automation saves your organization, or explore our ongoing web maintenance packages.
+            <span class="text-vgreen-500 font-bold text-xs uppercase tracking-widest bg-vgreen-500/10 px-3 py-1 rounded-full border border-vgreen-500/20">
+                Transparent Pricing Structure
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white mt-4">
+                Services &amp; Maintenance Plans
+            </h2>
+            <p class="text-slate-400 text-base mt-3">
+                Custom development tailored to your exact operational challenges, backed by continuous maintenance support.
             </p>
         </div>
 
-        <!-- Interactive Calculator -->
-        <div id="calculator" class="bg-navy-900 text-white rounded-3xl p-8 md:p-12 shadow-2xl mb-16 border border-navy-800">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="text-vgreen-500 font-extrabold text-xs tracking-wider uppercase">Interactive ROI Estimate</span>
-                    <h3 class="text-2xl sm:text-3xl font-bold">How Much Are Manual Tasks Costing You?</h3>
-                    <p class="text-slate-300 text-sm">
-                        Adjust the sliders below to see your estimated annual savings when repetitive spreadsheet and manual admin processes are automated.
+        <!-- PRICING CARDS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            <!-- Card 1: Custom Development -->
+            <div class="bg-navy-800/60 border border-slate-800 rounded-3xl p-8 flex flex-col justify-between hover:border-slate-700 transition-all">
+                <div>
+                    <span class="text-[10px] font-extrabold text-vgreen-500 uppercase tracking-widest block mb-1">Project-Based</span>
+                    <h3 class="text-2xl font-bold text-white">Custom Development</h3>
+                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                        Tailored web design, bespoke executive dashboards, and specialized workflow automation built from the ground up.
                     </p>
-
-                    <!-- Slider 1 -->
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-sm font-semibold">
-                            <label for="hours-slider">Weekly Manual Hours Spent:</label>
-                            <span id="hours-display" class="text-vgreen-400 font-bold">5 hrs</span>
-                        </div>
-                        <input type="range" id="hours-slider" min="1" max="40" value="5" class="w-full accent-vgreen-500 cursor-pointer">
+                    <div class="mt-6 mb-6">
+                        <span class="text-4xl font-black text-white">Custom</span>
+                        <span class="text-xs text-slate-400"> / quote basis</span>
                     </div>
 
-                    <!-- Slider 2 -->
-                    <div class="space-y-2 pt-2">
-                        <div class="flex justify-between text-sm font-semibold">
-                            <label for="rate-slider">Estimated Staff Hourly Rate (NZD):</label>
-                            <span id="rate-display" class="text-vgreen-400 font-bold">$35 / hr</span>
-                        </div>
-                        <input type="range" id="rate-slider" min="25" max="150" value="35" step="5" class="w-full accent-vgreen-500 cursor-pointer">
-                    </div>
+                    <ul class="space-y-3 text-xs text-slate-300 border-t border-slate-800/80 pt-6">
+                        <li class="flex items-center gap-2">
+                            <span class="text-vgreen-500 font-bold">✓</span> Full Requirements &amp; Workflow Audit
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-vgreen-500 font-bold">✓</span> Zero Monthly Hosting Cloud Architecture
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-vgreen-500 font-bold">✓</span> Bespoke UI &amp; Multi-API Integrations
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-vgreen-500 font-bold">✓</span> 30-Day Post-Launch Support &amp; Fixes
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Savings Output Card -->
-                <div class="lg:col-span-5 bg-navy-950 border border-navy-800 rounded-2xl p-6 text-center space-y-4">
-                    <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Estimated Annual Savings</span>
-                    
-                    <div class="py-2">
-                        <p class="text-xs text-slate-400">Hours Saved Yearly (~80% Efficiency):</p>
-                        <p id="annual-hours" class="text-3xl font-black text-white mt-1">208 Hours</p>
-                    </div>
-
-                    <div class="border-t border-navy-800 pt-4">
-                        <p class="text-xs text-slate-400">Estimated Value Reclaimed:</p>
-                        <p id="annual-savings" class="text-4xl font-black text-vgreen-500 mt-1">$7,280 NZD</p>
-                    </div>
-
-                    <a href="#contact" class="block w-full bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold py-3 rounded-xl transition-all text-xs uppercase tracking-wider mt-4">
-                        Claim Your Automation Audit
+                <div class="pt-8">
+                    <a href="#contact" class="block w-full text-center bg-slate-800 hover:bg-slate-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all text-xs">
+                        Request Quote
                     </a>
                 </div>
             </div>
+
+            <!-- Card 2: Essential Care Plan -->
+            <div class="bg-navy-800/90 border-2 border-vgreen-500 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative">
+                <div class="absolute -top-3.5 right-6 bg-vgreen-600 text-white text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full">
+                    Most Popular
+                </div>
+
+                <div>
+                    <span class="text-[10px] font-extrabold text-vgreen-500 uppercase tracking-widest block mb-1">Ongoing Support</span>
+                    <h3 class="text-2xl font-bold text-white">Essential Care Plan</h3>
+                    <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                        Continuous maintenance, content updates, security monitoring, and minor script enhancements for custom builds.
+                    </p>
+                    <div class="mt-6 mb-6">
+                        <span class="text-4xl font-black text-white">$250</span>
+                        <span class="text-xs text-slate-400"> NZD / month</span>
+                    </div>
+
+                    <ul class="space-y-3 text-xs text-slate-300 border-t border-slate-800/80 pt-6">
+                        <li class="flex items-center gap-2">
+                            <span class="text-vgreen-500 font-bold">✓</span> Priority Response &amp; Same-Day Edits
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-vgreen-500 font-bold">✓</span> Domain, DNS &amp; SSL Continuous Monitoring
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-vgreen-500 font-bold">✓</span> Monthly Script &amp; Portal Optimization
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-vgreen-500 font-bold">✓</span> Ongoing System Health Checks
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-8">
+                    <a href="#contact" class="block w-full text-center bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all text-xs">
+                        Select Care Plan
+                    </a>
+                </div>
+            </div>
+
         </div>
 
-        <!-- Care Plan Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <!-- Plan 1 -->
-            <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-md hover:shadow-xl transition-all flex flex-col justify-between">
-                <div>
-                    <span class="text-vgreen-600 font-extrabold text-xs uppercase tracking-wider">Project-Based</span>
-                    <h3 class="text-2xl font-bold text-navy-900 mt-1">Custom Development</h3>
-                    <p class="text-slate-600 text-sm mt-2">Tailored web design, dashboard build, or specific process automation project.</p>
-                    <div class="my-6">
-                        <span class="text-4xl font-extrabold text-navy-900">Custom</span>
-                        <span class="text-slate-500 text-sm"> / quote basis</span>
-                    </div>
-                    <ul class="text-xs text-slate-600 space-y-3 border-t border-slate-100 pt-6">
-                        <li class="flex items-center gap-2"><span class="text-vgreen-600 font-bold">✓</span> Full Requirements &amp; Workflow Audit</li>
-                        <li class="flex items-center gap-2"><span class="text-vgreen-600 font-bold">✓</span> Zero Monthly Hosting Cloud Setup</li>
-                        <li class="flex items-center gap-2"><span class="text-vgreen-600 font-bold">✓</span> 30-Day Post-Launch Support &amp; Fixes</li>
-                    </ul>
-                </div>
-                <a href="#contact" class="mt-8 block text-center bg-navy-900 hover:bg-navy-800 text-white font-bold py-3 rounded-xl transition-all text-sm">
-                    Request Quote
+        <!-- SPECIAL NOTICE FOR F&B OPERATORS -->
+        <div class="mt-12 max-w-4xl mx-auto bg-navy-800/40 border border-vgreen-500/30 rounded-2xl p-4 sm:p-6 text-center">
+            <p class="text-xs text-slate-300">
+                🍔 <strong>Looking for a turn-key Restaurant POS &amp; Management Platform?</strong> 
+                Explore our ready-to-use SaaS solution: 
+                <a href="https://tedysutedja.github.io/restosync-saas/" target="_blank" rel="noopener" class="text-vgreen-400 hover:underline font-bold ml-1">
+                    RestoSync SaaS Tiered Packages (from $150 NZD/mo with Free Digital Menu Site) →
                 </a>
-            </div>
-
-            <!-- Plan 2 -->
-            <div class="bg-white border-2 border-vgreen-500 rounded-3xl p-8 shadow-xl relative flex flex-col justify-between">
-                <span class="absolute -top-3.5 right-6 bg-vgreen-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-                    Most Popular
-                </span>
-                <div>
-                    <span class="text-vgreen-600 font-extrabold text-xs uppercase tracking-wider">Ongoing Support</span>
-                    <h3 class="text-2xl font-bold text-navy-900 mt-1">Essential Care Plan</h3>
-                    <p class="text-slate-600 text-sm mt-2">Continuous maintenance, content updates, and minor script enhancements.</p>
-                    <div class="my-6">
-                        <span class="text-4xl font-extrabold text-navy-900">$250</span>
-                        <span class="text-slate-500 text-sm"> NZD / month</span>
-                    </div>
-                    <ul class="text-xs text-slate-600 space-y-3 border-t border-slate-100 pt-6">
-                        <li class="flex items-center gap-2"><span class="text-vgreen-600 font-bold">✓</span> Priority Response &amp; Same-Day Edits</li>
-                        <li class="flex items-center gap-2"><span class="text-vgreen-600 font-bold">✓</span> Domain, DNS &amp; SSL Monitoring</li>
-                        <li class="flex items-center gap-2"><span class="text-vgreen-600 font-bold">✓</span> Monthly Script &amp; Portal Optimization</li>
-                    </ul>
-                </div>
-                <a href="#contact" class="mt-8 block text-center bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold py-3 rounded-xl transition-all text-sm">
-                    Select Care Plan
-                </a>
-            </div>
+            </p>
         </div>
 
     </div>
