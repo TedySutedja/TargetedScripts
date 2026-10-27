@@ -1,94 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- PRIMARY SEO META TAGS -->
-    <title>Targeted Scripts | Custom Web, Dashboards &amp; Automation NZ</title>
-    <meta name="title" content="Targeted Scripts | Custom Web, Dashboards &amp; Automation NZ">
-    <meta name="description" content="Lightweight custom websites with zero monthly hosting, interactive executive visual dashboards, and Google Workspace process automation in Palmerston North, New Zealand.">
-    <meta name="keywords" content="Targeted Scripts, Custom Web Design NZ, Google Apps Script Palmerston North, Visual Dashboards New Zealand, n8n Automation NZ, Business Process Automation">
-    <meta name="author" content="Tedy Sutedja">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://targetedscripts.com/">
-
-    <!-- OPEN GRAPH / FACEBOOK / WHATSAPP PREVIEW -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://targetedscripts.com/">
-    <meta property="og:title" content="Targeted Scripts | Custom Web &amp; Automation Solutions">
-    <meta property="og:description" content="Tailored web design, executive analytics dashboards, and smart process automation for businesses across New Zealand.">
-    <meta property="og:image" content="https://targetedscripts.com/Images/favico/android-chrome-512x512.png">
-
-    <!-- TWITTER CARD PREVIEW -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://targetedscripts.com/">
-    <meta property="twitter:title" content="Targeted Scripts | Custom Web &amp; Automation Solutions">
-    <meta property="twitter:description" content="Tailored web design, executive analytics dashboards, and smart process automation for businesses across New Zealand.">
-    <meta property="twitter:image" content="https://targetedscripts.com/Images/favico/android-chrome-512x512.png">
-
-    <!-- FAVICON CONFIGURATION -->
-    <link rel="icon" type="image/x-icon" href="Images/favico/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="Images/favico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="Images/favico/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="Images/favico/apple-touch-icon.png">
-
-    <!-- GOOGLE FONTS (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- TAILWIND CSS CDN & CUSTOM BRAND COLOR CONFIGURATION -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        navy: {
-                            800: '#142d42',
-                            900: '#0F2537',
-                            950: '#0a1a28'
-                        },
-                        vgreen: {
-                            500: '#00cc5e',
-                            600: '#00B050',
-                            700: '#008a3e'
-                        }
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TargetedScripts • Tailored code, targeted results.</title>
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vgreen: {
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+            },
+            navy: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
             }
+          }
         }
-    </script>
-
-    <!-- SCHEMA.ORG STRUCTURED DATA -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Targeted Scripts",
-      "url": "https://targetedscripts.com",
-      "logo": "https://targetedscripts.com/Images/favico/android-chrome-512x512.png",
-      "description": "Custom Web Design, Executive Dashboards, and Process Automation Services in New Zealand.",
-      "telephone": "+64226562882",
-      "email": "info@targetedscripts.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Palmerston North",
-        "addressRegion": "Manawatu",
-        "addressCountry": "NZ"
-      },
-      "priceRange": "$$"
+      }
     }
-    </script>
+  </script>
+  
+  <!-- Typography Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased font-sans flex flex-col min-h-screen">
+<body class="bg-navy-950 text-slate-100 min-h-screen antialiased flex flex-col justify-between pt-6 selection:bg-vgreen-500 selection:text-black">
 
-    <!-- WADAH KOMPONEN MODULAR -->
-    <div id="header-root"></div>
+  <!-- 1. HEADER MODULAR CONTAINER -->
+  <div id="header-root"></div>
+
+  <!-- 2. MAIN MODULAR CONTENT -->
+  <main class="flex-grow">
     <div id="hero-root"></div>
     <div id="services-root"></div>
     <div id="portfolio-root"></div>
@@ -97,8 +56,13 @@
     <div id="faq-root"></div>
     <div id="about-root"></div>
     <div id="contact-root"></div>
-    <div id="footer-root"></div>
+  </main>
 
-    <script src="js/loader.js"></script>
+  <!-- 3. FOOTER MODULAR CONTAINER -->
+  <div id="footer-root"></div>
+
+  <!-- 4. CORE LOADER SCRIPT -->
+  <script src="js/loader.js"></script>
+
 </body>
 </html>
