@@ -1,266 +1,212 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio & Featured Work - TargetedScripts</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            vgreen: {
-              300: '#86efac',
-              400: '#4ade80',
-              500: '#22c55e',
-              600: '#16a34a',
-              700: '#15803d',
-            },
-            navy: {
-              800: '#1e293b',
-              900: '#0f172a',
-              950: '#020617',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
-</head>
-<body class="bg-slate-950 text-slate-100 min-h-screen antialiased flex flex-col justify-between pt-28">
+<!-- PORTFOLIO / FEATURED PROJECTS SECTION (components/portfolio.html) -->
+<section id="portfolio" class="py-16 md:py-24 bg-slate-900 text-white border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-vgreen-500 font-bold text-xs uppercase tracking-widest bg-vgreen-500/10 px-3 py-1 rounded-full border border-vgreen-500/20">
+                Featured Work &amp; SaaS Solutions
+            </span>
+            <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">
+                Proven Systems Built for Business Efficiency
+            </h2>
+            <p class="mt-4 text-base text-slate-400">
+                From specialized vertical SaaS platforms to custom web applications and organizational portals across New Zealand.
+            </p>
+        </div>
 
-  <!-- 1. UNIVERSAL HEADER CONTAINER -->
-  <div id="header-root"></div>
-
-  <!-- 2. MAIN CONTENT -->
-  <main class="flex-grow">
-    <section id="portfolio" class="py-16 md:py-24 bg-slate-900 text-white border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-vgreen-500 font-bold text-xs uppercase tracking-widest bg-vgreen-500/10 px-3 py-1 rounded-full border border-vgreen-500/20">
-                    Featured Work &amp; SaaS Solutions
-                </span>
-                <h2 class="mt-3 text-3xl font-black text-white sm:text-4xl">
-                    Proven Systems Built for Business Efficiency
-                </h2>
-                <p class="mt-4 text-base text-slate-400">
-                    From specialized vertical SaaS platforms to custom web applications and organizational portals across New Zealand.
-                </p>
+        <!-- FLAGSHIP SAAS PRODUCT: RESTOSYNC SAAS -->
+        <div class="bg-navy-900 rounded-3xl border border-slate-800 p-6 sm:p-10 shadow-2xl mb-16 relative overflow-hidden group text-white">
+            <div class="absolute top-0 right-0 bg-vgreen-600 text-white text-[10px] font-black uppercase tracking-wider px-4 py-1.5 rounded-bl-xl shadow-md">
+                ⭐ Flagship SaaS Product
             </div>
 
-            <!-- FLAGSHIP SAAS PRODUCT: RESTOSYNC SAAS -->
-            <div class="bg-navy-900 rounded-3xl border border-slate-800 p-6 sm:p-10 shadow-2xl mb-16 relative overflow-hidden group text-white">
-                <div class="absolute top-0 right-0 bg-vgreen-600 text-white text-[10px] font-black uppercase tracking-wider px-4 py-1.5 rounded-bl-xl shadow-md">
-                    ⭐ Flagship SaaS Product
-                </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-5">
+                    
+                    <div class="mb-2">
+                        <img src="Images/RS Logo.png" alt="RestoSync SaaS Logo" class="h-10 sm:h-11 w-auto object-contain filter brightness-0 invert" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x50/0f172a/ffffff?text=RestoSync+SaaS';">
+                    </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-7 space-y-5">
-                        
-                        <div class="mb-2">
-                            <img src="../Images/RS Logo.png" alt="RestoSync SaaS Logo" class="h-10 sm:h-11 w-auto object-contain filter brightness-0 invert" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x50/0f172a/ffffff?text=RestoSync+SaaS';">
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        A complete F&amp;B management and counter POS platform built to meet New Zealand industry standards. Features automated 15% GST tax calculation, bilingual menus, NZ staff rostering, and a <strong class="text-white">complimentary customer digital website with 2 layout options (Modern Grid &amp; Classic Menu Book)</strong> included in your monthly subscription.
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                        <div class="bg-navy-800/80 border border-slate-800 p-3 rounded-xl text-xs text-slate-300">
+                            <span class="text-vgreen-500 font-bold block mb-0.5">🇳🇿 NZ GST 15%</span>
+                            Automated Tax Calc
                         </div>
-
-                        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                            A complete F&amp;B management and counter POS platform built to meet New Zealand industry standards. Features automated 15% GST tax calculation, bilingual menus, NZ staff rostering, and a <strong class="text-white">complimentary customer digital website with 2 layout options (Modern Grid &amp; Classic Menu Book)</strong> included in your monthly subscription.
-                        </p>
-
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-                            <div class="bg-navy-800/80 border border-slate-800 p-3 rounded-xl text-xs text-slate-300">
-                                <span class="text-vgreen-500 font-bold block mb-0.5">🇳🇿 NZ GST 15%</span>
-                                Automated Tax Calc
-                            </div>
-                            <div class="bg-navy-800/80 border border-slate-800 p-3 rounded-xl text-xs text-slate-300">
-                                <span class="text-vgreen-500 font-bold block mb-0.5">🌐 Dual Language</span>
-                                English &amp; 中文 Catalog
-                            </div>
-                            <div class="bg-navy-800/80 border border-slate-800 p-3 rounded-xl text-xs text-slate-300">
-                                <span class="text-vgreen-500 font-bold block mb-0.5">🎨 2 Web Layouts</span>
-                                Grid &amp; Menu Book Styles
-                            </div>
+                        <div class="bg-navy-800/80 border border-slate-800 p-3 rounded-xl text-xs text-slate-300">
+                            <span class="text-vgreen-500 font-bold block mb-0.5">🌐 Dual Language</span>
+                            English &amp; 中文 Catalog
                         </div>
-
-                        <div class="pt-4 flex flex-wrap items-center gap-4">
-                            <a href="https://targetedscripts.github.io/restosync-saas/" target="_blank" rel="noopener" class="bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold px-6 py-3 rounded-xl transition-all inline-flex items-center gap-2 text-sm shadow-md">
-                                Launch Live Application <span>→</span>
-                            </a>
-                            <span class="text-xs text-slate-400 italic">Ready-to-use SaaS package • Instant onboarding</span>
+                        <div class="bg-navy-800/80 border border-slate-800 p-3 rounded-xl text-xs text-slate-300">
+                            <span class="text-vgreen-500 font-bold block mb-0.5">🎨 2 Web Layouts</span>
+                            Grid &amp; Menu Book Styles
                         </div>
                     </div>
 
-                    <div class="lg:col-span-5 bg-navy-950/80 border border-slate-800 rounded-2xl p-6 text-xs text-slate-300 space-y-4">
-                        <div class="flex justify-between items-center border-b border-slate-800 pb-3">
-                            <span class="font-bold text-white uppercase tracking-wider text-[11px]">SaaS System Overview</span>
-                            <span class="flex items-center gap-1.5 text-vgreen-400 font-semibold">
-                                <span class="w-2 h-2 rounded-full bg-vgreen-500 animate-pulse"></span> Active SaaS Platform
-                            </span>
-                        </div>
-
-                        <div class="space-y-2 font-mono text-[11px]">
-                            <div class="flex justify-between py-1 border-b border-slate-800/50">
-                                <span class="text-slate-400">Target Industry:</span>
-                                <span class="text-white">NZ Restaurants, Cafes &amp; Takeaways</span>
-                            </div>
-                            <div class="flex justify-between py-1 border-b border-slate-800/50">
-                                <span class="text-slate-400">Free Website Included:</span>
-                                <span class="text-vgreen-400 font-bold">Yes (Grid &amp; Menu Book)</span>
-                            </div>
-                            <div class="flex justify-between py-1 border-b border-slate-800/50">
-                                <span class="text-slate-400">POS Tax Compliance:</span>
-                                <span class="text-vgreen-400">NZ IRD Standard (15%)</span>
-                            </div>
-                            <div class="flex justify-between py-1">
-                                <span class="text-slate-400">Parent Provider:</span>
-                                <span class="text-vgreen-400 font-bold">TargetedScripts.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CLIENT PROJECTS SUB-HEADER -->
-            <div class="pt-6 pb-6 border-t border-slate-800 mb-8">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                    <span>💻</span> Custom Client Websites &amp; Web Platforms
-                </h3>
-            </div>
-
-            <!-- CLIENT PROJECTS GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <!-- Project 1: IFGF Palmy -->
-                <div class="bg-navy-900/60 rounded-3xl border border-slate-800 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="bg-[#000000] p-6 flex items-center justify-center min-h-[180px] border-b border-slate-800 relative">
-                            <img src="../Images/IFGFPalmy.png" alt="IFGF Palmerston North Logo" class="max-h-28 w-auto object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x80/000000/ffffff?text=IFGF+Palmy';">
-                            <span class="absolute top-4 right-4 bg-vgreen-600/20 text-vgreen-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-vgreen-500/30">
-                                Live Website
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white group-hover:text-vgreen-400 transition-colors">
-                                IFGF Palmerston North
-                            </h3>
-                            <p class="text-xs font-semibold text-vgreen-400 mt-1 uppercase tracking-wider">Local Community Web Solution</p>
-                            
-                            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
-                                A dynamic digital hub engineered for the Palmerston North community, featuring video hero banners, automated theme highlighting, daily spiritual resources, and an integrated leader management dashboard.
-                            </p>
-
-                            <div class="mt-6 pt-4 border-t border-slate-800">
-                                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2">Key Delivered Features:</h4>
-                                <ul class="text-xs text-slate-400 space-y-2">
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Dynamic Video Hero:</strong> Multi-video banner showcasing Sunday service themes &amp; promos.</li>
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Yearly Anchor &amp; Monthly Compass:</strong> Smart calendar UI highlighting active monthly themes.</li>
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Daily Reflections:</strong> Weekly reflections dynamically aligned with church themes.</li>
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Integrated Leader Dashboard:</strong> Custom backend tools built for church leaders.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-2">
-                        <a href="https://www.ifgfpalmy.org" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-vgreen-400 hover:text-vgreen-300 gap-1 underline">
-                            <span>Visit ifgfpalmy.org</span>
-                            <span>↗</span>
+                    <div class="pt-4 flex flex-wrap items-center gap-4">
+                        <a href="https://targetedscripts.github.io/restosync-saas/" target="_blank" rel="noopener" class="bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold px-6 py-3 rounded-xl transition-all inline-flex items-center gap-2 text-sm shadow-md">
+                            Launch Live Application <span>→</span>
                         </a>
+                        <span class="text-xs text-slate-400 italic">Ready-to-use SaaS package • Instant onboarding</span>
                     </div>
                 </div>
 
-                <!-- Project 2: IFGF New Zealand -->
-                <div class="bg-navy-900/60 rounded-3xl border border-slate-800 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="bg-[#000000] p-6 flex items-center justify-center min-h-[180px] border-b border-slate-800 relative">
-                            <img src="../Images/IFGFNZ.png" alt="IFGF New Zealand Logo" class="max-h-28 w-auto object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x80/000000/ffffff?text=IFGF+NZ';">
-                            <span class="absolute top-4 right-4 bg-white/10 text-slate-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-slate-700">
-                                Live Website
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white group-hover:text-vgreen-400 transition-colors">
-                                IFGF New Zealand
-                            </h3>
-                            <p class="text-xs font-semibold text-vgreen-400 mt-1 uppercase tracking-wider">National Network Portal</p>
-                            
-                            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
-                                A unified national web portal connecting regional churches across New Zealand (Auckland, Hamilton, Palmy, Wellington, Christchurch) with built-in regional news publishing and admin moderation.
-                            </p>
-
-                            <div class="mt-6 pt-4 border-t border-slate-800">
-                                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2">Key Delivered Features:</h4>
-                                <ul class="text-xs text-slate-400 space-y-2">
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Multi-City Directory:</strong> Location hub for Auckland, Hamilton, Palmy, Wellington, &amp; Christchurch.</li>
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Regional News Moderation:</strong> Decentralized local news posting with national admin controls.</li>
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>National Network Integration:</strong> Unified events, leadership contacts, &amp; custom domain setup (`ifgf.nz`).</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="lg:col-span-5 bg-navy-950/80 border border-slate-800 rounded-2xl p-6 text-xs text-slate-300 space-y-4">
+                    <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                        <span class="font-bold text-white uppercase tracking-wider text-[11px]">SaaS System Overview</span>
+                        <span class="flex items-center gap-1.5 text-vgreen-400 font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-vgreen-500 animate-pulse"></span> Active SaaS Platform
+                        </span>
                     </div>
-                    <div class="px-6 pb-6 pt-2">
-                        <a href="https://www.ifgf.nz" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-vgreen-400 hover:text-vgreen-300 gap-1 underline">
-                            <span>Visit ifgf.nz</span>
-                            <span>↗</span>
-                        </a>
+
+                    <div class="space-y-2 font-mono text-[11px]">
+                        <div class="flex justify-between py-1 border-b border-slate-800/50">
+                            <span class="text-slate-400">Target Industry:</span>
+                            <span class="text-white">NZ Restaurants, Cafes &amp; Takeaways</span>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-800/50">
+                            <span class="text-slate-400">Free Website Included:</span>
+                            <span class="text-vgreen-400 font-bold">Yes (Grid &amp; Menu Book)</span>
+                        </div>
+                        <div class="flex justify-between py-1 border-b border-slate-800/50">
+                            <span class="text-slate-400">POS Tax Compliance:</span>
+                            <span class="text-vgreen-400">NZ IRD Standard (15%)</span>
+                        </div>
+                        <div class="flex justify-between py-1">
+                            <span class="text-slate-400">Parent Provider:</span>
+                            <span class="text-vgreen-400 font-bold">TargetedScripts.com</span>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Project 3: HeyyitsMe -->
-                <div class="bg-navy-900/60 rounded-3xl border border-slate-800 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <div class="bg-slate-950 p-6 flex items-center justify-center min-h-[180px] border-b border-slate-800 relative">
-                            <img src="../Images/HeyyitsMe.png" alt="HeyyitsMe Audio Guestbook Logo" class="max-h-28 w-auto object-contain filter brightness-0 invert" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x80/0f172a/ffffff?text=HeyyitsMe';">
-                            <span class="absolute top-4 right-4 bg-vgreen-600/20 text-vgreen-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-vgreen-500/30">
-                                Live Website
-                            </span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white group-hover:text-vgreen-400 transition-colors">
-                                HeyyitsMe Audio Guestbook
-                            </h3>
-                            <p class="text-xs font-semibold text-vgreen-400 mt-1 uppercase tracking-wider">Commercial Event Web Platform</p>
-                            
-                            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
-                                A modern brand and web platform for an audio guestbook service, enabling event hosts to rent vintage phone audio recorders for weddings and celebrations.
-                            </p>
-
-                            <div class="mt-6 pt-4 border-t border-slate-800">
-                                <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2">Key Delivered Features:</h4>
-                                <ul class="text-xs text-slate-400 space-y-2">
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Modern Retro Aesthetic:</strong> Tailored branding and responsive visual layout.</li>
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Online Rental Inquiry:</strong> Streamlined booking process for vintage audio phones.</li>
-                                    <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Zero-Overhead Hosting:</strong> High-performance architecture deployed on custom domain (`heyyitsme.co.nz`).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-2">
-                        <a href="https://www.heyyitsme.co.nz" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-vgreen-400 hover:text-vgreen-300 gap-1 underline">
-                            <span>Visit heyyitsme.co.nz</span>
-                            <span>↗</span>
-                        </a>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
-  </main>
 
-  <!-- 3. UNIVERSAL FOOTER CONTAINER -->
-  <div id="footer-root"></div>
+        <!-- CLIENT PROJECTS SUB-HEADER -->
+        <div class="pt-6 pb-6 border-t border-slate-800 mb-8">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <span>💻</span> Custom Client Websites &amp; Web Platforms
+            </h3>
+        </div>
 
-  <!-- 4. LOADER SCRIPT -->
-  <script src="../js/loader.js"></script>
+        <!-- CLIENT PROJECTS GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-</body>
-</html>
+            <!-- Project 1: IFGF Palmy -->
+            <div class="bg-navy-900/60 rounded-3xl border border-slate-800 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-[#000000] p-6 flex items-center justify-center min-h-[180px] border-b border-slate-800 relative">
+                        <img src="Images/IFGFPalmy.png" alt="IFGF Palmerston North Logo" class="max-h-28 w-auto object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x80/000000/ffffff?text=IFGF+Palmy';">
+                        <span class="absolute top-4 right-4 bg-vgreen-600/20 text-vgreen-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-vgreen-500/30">
+                            Live Website
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:text-vgreen-400 transition-colors">
+                            IFGF Palmerston North
+                        </h3>
+                        <p class="text-xs font-semibold text-vgreen-400 mt-1 uppercase tracking-wider">Local Community Web Solution</p>
+                        
+                        <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                            A dynamic digital hub engineered for the Palmerston North community, featuring video hero banners, automated theme highlighting, daily spiritual resources, and an integrated leader management dashboard.
+                        </p>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2">Key Delivered Features:</h4>
+                            <ul class="text-xs text-slate-400 space-y-2">
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Dynamic Video Hero:</strong> Multi-video banner showcasing Sunday service themes &amp; promos.</li>
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Yearly Anchor &amp; Monthly Compass:</strong> Smart calendar UI highlighting active monthly themes.</li>
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Daily Reflections:</strong> Weekly reflections dynamically aligned with church themes.</li>
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Integrated Leader Dashboard:</strong> Custom backend tools built for church leaders.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-2">
+                    <a href="https://www.ifgfpalmy.org" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-vgreen-400 hover:text-vgreen-300 gap-1 underline">
+                        <span>Visit ifgfpalmy.org</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2: IFGF New Zealand -->
+            <div class="bg-navy-900/60 rounded-3xl border border-slate-800 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-[#000000] p-6 flex items-center justify-center min-h-[180px] border-b border-slate-800 relative">
+                        <img src="Images/IFGFNZ.png" alt="IFGF New Zealand Logo" class="max-h-28 w-auto object-contain" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x80/000000/ffffff?text=IFGF+NZ';">
+                        <span class="absolute top-4 right-4 bg-white/10 text-slate-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-slate-700">
+                            Live Website
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:text-vgreen-400 transition-colors">
+                            IFGF New Zealand
+                        </h3>
+                        <p class="text-xs font-semibold text-vgreen-400 mt-1 uppercase tracking-wider">National Network Portal</p>
+                        
+                        <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                            A unified national web portal connecting regional churches across New Zealand (Auckland, Hamilton, Palmy, Wellington, Christchurch) with built-in regional news publishing and admin moderation.
+                        </p>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2">Key Delivered Features:</h4>
+                            <ul class="text-xs text-slate-400 space-y-2">
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Multi-City Directory:</strong> Location hub for Auckland, Hamilton, Palmy, Wellington, &amp; Christchurch.</li>
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Regional News Moderation:</strong> Decentralized local news posting with national admin controls.</li>
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>National Network Integration:</strong> Unified events, leadership contacts, &amp; custom domain setup (`ifgf.nz`).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-2">
+                    <a href="https://www.ifgf.nz" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-vgreen-400 hover:text-vgreen-300 gap-1 underline">
+                        <span>Visit ifgf.nz</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3: HeyyitsMe -->
+            <div class="bg-navy-900/60 rounded-3xl border border-slate-800 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between group">
+                <div>
+                    <div class="bg-slate-950 p-6 flex items-center justify-center min-h-[180px] border-b border-slate-800 relative">
+                        <img src="Images/HeyyitsMe.png" alt="HeyyitsMe Audio Guestbook Logo" class="max-h-28 w-auto object-contain filter brightness-0 invert" onerror="this.onerror=null; this.src='https://via.placeholder.com/200x80/0f172a/ffffff?text=HeyyitsMe';">
+                        <span class="absolute top-4 right-4 bg-vgreen-600/20 text-vgreen-400 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase border border-vgreen-500/30">
+                            Live Website
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:text-vgreen-400 transition-colors">
+                            HeyyitsMe Audio Guestbook
+                        </h3>
+                        <p class="text-xs font-semibold text-vgreen-400 mt-1 uppercase tracking-wider">Commercial Event Web Platform</p>
+                        
+                        <p class="mt-4 text-slate-300 text-sm leading-relaxed">
+                            A modern brand and web platform for an audio guestbook service, enabling event hosts to rent vintage phone audio recorders for weddings and celebrations.
+                        </p>
+
+                        <div class="mt-6 pt-4 border-t border-slate-800">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2">Key Delivered Features:</h4>
+                            <ul class="text-xs text-slate-400 space-y-2">
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Modern Retro Aesthetic:</strong> Tailored branding and responsive visual layout.</li>
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Online Rental Inquiry:</strong> Streamlined booking process for vintage audio phones.</li>
+                                <li class="flex items-start"><span class="text-vgreen-400 font-bold mr-2">✓</span> <strong>Zero-Overhead Hosting:</strong> High-performance architecture deployed on custom domain (`heyyitsme.co.nz`).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-2">
+                    <a href="https://www.heyyitsme.co.nz" target="_blank" rel="noopener" class="inline-flex items-center text-xs font-bold text-vgreen-400 hover:text-vgreen-300 gap-1 underline">
+                        <span>Visit heyyitsme.co.nz</span>
+                        <span>↗</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
