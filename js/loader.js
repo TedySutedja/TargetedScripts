@@ -1,56 +1,83 @@
+/**
+ * TargetedScripts - Core Loader & Interactive Logic
+ * Optimized for resilience, event delegation, and zero blocking UI.
+ */
+
+// 1. Helper function untuk memuat komponen individual dengan Error Handling
 async function loadComponent(elementId, filePath) {
+    const container = document.getElementById(elementId);
+    if (!container) return; // Ignore jika kontainer tidak ditemukan di halaman aktif
+
     try {
         const response = await fetch(filePath);
         if (response.ok) {
             const html = await response.text();
-            document.getElementById(elementId).innerHTML = html;
+            container.innerHTML = html;
         } else {
-            console.error(`Gagal memuat ${filePath}: Status ${response.status}`);
+            console.warn(`[TargetedScripts] Gagal memuat ${filePath} (Status: ${response.status})`);
         }
     } catch (error) {
-        console.error(`Error loading ${filePath}:`, error);
+        console.error(`[TargetedScripts] Network error saat memuat ${filePath}:`, error);
     }
 }
 
+// 2. Main DOM Entry Point
 document.addEventListener("DOMContentLoaded", async function() {
-    // Memuat seluruh komponen modular secara paralel
-    await Promise.all([
-        loadComponent('header-root', 'components/header.html'),
-        loadComponent('hero-root', 'components/hero.html'),
-        loadComponent('services-root', 'components/services.html'),
-        loadComponent('portfolio-root', 'components/portfolio.html'),
-        loadComponent('dashboards-root', 'components/dashboards.html'),
-        loadComponent('pricing-root', 'components/pricing.html'),
-        loadComponent('faq-root', 'components/faq.html'),
-        loadComponent('about-root', 'components/about.html'),
-        loadComponent('contact-root', 'components/contact.html'),
-        loadComponent('footer-root', 'components/footer.html')
-    ]);
+    // Jalankan inisialisasi UI dasar SEBELUM/SEJAJAR dengan fetch agar menu & listener langsung responsif
+    initGlobalListeners();
 
-    // Inisialisasi logika interaktif
+    // List seluruh komponen modular index.html
+    const components = [
+        { id: 'header-root', path: 'components/header.html' },
+        { id: 'hero-root', path: 'components/hero.html' },
+        { id: 'services-root', path: 'components/services.html' },
+        { id: 'portfolio-root', path: 'components/portfolio.html' },
+        { id: 'dashboards-root', path: 'components/dashboards.html' },
+        { id: 'pricing-root', path: 'components/pricing.html' },
+        { id: 'faq-root', path: 'components/faq.html' },
+        { id: 'about-root', path: 'components/about.html' },
+        { id: 'contact-root', path: 'components/contact.html' },
+        { id: 'footer-root', path: 'components/footer.html' }
+    ];
+
+    // Gunakan Promise.allSettled agar jika 1 komponen gagal/404, komponen lain TETAP muncul
+    await Promise.allSettled(
+        components.map(comp => loadComponent(comp.id, comp.path))
+    );
+
+    // Inisialisasi ulang fungsi interaktif khusus setelah DOM komponen ter-inject sepenuhnya
     initMobileMenu();
     initCalculator();
+    initFormHandler();
 });
 
+// 3. Logika Mobile Navigation Menu (Safe Check)
 function initMobileMenu() {
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    if (mobileBtn && mobileMenu) {
-        mobileBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            mobileMenu.classList.toggle('hidden');
-        });
+    if (!mobileBtn || !mobileMenu) return;
 
-        const navLinks = mobileMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+    // Remove existing listener jika ada untuk cegah duplikasi
+    mobileBtn.replaceWith(mobileBtn.cloneNode(true));
+    const newBtn = document.getElementById('mobile-menu-btn');
+
+    newBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Otomatis tutup drawer menu saat salah satu link diklik
+    const navLinks = mobileMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
         });
-    }
+    });
 }
 
+// 4. Logika ROI Savings Calculator
 function initCalculator() {
     const hoursSlider = document.getElementById('hours-slider');
     const rateSlider = document.getElementById('rate-slider');
@@ -59,10 +86,13 @@ function initCalculator() {
     const annualHoursOutput = document.getElementById('annual-hours');
     const annualSavingsOutput = document.getElementById('annual-savings');
 
+    if (!hoursSlider || !rateSlider) return;
+
     function updateCalculator() {
-        if (!hoursSlider || !rateSlider) return;
-        const hours = parseInt(hoursSlider.value);
-        const rate = parseInt(rateSlider.value);
+        const hours = parseInt(hoursSlider.value) || 0;
+        const rate = parseInt(rateSlider.value) || 0;
+        
+        // Asumsi efisiensi 80% per minggu dari total jam kerja
         const annualHoursSaved = Math.round(hours * 52 * 0.8);
         const annualDollarSaved = annualHoursSaved * rate;
 
@@ -72,29 +102,47 @@ function initCalculator() {
         if (annualSavingsOutput) annualSavingsOutput.textContent = '$' + annualDollarSaved.toLocaleString() + ' NZD';
     }
 
-    if (hoursSlider && rateSlider) {
-        hoursSlider.addEventListener('input', updateCalculator);
-        rateSlider.addEventListener('input', updateCalculator);
-        updateCalculator();
-    }
+    hoursSlider.addEventListener('input', updateCalculator);
+    rateSlider.addEventListener('input', updateCalculator);
+    
+    // Initial run
+    updateCalculator();
 }
 
-function handleFormSubmit(e) {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+// 5. Logika Form Contact Dispatcher
+function initFormHandler() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) return;
 
-    const emailSubject = encodeURIComponent(`Targeted Scripts Enquiry: ${subject} - ${name}`);
-    const emailBody = encodeURIComponent(
-        `Hello Tedy,\n\nNew enquiry from Targeted Scripts website:\n\n` +
-        `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nInterest: ${subject}\n\nMessage:\n${message}`
-    );
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name')?.value || '';
+        const email = document.getElementById('email')?.value || '';
+        const phone = document.getElementById('phone')?.value || 'Not provided';
+        const subject = document.getElementById('subject')?.value || 'General Enquiry';
+        const message = document.getElementById('message')?.value || '';
 
-    window.location.href = `mailto:info@targetedscripts.com?subject=${emailSubject}&body=${emailBody}`;
+        const emailSubject = encodeURIComponent(`Targeted Scripts Enquiry: ${subject} - ${name}`);
+        const emailBody = encodeURIComponent(
+            `Hello Tedy,\n\nNew enquiry from Targeted Scripts website:\n\n` +
+            `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nInterest: ${subject}\n\nMessage:\n${message}`
+        );
 
-    document.getElementById('contact-form')?.classList.add('hidden');
-    document.getElementById('form-success')?.classList.remove('hidden');
+        // Buka mailto client
+        window.location.href = `mailto:info@targetedscripts.com?subject=${emailSubject}&body=${emailBody}`;
+
+        // Tampilkan pesan sukses UI
+        contactForm.classList.add('hidden');
+        document.getElementById('form-success')?.classList.remove('hidden');
+    });
+}
+
+// 6. Global Event Listeners (Event Delegation)
+function initGlobalListeners() {
+    // Mencegah error jika fungsi dipanggil via inline HTML sebelum script selesai
+    window.handleFormSubmit = function(e) {
+        e.preventDefault();
+        initFormHandler();
+    };
 }
