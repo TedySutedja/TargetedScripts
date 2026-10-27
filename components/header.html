@@ -1,19 +1,19 @@
 <!-- GLOBAL FLOATING HEADER (components/header.html) -->
 <header class="fixed top-4 inset-x-0 z-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="bg-navy-900/90 backdrop-blur-md border border-slate-800 rounded-2xl shadow-2xl px-4 sm:px-6 h-16 flex items-center justify-between">
+    <div class="bg-navy-900/95 backdrop-blur-md border border-slate-800 rounded-2xl shadow-2xl px-4 sm:px-6 h-16 flex items-center justify-between">
         
-        <!-- Brand Logo -->
+        <!-- Brand Logo (Ringkas di HP) -->
         <a href="index.html" class="flex items-center space-x-1 group shrink-0">
-            <span class="text-lg sm:text-xl font-extrabold tracking-wider text-white">TARGETED</span>
-            <div class="inline-flex items-center text-lg sm:text-xl font-black px-0.5">
+            <span class="text-base sm:text-xl font-extrabold tracking-wider text-white">TARGETED</span>
+            <div class="inline-flex items-center text-base sm:text-xl font-black px-0.5">
                 <span class="text-white">}</span>
                 <span class="text-vgreen-600 mx-0.5">•</span>
                 <span class="text-vgreen-600">{</span>
             </div>
-            <span class="text-lg sm:text-xl font-extrabold tracking-wider text-vgreen-600">SCRIPTS</span>
+            <span class="text-base sm:text-xl font-extrabold tracking-wider text-vgreen-600">SCRIPTS</span>
         </a>
 
-        <!-- Desktop Nav Links (Visible from md / 768px UP) -->
+        <!-- Desktop Nav Links (Hanya muncul dari lebar 768px ke atas) -->
         <nav class="hidden md:flex items-center space-x-6 text-sm font-semibold text-slate-300">
             <a href="#services" class="hover:text-vgreen-400 transition-colors">Services</a>
             <a href="#portfolio" class="hover:text-vgreen-400 transition-colors">Portfolio</a>
@@ -22,16 +22,17 @@
             <a href="#about" class="hover:text-vgreen-400 transition-colors">About</a>
         </nav>
 
-        <!-- Right Side: Phone, CTA & Mobile Hamburger -->
-        <div class="flex items-center gap-2 sm:gap-4">
+        <!-- Right Side: Phone & Hamburger Button -->
+        <div class="flex items-center gap-3">
+            <!-- Telepon & Consultation Button HANYA muncul di layar sedang/besar -->
             <a href="tel:+64226562882" class="hidden sm:flex items-center gap-1.5 text-vgreen-500 hover:text-white font-semibold text-sm transition-colors">
                 <span>📞</span> 022 656 2882
             </a>
-            <a href="#contact" class="hidden xs:inline-flex bg-vgreen-600 hover:bg-vgreen-700 text-white font-semibold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl shadow-md transition-all">
+            <a href="#contact" class="hidden sm:inline-flex bg-vgreen-600 hover:bg-vgreen-700 text-white font-semibold text-sm px-4 py-2 rounded-xl shadow-md transition-all">
                 Book Consultation
             </a>
 
-            <!-- Mobile Hamburger Button (Always Visible on Mobile / below 768px) -->
+            <!-- Mobile Hamburger Button (Selalu Tampil & Rapi di HP) -->
             <button id="mobile-menu-btn" type="button" aria-label="Toggle Navigation Menu" class="md:hidden flex items-center justify-center p-2 rounded-xl text-slate-200 hover:text-white bg-navy-800 hover:bg-navy-700 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-vgreen-500 transition-all">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
