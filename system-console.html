@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RestoSync SaaS | Super Admin System Console</title>
+    <!-- Tailwind CSS untuk Desain Modern -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <!-- Header / Navbar Utama -->
+    <header class="bg-indigo-900 text-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-sync text-2xl text-indigo-400"></i>
+                <span class="text-xl font-bold tracking-wide">RestoSync <span class="text-indigo-300 font-light">System Console</span></span>
+            </div>
+            <div class="text-sm bg-indigo-800 px-3 py-1.5 rounded-lg border border-indigo-700">
+                <i class="fa-solid fa-shield-halved mr-2 text-green-400"></i>Super Admin: <strong>TargetedScripts</strong>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        
+        <!-- Panel Pilih Tenant / Restoran -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-200">
+            <h2 class="text-lg font-bold text-gray-800 mb-4"><i class="fa-solid fa-store mr-2 text-indigo-600"></i>Pilih atau Tambah Tenant Restoran</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Pilih Tenant Aktif</label>
+                    <select id="tenantSelect" class="w-full border border-gray-300 rounded-lg p-2.5 focus:ring-2 focus:ring-indigo-500">
+                        <option value="bangkokthai">Bangkok Thai Takeaway (Free Tier)</option>
+                        <option value="finedining_demo">Auckland Fine Dining (Enterprise)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Nama Restoran / Klien</label>
+                    <input type="text" id="tenantName" value="Bangkok Thai Takeaway" class="w-full border border-gray-300 rounded-lg p-2.5">
+                </div>
+                <div class="flex items-end">
+                    <button onclick="saveTenantConfig()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 px-4 rounded-lg transition duration-200 shadow-sm">
+                        <i class="fa-solid fa-floppy-disk mr-2"></i>Simpan Konfigurasi
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVIGASI 5 TAB UTAMA -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="flex border-b border-gray-200 bg-gray-50 overflow-x-auto">
+                <button onclick="switchTab(1)" id="tabBtn1" class="tab-btn px-6 py-4 font-semibold text-indigo-600 border-b-2 border-indigo-600 flex items-center whitespace-nowrap focus:outline-none">
+                    <i class="fa-solid fa-palette mr-2"></i>1. Branding & Store
+                </button>
+                <button onclick="switchTab(2)" id="tabBtn2" class="tab-btn px-6 py-4 font-medium text-gray-600 hover:text-indigo-600 flex items-center whitespace-nowrap focus:outline-none">
+                    <i class="fa-solid fa-utensils mr-2"></i>2. Catalogue & Operations
+                </button>
+                <button onclick="switchTab(3)" id="tabBtn3" class="tab-btn px-6 py-4 font-medium text-gray-600 hover:text-indigo-600 flex items-center whitespace-nowrap focus:outline-none">
+                    <i class="fa-solid fa-fire-burner mr-2"></i>3. Kitchen & Compliance (FCP)
+                </button>
+                <button onclick="switchTab(4)" id="tabBtn4" class="tab-btn px-6 py-4 font-medium text-gray-600 hover:text-indigo-600 flex items-center whitespace-nowrap focus:outline-none">
+                    <i class="fa-solid fa-cash-register mr-2"></i>4. Finance, POS & Security
+                </button>
+                <button onclick="switchTab(5)" id="tabBtn5" class="tab-btn px-6 py-4 font-medium text-gray-600 hover:text-indigo-600 flex items-center whitespace-nowrap focus:outline-none">
+                    <i class="fa-solid fa-chart-line mr-2"></i>5. CRM, Analytics & VIP
+                </button>
+            </div>
+
+            <!-- KONTEN TAB -->
+            <div class="p-8">
+                
+                <!-- TAB 1: General Store & Branding -->
+                <div id="tabContent1" class="tab-content space-y-6">
+                    <h3 class="text-xl font-bold text-gray-800 border-b pb-3">Tab 1: Identitas Toko & Kustomisasi Visual</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_upload_logo" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Izin Upload Logo Mandiri</span>
+                                <span class="text-sm text-gray-500">Mengizinkan klien mengganti logo toko mereka sendiri.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_custom_colors" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Kustomisasi Warna Tema</span>
+                                <span class="text-sm text-gray-500">Mengizinkan perubahan skema warna aksen etalase.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_seo_metadata" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Pengaturan SEO Metadata</span>
+                                <span class="text-sm text-gray-500">Menyunting Meta Title & Deskripsi Google Search.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_custom_domain" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Custom Domain White-Label</span>
+                                <span class="text-sm text-gray-500">Mengaktifkan penggunaan domain khusus milik klien (.co.nz).</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- TAB 2: Catalogue, Menu & Operations -->
+                <div id="tabContent2" class="tab-content space-y-6 hidden">
+                    <h3 class="text-xl font-bold text-gray-800 border-b pb-3">Tab 2: Katalog Menu & Operasional Harian</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_online_ordering" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Pemesanan Online Umum</span>
+                                <span class="text-sm text-gray-500">Mengaktifkan keranjang belanja dan transaksi online.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_qr_dine_in" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">QR Scan-to-Order Meja</span>
+                                <span class="text-sm text-gray-500">Pemesanan mandiri langsung dari meja restoran.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_table_reservation" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Reservasi Meja & Denah</span>
+                                <span class="text-sm text-gray-500">Manajemen booking meja dan tata letak ruangan.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_scheduled_orders" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Pemesanan Terjadwal (Scheduled Orders)</span>
+                                <span class="text-sm text-gray-500">Sangat penting untuk bakery & cake shop.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- TAB 3: Kitchen & Compliance -->
+                <div id="tabContent3" class="tab-content space-y-6 hidden">
+                    <h3 class="text-xl font-bold text-gray-800 border-b pb-3">Tab 3: Layar Dapur & Kepatuhan MPI FCP Selandia Baru</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_kitchen_display_system" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Kitchen Display System (KDS)</span>
+                                <span class="text-sm text-gray-500">Layar digital pesanan masuk menggantikan kertas.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_fcp_temperature_log" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Pencatatan Suhu Digital (MPI FCP)</span>
+                                <span class="text-sm text-gray-500">Log suhu chiller/freezer harian untuk audit resmi MPI.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_allergen_management" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Manajemen Alergen Makanan</span>
+                                <span class="text-sm text-gray-500">Deklarasi wajib label alergen standar Selandia Baru.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_cleaning_sanitation_checklist" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Checklist Kebersihan & Sanitasi</span>
+                                <span class="text-sm text-gray-500">Daftar periksa harian area dapur dan perlengkapan.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- TAB 4: Finance, POS & Security -->
+                <div id="tabContent4" class="tab-content space-y-6 hidden">
+                    <h3 class="text-xl font-bold text-gray-800 border-b pb-3">Tab 4: Keuangan, Kasir & Pencegahan Kecurangan</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_gst_calculation" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Kalkulasi Otomatis GST 15% NZ</span>
+                                <span class="text-sm text-gray-500">Perhitungan pajak penjualan standar Selandia Baru.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_receipt_print" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Izin Cetak Struk Fisik</span>
+                                <span class="text-sm text-gray-500">Mengontrol perangkat printer struk kasir/dapur.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_cash_drawer_audit_trail" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Audit Laci Kasir (Cash Drawer)</span>
+                                <span class="text-sm text-gray-500">Mencatat setiap kali laci kasir dibuka secara manual.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_void_refund_authorization" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Otorisasi PIN Manajer (Void/Refund)</span>
+                                <span class="text-sm text-gray-500">Mencegah staf menghapus pesanan tanpa izin supervisor.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- TAB 5: CRM, Analytics & Advanced Tier -->
+                <div id="tabContent5" class="tab-content space-y-6 hidden">
+                    <h3 class="text-xl font-bold text-gray-800 border-b pb-3">Tab 5: Analitik Bisnis, CRM & Layanan VIP</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_advanced_analytics" checked class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Dasbor Analitik & Laporan Omzet</span>
+                                <span class="text-sm text-gray-500">Grafik perbandingan harian, mingguan, dan menu terlaris.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_vip_guest_profiles" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Profil Tamu VVIP & Preferensi</span>
+                                <span class="text-sm text-gray-500">Penyimpanan catatan riwayat dan alergi tamu khusus (Fine Dining).</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_vintage_cellar_tracking" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Manajemen Gudang Wine & Cellar</span>
+                                <span class="text-sm text-gray-500">Pelacakan botol anggur berdasarkan tahun panen.</span>
+                            </div>
+                        </label>
+                        <label class="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg border border-gray-200 cursor-pointer">
+                            <input type="checkbox" id="toggle_service_role_permissions" class="h-5 w-5 text-indigo-600 rounded">
+                            <div>
+                                <span class="font-semibold text-gray-800 block">Hierarki Peran Staf Ketat</span>
+                                <span class="text-sm text-gray-500">Pemisahan akses antara Waiter, Sommelier, Maître d', dan Chef.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JavaScript Interaksi Tab & Simpan Konfigurasi -->
+    <script>
+        function switchTab(tabNumber) {
+            // Sembunyikan semua konten tab
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`tabContent${i}`).classList.add('hidden');
+                document.getElementById(`tabBtn${i}`).className = "tab-btn px-6 py-4 font-medium text-gray-600 hover:text-indigo-600 flex items-center whitespace-nowrap focus:outline-none";
+            }
+            // Tampilkan tab yang dipilih
+            document.getElementById(`tabContent${tabNumber}`).classList.remove('hidden');
+            document.getElementById(`tabBtn${tabNumber}`).className = "tab-btn px-6 py-4 font-semibold text-indigo-600 border-b-2 border-indigo-600 flex items-center whitespace-nowrap focus:outline-none";
+        }
+
+        function saveTenantConfig() {
+            const tenantId = document.getElementById('tenantSelect').value;
+            const tenantName = document.getElementById('tenantName').value;
+            
+            // Mengumpulkan status seluruh toggle
+            const configData = {
+                tenantName: tenantName,
+                updatedAt: new Date().toISOString(),
+                modules: {
+                    toggle_upload_logo: document.getElementById('toggle_upload_logo').checked,
+                    toggle_custom_colors: document.getElementById('toggle_custom_colors').checked,
+                    toggle_seo_metadata: document.getElementById('toggle_seo_metadata').checked,
+                    toggle_custom_domain: document.getElementById('toggle_custom_domain').checked,
+                    toggle_online_ordering: document.getElementById('toggle_online_ordering').checked,
+                    toggle_qr_dine_in: document.getElementById('toggle_qr_dine_in').checked,
+                    toggle_table_reservation: document.getElementById('toggle_table_reservation').checked,
+                    toggle_scheduled_orders: document.getElementById('toggle_scheduled_orders').checked,
+                    toggle_kitchen_display_system: document.getElementById('toggle_kitchen_display_system').checked,
+                    toggle_fcp_temperature_log: document.getElementById('toggle_fcp_temperature_log').checked,
+                    toggle_allergen_management: document.getElementById('toggle_allergen_management').checked,
+                    toggle_cleaning_sanitation_checklist: document.getElementById('toggle_cleaning_sanitation_checklist').checked,
+                    toggle_gst_calculation: document.getElementById('toggle_gst_calculation').checked,
+                    toggle_receipt_print: document.getElementById('toggle_receipt_print').checked,
+                    toggle_cash_drawer_audit_trail: document.getElementById('toggle_cash_drawer_audit_trail').checked,
+                    toggle_void_refund_authorization: document.getElementById('toggle_void_refund_authorization').checked,
+                    toggle_advanced_analytics: document.getElementById('toggle_advanced_analytics').checked,
+                    toggle_vip_guest_profiles: document.getElementById('toggle_vip_guest_profiles').checked,
+                    toggle_vintage_cellar_tracking: document.getElementById('toggle_vintage_cellar_tracking').checked,
+                    toggle_service_role_permissions: document.getElementById('toggle_service_role_permissions').checked
+                }
+            };
+
+            console.log("Menyimpan konfigurasi untuk tenant:", tenantId, configData);
+            alert(`Konfigurasi untuk "${tenantName}" berhasil disimpan! (Data siap disinkronkan ke Firebase Firestore).`);
+            
+            // Di sini nantinya koneksi Firebase SDK dipasang untuk menyimpan ke database cloud.
+        }
+    </script>
+</body>
+</html>
