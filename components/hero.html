@@ -1,84 +1,124 @@
-<!-- HERO SECTION -->
-<section id="hero" class="relative bg-navy-900 text-white pt-12 pb-20 md:py-24 overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(to right, rgba(10, 26, 40, 0.90), rgba(15, 37, 55, 0.80)), url('/Images/hero01.png');">
-    
-    <!-- Content Area -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- HERO SECTION - MODERN WIX HARMONY STYLE -->
+<section id="hero" class="relative overflow-hidden bg-navy-950 pt-12 pb-20 lg:pt-20 lg:pb-32 text-white">
+  
+  <!-- 1. Ambient Background Glow (Efek Cahaya Aurora Modern) -->
+  <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-tr from-vgreen-600/20 via-vgreen-500/10 to-transparent blur-[120px] rounded-full opacity-70"></div>
+  <div class="pointer-events-none absolute top-1/3 -left-40 w-96 h-96 bg-blue-600/10 blur-[100px] rounded-full"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- LEFT COLUMN: Headline & Value Proposition -->
+      <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+        
+        <!-- Modern Pill Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/80 border border-slate-800 backdrop-blur-md shadow-inner">
+          <span class="flex h-2 w-2 rounded-full bg-vgreen-400 animate-ping"></span>
+          <span class="text-xs font-semibold text-slate-300">Custom Web Development &amp; Automation</span>
+          <span class="text-xs text-vgreen-400 font-bold ml-1">NZ Wide 🇳🇿</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+          Tailored code, <br class="hidden sm:inline" />
+          <span class="bg-gradient-to-r from-vgreen-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent">
+            targeted results.
+          </span>
+        </h1>
+
+        <!-- Subtitle / Body Copy -->
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          Kami membangun sistem SaaS, aplikasi web custom, dan otomasi bisnis berkinerja tinggi tanpa biaya server hosting bulanan yang mahal.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+          <a href="#contact" class="w-full sm:w-auto bg-vgreen-600 hover:bg-vgreen-500 text-slate-950 font-bold px-8 py-4 rounded-2xl shadow-[0_0_25px_rgba(34,197,94,0.3)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm text-center">
+            Book Free Consultation ➔
+          </a>
+          <a href="#portfolio" class="w-full sm:w-auto bg-navy-900/90 hover:bg-navy-800 text-slate-200 font-semibold px-7 py-4 rounded-2xl border border-slate-800 backdrop-blur-md transition-all text-sm text-center">
+            Explore Portfolio
+          </a>
+        </div>
+
+        <!-- Trust Badges / Social Proof -->
+        <div class="pt-6 border-t border-slate-800/80 grid grid-cols-3 gap-4 text-left max-w-lg mx-auto lg:mx-0">
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold text-white">$0</div>
+            <div class="text-xs text-slate-400">Hosting Overhead</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold text-vgreen-400">100%</div>
+            <div class="text-xs text-slate-400">Custom Built</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold text-white">NZ IRD</div>
+            <div class="text-xs text-slate-400">GST Compliant</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Modern Interactive Visual Showcase (Wix Harmony Style) -->
+      <div class="lg:col-span-5 relative">
+        
+        <!-- Main Feature Card (Glassmorphism Container) -->
+        <div class="relative bg-gradient-to-b from-navy-900/90 to-navy-950/90 border border-slate-800/80 p-6 sm:p-8 rounded-3xl shadow-2xl backdrop-blur-xl">
+          
+          <!-- Mock Terminal / SaaS Header -->
+          <div class="flex items-center justify-between pb-6 border-b border-slate-800/80">
+            <div class="flex items-center space-x-2">
+              <div class="w-3 h-3 rounded-full bg-rose-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+            </div>
+            <span class="font-mono text-[11px] text-slate-500 uppercase tracking-widest">TargetedScripts Engine</span>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="py-6 space-y-4">
             
-            <!-- Left Column: Copywriting & Actions -->
-            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                <span class="inline-flex items-center gap-2 bg-vgreen-600/10 border border-vgreen-500/30 text-vgreen-400 font-semibold text-xs px-3.5 py-1.5 rounded-full">
-                    <span class="w-2 h-2 rounded-full bg-vgreen-500 animate-pulse"></span>
-                    New Zealand Custom Software, Web &amp; Automation Services
-                </span>
-
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white">
-                    Custom Websites, Visual Dashboards <span class="text-vgreen-500">&amp; Smart Automation</span>
-                </h1>
-
-                <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    We design lightweight, responsive websites on zero-overhead cloud hosting, build interactive executive dashboards, and automate repetitive workflows for businesses and organizations across New Zealand.
-                </p>
-
-                <!-- Action Buttons Including RestoSync CTA -->
-                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="#contact" class="w-full sm:w-auto bg-vgreen-600 hover:bg-vgreen-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center">
-                        Start Free Consultation
-                    </a>
-                    <a href="https://targetedscripts.github.io/restosync-saas/" target="_blank" rel="noopener" class="w-full sm:w-auto border border-vgreen-500/40 bg-navy-800/80 hover:bg-navy-800 text-vgreen-400 hover:text-vgreen-300 font-semibold px-6 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-2 group">
-                        <span>🚀 Live Demo: RestoSync SaaS</span>
-                        <span class="transform group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
+            <!-- Live SaaS Status Badge -->
+            <div class="p-4 rounded-2xl bg-navy-950/80 border border-slate-800/80 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-xl bg-vgreen-500/10 text-vgreen-400 border border-vgreen-500/20">
+                  ⚡
                 </div>
-
-                <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-6 text-xs text-slate-400 font-medium">
-                    <span class="flex items-center gap-1.5"><span class="text-vgreen-500">✓</span> Web Design &amp; Apps</span>
-                    <span class="flex items-center gap-1.5"><span class="text-vgreen-500">✓</span> Executive Dashboards</span>
-                    <span class="flex items-center gap-1.5"><span class="text-vgreen-500">✓</span> Custom Automation</span>
+                <div>
+                  <div class="text-xs font-bold text-white">RestoSync SaaS</div>
+                  <div class="text-[11px] text-slate-400">F&amp;B POS &amp; Digital Menu Platform</div>
                 </div>
+              </div>
+              <span class="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-vgreen-500/20 text-vgreen-400 border border-vgreen-500/30 uppercase">
+                Active
+              </span>
             </div>
 
-            <!-- Right Column: Brand Identity Card -->
-            <div class="lg:col-span-5">
-                <div class="bg-navy-800/40 border border-slate-800 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-2xl relative">
-                    <div class="text-center pb-6 border-b border-navy-800">
-                        <span class="text-[10px] font-extrabold text-vgreen-500 tracking-widest uppercase">Our Core Identity</span>
-                        <div class="flex items-center justify-center text-4xl font-black mt-2">
-                            <span class="text-white">}</span>
-                            <span class="text-vgreen-600 mx-1">•</span>
-                            <span class="text-vgreen-600">{</span>
-                        </div>
-                        <p class="text-xs text-slate-400 italic mt-2">"Where meaningful conversations spark precise digital solutions."</p>
-                    </div>
-
-                    <div class="mt-6 space-y-4">
-                        <div class="bg-navy-900/80 p-4 rounded-2xl border border-navy-800/80 flex items-start gap-3">
-                            <div class="text-vgreen-500 font-mono font-bold text-sm pt-0.5">}&nbsp;{</div>
-                            <div>
-                                <h4 class="text-sm font-bold text-white">Human Collaboration</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Listening closely to understand your real operational challenges.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-navy-900/80 p-4 rounded-2xl border border-navy-800/80 flex items-start gap-3">
-                            <div class="text-vgreen-500 text-sm pt-0.5">●</div>
-                            <div>
-                                <h4 class="text-sm font-bold text-white">Targeted Precision</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Building lightweight, accurate web tools aimed straight at the problem.</p>
-                            </div>
-                        </div>
-
-                        <div class="bg-navy-900/80 p-4 rounded-2xl border border-navy-800/80 flex items-start gap-3">
-                            <div class="text-vgreen-500 font-mono text-xs pt-0.5">code</div>
-                            <div>
-                                <h4 class="text-sm font-bold text-white">Automated Progress</h4>
-                                <p class="text-xs text-slate-400 mt-0.5">Saving hours of weekly repetitive administration automatically.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Code / Tech Stack Snippet Card -->
+            <div class="p-4 rounded-2xl bg-slate-950/90 border border-slate-800 font-mono text-[11px] leading-relaxed text-slate-300">
+              <span class="text-vgreen-400 font-bold">&gt; System.Architecture:</span><br/>
+              <span class="text-slate-400">• High-speed Static CDN Deployment</span><br/>
+              <span class="text-slate-400">• Google Workspace &amp; Apps Script API</span><br/>
+              <span class="text-slate-400">• Modular Vanilla JS Architecture</span>
             </div>
+
+          </div>
+
+          <!-- Floating Glass Card (Efek Elegan Melayang di Atas Card Utama) -->
+          <div class="absolute -bottom-6 -left-6 bg-navy-900/95 border border-slate-700/80 p-4 rounded-2xl shadow-2xl backdrop-blur-xl hidden sm:flex items-center gap-3 max-w-xs">
+            <div class="w-10 h-10 rounded-xl bg-vgreen-600 flex items-center justify-center text-slate-950 font-black text-lg">
+              ✓
+            </div>
+            <div>
+              <div class="text-xs font-bold text-white">Zero Monthly Hosting</div>
+              <div class="text-[10px] text-slate-400">Deployed directly to Cloud CDN</div>
+            </div>
+          </div>
 
         </div>
+
+      </div>
+
     </div>
+  </div>
 </section>
