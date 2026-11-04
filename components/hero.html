@@ -1,81 +1,81 @@
-<!-- HERO SECTION - BYHOLM STYLE CURVED CAROUSEL SHOWCASE -->
-<section id="hero" class="relative bg-[#111315] text-slate-100 min-h-[90vh] flex flex-col justify-between overflow-hidden py-8 px-4 sm:px-8">
+<!-- HERO SECTION - ULTRA LIGHTWEIGHT BYHOLM STYLE CAROUSEL -->
+<section id="hero" class="relative bg-[#111315] text-slate-100 min-h-[85vh] flex flex-col justify-between overflow-hidden py-6 px-4 sm:px-8">
   
   <!-- 1. TOP NAVBAR / HEADER AREA -->
-  <div class="max-w-7xl w-full mx-auto flex items-center justify-between pt-2 pb-6">
+  <div class="max-w-7xl w-full mx-auto flex items-center justify-between pt-2 pb-4">
     <!-- Brand Logo -->
     <a href="#" class="flex items-center gap-2 group">
-      <span class="text-2xl font-black text-white tracking-tighter group-hover:text-vgreen-400 transition-colors">
+      <span class="text-xl sm:text-2xl font-black text-white tracking-tighter group-hover:text-vgreen-400 transition-colors">
         TARGETED<span class="text-vgreen-400">}•{</span>SCRIPTS
       </span>
     </a>
 
-    <!-- Action Buttons -->
+    <!-- Action Button -->
     <div class="flex items-center gap-4">
-      <a href="#contact" class="bg-white hover:bg-vgreen-400 text-black hover:text-black font-extrabold text-xs uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 shadow-md">
+      <a href="#contact" class="bg-white hover:bg-vgreen-400 text-black font-extrabold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-colors shadow-md">
         BOOK A CALL
       </a>
     </div>
   </div>
 
-  <!-- 2. MAIN 3D CURVED CAROUSEL CONTAINER -->
-  <div class="relative max-w-7xl w-full mx-auto my-auto py-6">
+  <!-- 2. LIGHTWEIGHT CAROUSEL VIEWPORT -->
+  <div class="relative max-w-7xl w-full mx-auto my-auto py-4">
     
     <!-- Navigation Arrow Left -->
-    <button id="hero-prev-btn" onclick="rotateHeroSlide(-1)" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/80 hover:bg-vgreen-500 text-white hover:text-black border border-slate-700/80 flex items-center justify-center transition-all duration-300 shadow-2xl backdrop-blur-md">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    <button id="hero-prev-btn" onclick="rotateHeroSlide(-1)" aria-label="Previous Slide" class="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-slate-900/90 hover:bg-vgreen-500 text-white hover:text-black border border-slate-700 flex items-center justify-center transition-colors shadow-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
     </button>
 
     <!-- Navigation Arrow Right -->
-    <button id="hero-next-btn" onclick="rotateHeroSlide(1)" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/80 hover:bg-vgreen-500 text-white hover:text-black border border-slate-700/80 flex items-center justify-center transition-all duration-300 shadow-2xl backdrop-blur-md">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    <button id="hero-next-btn" onclick="rotateHeroSlide(1)" aria-label="Next Slide" class="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-slate-900/90 hover:bg-vgreen-500 text-white hover:text-black border border-slate-700 flex items-center justify-center transition-colors shadow-xl">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
     </button>
 
-    <!-- Curved Perspective Viewport -->
-    <div class="overflow-hidden rounded-3xl border border-slate-800/80 bg-gradient-to-b from-slate-900/60 to-black/80 p-4 sm:p-8 backdrop-blur-xl shadow-2xl">
-      <div id="curved-carousel-track" class="flex items-center justify-center gap-4 sm:gap-8 transition-transform duration-700 ease-out min-h-[320px] sm:min-h-[420px]">
+    <!-- GPU-Accelerated Container Container -->
+    <div class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 p-4 sm:p-6 shadow-2xl">
+      <div id="curved-carousel-track" class="flex items-center justify-center gap-4 sm:gap-6 min-h-[300px] sm:min-h-[380px] will-change-transform">
         
-        <!-- Slide Item 1: RestoSync SaaS Platform -->
-        <div class="hero-slide-item shrink-0 w-[280px] sm:w-[500px] lg:w-[650px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 transform scale-95 opacity-50">
-          <div class="p-6 bg-gradient-to-r from-navy-900 to-black border-b border-slate-800 flex justify-between items-center">
+        <!-- Slide 1: RestoSync SaaS Platform -->
+        <div class="hero-slide-item shrink-0 w-[270px] sm:w-[480px] lg:w-[600px] bg-navy-900 border border-slate-800 rounded-xl overflow-hidden transition-all duration-300 transform scale-90 opacity-40">
+          <div class="p-5 bg-black/60 border-b border-slate-800 flex justify-between items-center">
             <span class="text-xs font-mono text-vgreen-400 font-bold uppercase tracking-wider">⭐ Flagship SaaS Product</span>
             <span class="text-[10px] bg-vgreen-500/20 text-vgreen-400 border border-vgreen-500/30 font-extrabold px-2.5 py-0.5 rounded-full">LIVE</span>
           </div>
           <div class="p-6 space-y-3">
-            <h3 class="text-2xl font-black text-white">RestoSync SaaS Platform</h3>
+            <h3 class="text-xl sm:text-2xl font-black text-white">RestoSync SaaS Platform</h3>
             <p class="text-xs text-slate-300 leading-relaxed">
               Complete NZ F&amp;B management platform featuring 15% GST calculation, bilingual menus, and complimentary digital ordering website.
             </p>
           </div>
         </div>
 
-        <!-- Slide Item 2: Custom Client Web Engineering (Active Center) -->
-        <div class="hero-slide-item active-slide shrink-0 w-[300px] sm:w-[540px] lg:w-[700px] bg-slate-950 border-2 border-vgreen-500 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(34,197,94,0.2)] transition-all duration-500 transform scale-100 z-20">
-          <div class="p-6 bg-gradient-to-r from-navy-900 via-slate-900 to-black border-b border-slate-800 flex justify-between items-center">
+        <!-- Slide 2: Core Engineering (Active Center Slide) -->
+        <div class="hero-slide-item active-slide shrink-0 w-[290px] sm:w-[520px] lg:w-[650px] bg-navy-900 border-2 border-vgreen-500 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 transform scale-100 z-20">
+          <div class="p-5 bg-black/80 border-b border-slate-800 flex justify-between items-center">
             <span class="text-xs font-mono text-vgreen-400 font-bold uppercase tracking-wider">&gt; TargetedScripts Engine</span>
             <span class="text-xs font-mono text-slate-400">NZ Wide 🇳🇿</span>
           </div>
           <div class="p-6 sm:p-8 space-y-4">
-            <h3 class="text-3xl sm:text-4xl font-black text-white">Tailored Code. Targeted Results.</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
+            <h3 class="text-2xl sm:text-4xl font-black text-white leading-tight">Tailored Code. Targeted Results.</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
               High-performance vertical SaaS, web applications, and automated workflows engineered specifically for New Zealand businesses with zero monthly hosting overhead.
             </p>
-            <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
-              <span class="bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">• High-Speed CDN</span>
-              <span class="bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">• $0 Hosting Fee</span>
-              <span class="bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">• 100% Custom Built</span>
+            <div class="pt-2 flex flex-wrap gap-2 text-[10px] sm:text-[11px] font-mono text-slate-400">
+              <span class="bg-black/60 px-3 py-1 rounded-md border border-slate-800">• High-Speed CDN</span>
+              <span class="bg-black/60 px-3 py-1 rounded-md border border-slate-800">• $0 Hosting Fee</span>
+              <span class="bg-black/60 px-3 py-1 rounded-md border border-slate-800">• 100% Custom Built</span>
             </div>
           </div>
         </div>
 
-        <!-- Slide Item 3: IFGF National Web Portal -->
-        <div class="hero-slide-item shrink-0 w-[280px] sm:w-[500px] lg:w-[650px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 transform scale-95 opacity-50">
-          <div class="p-6 bg-gradient-to-r from-navy-900 to-black border-b border-slate-800 flex justify-between items-center">
+        <!-- Slide 3: IFGF Portal -->
+        <div class="hero-slide-item shrink-0 w-[270px] sm:w-[480px] lg:w-[600px] bg-navy-900 border border-slate-800 rounded-xl overflow-hidden transition-all duration-300 transform scale-90 opacity-40">
+          <div class="p-5 bg-black/60 border-b border-slate-800 flex justify-between items-center">
             <span class="text-xs font-mono text-vgreen-400 font-bold uppercase tracking-wider">Enterprise Web Portal</span>
             <span class="text-[10px] bg-white/10 text-slate-300 border border-slate-700 font-extrabold px-2.5 py-0.5 rounded-full">PORTAL</span>
           </div>
           <div class="p-6 space-y-3">
-            <h3 class="text-2xl font-black text-white">IFGF New Zealand Portal</h3>
+            <h3 class="text-xl sm:text-2xl font-black text-white">IFGF New Zealand Portal</h3>
             <p class="text-xs text-slate-300 leading-relaxed">
               Unified national portal connecting regional organizations across NZ with multi-city directories and regional moderation.
             </p>
@@ -86,51 +86,55 @@
     </div>
   </div>
 
-  <!-- 3. BOTTOM INFO & SLIDE INDEX (BYHOLM STYLE) -->
-  <div class="max-w-7xl w-full mx-auto flex flex-col sm:flex-row items-start sm:items-end justify-between pt-6 pb-2 gap-4">
+  <!-- 3. BOTTOM SLIDE INDEX & METADATA -->
+  <div class="max-w-7xl w-full mx-auto flex items-end justify-between pt-4 pb-2">
     <div>
       <div id="hero-slide-index" class="text-xs font-mono text-slate-400 font-bold tracking-widest mb-1">
         02 / 03
       </div>
-      <h2 id="hero-slide-title" class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+      <h2 id="hero-slide-title" class="text-xl sm:text-3xl font-black text-white tracking-tight">
         TargetedScripts Core
       </h2>
     </div>
 
-    <!-- Scroll Down Indicator -->
-    <a href="#services" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-vgreen-500 text-slate-400 hover:text-black border border-slate-800 flex items-center justify-center transition-all duration-300">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    <!-- Scroll Down Link -->
+    <a href="#services" aria-label="Scroll Down" class="w-9 h-9 rounded-full bg-slate-900 hover:bg-vgreen-500 text-slate-400 hover:text-black border border-slate-800 flex items-center justify-center transition-colors">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7-7m0 0l-7-7m7 7V3"></path></svg>
     </a>
   </div>
 
 </section>
 
-<!-- CAROUSEL ENGINE SCRIPT -->
+<!-- FAST & LIGHTWEIGHT JS SLIDER ENGINE -->
 <script>
-  let currentSlideIndex = 1;
-  const slideTitles = [
-    "RestoSync SaaS Engine",
-    "TargetedScripts Core",
-    "Enterprise Portals"
-  ];
+  (function() {
+    let currentIdx = 1;
+    const slideTitles = [
+      "RestoSync SaaS Engine",
+      "TargetedScripts Core",
+      "Enterprise Portals"
+    ];
 
-  function rotateHeroSlide(direction) {
-    const slides = document.querySelectorAll('.hero-slide-item');
-    if (!slides.length) return;
+    window.rotateHeroSlide = function(direction) {
+      const slides = document.querySelectorAll('.hero-slide-item');
+      if (!slides.length) return;
 
-    // Reset current active slide
-    slides[currentSlideIndex].classList.remove('active-slide', 'border-2', 'border-vgreen-500', 'scale-100', 'z-20', 'shadow-[0_0_40px_rgba(34,197,94,0.2)]');
-    slides[currentSlideIndex].classList.add('scale-95', 'opacity-50', 'border', 'border-slate-800');
+      // Reset Current Slide
+      const currentSlide = slides[currentIdx];
+      currentSlide.classList.remove('active-slide', 'border-2', 'border-vgreen-500', 'scale-100', 'z-20');
+      currentSlide.classList.add('scale-90', 'opacity-40', 'border', 'border-slate-800');
 
-    // Calculate next slide index
-    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+      // Update Index
+      currentIdx = (currentIdx + direction + slides.length) % slides.length;
 
-    // Activate new slide
-    slides[currentSlideIndex].classList.add('active-slide', 'border-2', 'border-vgreen-500', 'scale-100', 'z-20', 'shadow-[0_0_40px_rgba(34,197,94,0.2)]');
-    slides[currentSlideIndex].classList.remove('scale-95', 'opacity-50', 'border-slate-800');
+      // Activate Next Slide
+      const nextSlide = slides[currentIdx];
+      nextSlide.classList.add('active-slide', 'border-2', 'border-vgreen-500', 'scale-100', 'z-20');
+      nextSlide.classList.remove('scale-90', 'opacity-40', 'border-slate-800');
 
-    // Update bottom metadata (Index & Title)
-    document.getElementById('hero-slide-index').textContent = `0${currentSlideIndex + 1} / 0${slides.length}`;
-    document.getElementById('hero-slide-title').textContent = slideTitles[currentSlideIndex];
-  }
+      // Update Titles
+      document.getElementById('hero-slide-index').textContent = `0${currentIdx + 1} / 0${slides.length}`;
+      document.getElementById('hero-slide-title').textContent = slideTitles[currentIdx];
+    };
+  })();
 </script>
