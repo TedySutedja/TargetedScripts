@@ -1,141 +1,136 @@
-<!-- HERO SECTION - GAMIFIED & BENTO GRID STYLE (SAAS 2026) -->
-<section id="hero" class="relative overflow-hidden bg-navy-950 pt-12 pb-20 lg:pt-16 lg:pb-28 text-white">
+<!-- HERO SECTION - BYHOLM STYLE CURVED CAROUSEL SHOWCASE -->
+<section id="hero" class="relative bg-[#111315] text-slate-100 min-h-[90vh] flex flex-col justify-between overflow-hidden py-8 px-4 sm:px-8">
   
-  <!-- Ambient Gamified Glow Effect -->
-  <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-tr from-vgreen-500/20 via-emerald-500/10 to-transparent blur-[120px] rounded-full opacity-80"></div>
+  <!-- 1. TOP NAVBAR / HEADER AREA -->
+  <div class="max-w-7xl w-full mx-auto flex items-center justify-between pt-2 pb-6">
+    <!-- Brand Logo -->
+    <a href="#" class="flex items-center gap-2 group">
+      <span class="text-2xl font-black text-white tracking-tighter group-hover:text-vgreen-400 transition-colors">
+        TARGETED<span class="text-vgreen-400">}•{</span>SCRIPTS
+      </span>
+    </a>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- TOP SECTION: PUNCHY HEADLINE & CALL TO ACTIONS -->
-    <div class="text-center max-w-3xl mx-auto space-y-6 mb-16">
-      
-      <!-- Gamified Streak/Achievement Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-900 border border-vgreen-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(34,197,94,0.15)] animate-bounce">
-        <span class="text-base">🚀</span>
-        <span class="text-xs font-bold text-vgreen-400 uppercase tracking-wider">Level Up Your Business Ops</span>
-        <span class="text-[10px] bg-vgreen-500 text-black font-extrabold px-2 py-0.5 rounded-full">NZ WIDE</span>
-      </div>
-
-      <!-- Headline -->
-      <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-tight">
-        Tailored Code. <br class="hidden sm:inline" />
-        <span class="bg-gradient-to-r from-vgreen-400 via-emerald-300 to-teal-200 bg-clip-text text-transparent">
-          Targeted Results.
-        </span>
-      </h1>
-
-      <!-- Value Proposition -->
-      <p class="text-base sm:text-lg text-slate-300 leading-relaxed">
-        High-performance SaaS platforms, custom web tools, and business automation engineered to eliminate recurring hosting fees for New Zealand businesses.
-      </p>
-
-      <!-- Interactive Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-        <a href="#contact" class="w-full sm:w-auto bg-vgreen-500 hover:bg-vgreen-400 text-slate-950 font-black px-8 py-4 rounded-2xl shadow-[0_0_25px_rgba(34,197,94,0.3)] transition-all duration-300 transform hover:-translate-y-1 text-sm text-center flex items-center justify-center gap-2">
-          <span>⚡ Book Free Consultation</span>
-          <span>➔</span>
-        </a>
-        <a href="#portfolio" class="w-full sm:w-auto bg-navy-900 hover:bg-navy-800 text-slate-200 font-bold px-7 py-4 rounded-2xl border border-slate-800 transition-all text-sm text-center">
-          Explore Live Projects
-        </a>
-      </div>
+    <!-- Action Buttons -->
+    <div class="flex items-center gap-4">
+      <a href="#contact" class="bg-white hover:bg-vgreen-400 text-black hover:text-black font-extrabold text-xs uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 shadow-md">
+        BOOK A CALL
+      </a>
     </div>
-
-    <!-- BENTO GRID SHOWCASE (INTERACTIVE GAMIFIED CARDS) -->
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
-      
-      <!-- Bento Card 1: Flagship RestoSync SaaS (Large 7 Columns) -->
-      <div class="md:col-span-7 bg-navy-900/90 border border-slate-800 hover:border-vgreen-500/50 p-6 sm:p-8 rounded-3xl shadow-2xl backdrop-blur-xl transition-all duration-300 group flex flex-col justify-between relative overflow-hidden">
-        <div class="absolute top-0 right-0 bg-vgreen-500/10 text-vgreen-400 text-[10px] font-black uppercase tracking-wider px-4 py-1.5 rounded-bl-2xl border-l border-b border-vgreen-500/20">
-          ⭐ Featured SaaS Module
-        </div>
-
-        <div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="w-12 h-12 rounded-2xl bg-vgreen-500/20 border border-vgreen-500/30 flex items-center justify-center text-2xl">
-              🍳
-            </div>
-            <div>
-              <h3 class="text-xl font-extrabold text-white group-hover:text-vgreen-400 transition-colors">RestoSync SaaS</h3>
-              <p class="text-xs text-slate-400">Complete F&amp;B POS &amp; Order Management</p>
-            </div>
-          </div>
-
-          <p class="text-sm text-slate-300 leading-relaxed mb-6">
-            Built specifically for New Zealand hospitality. Features 15% GST automated IRD tax calculation, bilingual menus, and a free customer-facing ordering website.
-          </p>
-        </div>
-
-        <!-- Interactive Stat Progress Bar -->
-        <div class="bg-navy-950 p-4 rounded-2xl border border-slate-800/80 space-y-2">
-          <div class="flex justify-between text-xs font-mono">
-            <span class="text-slate-400">NZ IRD GST Compliance</span>
-            <span class="text-vgreen-400 font-bold">100% Ready</span>
-          </div>
-          <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
-            <div class="bg-vgreen-500 h-full w-full rounded-full"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bento Card 2: Zero Hosting Overhead (5 Columns) -->
-      <div class="md:col-span-5 bg-navy-900/90 border border-slate-800 hover:border-emerald-500/50 p-6 sm:p-8 rounded-3xl shadow-2xl backdrop-blur-xl transition-all duration-300 group flex flex-col justify-between">
-        <div>
-          <div class="w-12 h-12 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-2xl mb-4">
-            💰
-          </div>
-          <h3 class="text-xl font-extrabold text-white group-hover:text-emerald-400 transition-colors">Zero Server Hosting Overhead</h3>
-          <p class="text-xs text-slate-400 mt-1">High-Speed CDN Architecture</p>
-
-          <p class="text-sm text-slate-300 leading-relaxed mt-4">
-            Deploy your business website directly to global CDN platforms with $0 monthly server hosting maintenance.
-          </p>
-        </div>
-
-        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
-          <span class="text-xs text-slate-400">Monthly Cost</span>
-          <span class="text-2xl font-black text-emerald-400">$0 / mo</span>
-        </div>
-      </div>
-
-      <!-- Bento Card 3: Custom Business Automation (4 Columns) -->
-      <div class="md:col-span-4 bg-navy-900/90 border border-slate-800 hover:border-teal-500/50 p-6 rounded-3xl shadow-2xl backdrop-blur-xl transition-all duration-300 group">
-        <div class="w-10 h-10 rounded-xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-xl mb-3">
-          ⚙️
-        </div>
-        <h4 class="text-base font-bold text-white group-hover:text-teal-400 transition-colors">Workflow Automation</h4>
-        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-          Automate report dispatches, customer emails, and Google Sheets integrations effortlessly.
-        </p>
-      </div>
-
-      <!-- Bento Card 4: Dedicated Lead Engineer (4 Columns) -->
-      <div class="md:col-span-4 bg-navy-900/90 border border-slate-800 hover:border-amber-500/50 p-6 rounded-3xl shadow-2xl backdrop-blur-xl transition-all duration-300 group">
-        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-xl mb-3">
-          👨‍💻
-        </div>
-        <h4 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors">Direct NZ Support</h4>
-        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-          Direct engagement with your developer in Palmerston North. No overseas middleware.
-        </p>
-      </div>
-
-      <!-- Bento Card 5: Gamified Achievement Badge (4 Columns) -->
-      <div class="md:col-span-4 bg-gradient-to-br from-vgreen-900/40 to-navy-900 border border-vgreen-500/30 p-6 rounded-3xl shadow-2xl backdrop-blur-xl flex flex-col justify-between">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-mono text-vgreen-400 uppercase font-bold">Client Satisfaction</span>
-          <span class="text-xl">🏆</span>
-        </div>
-        <div class="my-4">
-          <div class="text-3xl font-black text-white">100%</div>
-          <div class="text-xs text-slate-300 mt-1">Tailored Code &amp; Guaranteed Performance</div>
-        </div>
-        <div class="text-[10px] text-vgreen-400 font-mono font-bold uppercase tracking-wider">
-          ✓ Verified NZ Quality
-        </div>
-      </div>
-
-    </div>
-
   </div>
+
+  <!-- 2. MAIN 3D CURVED CAROUSEL CONTAINER -->
+  <div class="relative max-w-7xl w-full mx-auto my-auto py-6">
+    
+    <!-- Navigation Arrow Left -->
+    <button id="hero-prev-btn" onclick="rotateHeroSlide(-1)" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/80 hover:bg-vgreen-500 text-white hover:text-black border border-slate-700/80 flex items-center justify-center transition-all duration-300 shadow-2xl backdrop-blur-md">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+
+    <!-- Navigation Arrow Right -->
+    <button id="hero-next-btn" onclick="rotateHeroSlide(1)" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 rounded-full bg-black/80 hover:bg-vgreen-500 text-white hover:text-black border border-slate-700/80 flex items-center justify-center transition-all duration-300 shadow-2xl backdrop-blur-md">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+
+    <!-- Curved Perspective Viewport -->
+    <div class="overflow-hidden rounded-3xl border border-slate-800/80 bg-gradient-to-b from-slate-900/60 to-black/80 p-4 sm:p-8 backdrop-blur-xl shadow-2xl">
+      <div id="curved-carousel-track" class="flex items-center justify-center gap-4 sm:gap-8 transition-transform duration-700 ease-out min-h-[320px] sm:min-h-[420px]">
+        
+        <!-- Slide Item 1: RestoSync SaaS Platform -->
+        <div class="hero-slide-item shrink-0 w-[280px] sm:w-[500px] lg:w-[650px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 transform scale-95 opacity-50">
+          <div class="p-6 bg-gradient-to-r from-navy-900 to-black border-b border-slate-800 flex justify-between items-center">
+            <span class="text-xs font-mono text-vgreen-400 font-bold uppercase tracking-wider">⭐ Flagship SaaS Product</span>
+            <span class="text-[10px] bg-vgreen-500/20 text-vgreen-400 border border-vgreen-500/30 font-extrabold px-2.5 py-0.5 rounded-full">LIVE</span>
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-2xl font-black text-white">RestoSync SaaS Platform</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Complete NZ F&amp;B management platform featuring 15% GST calculation, bilingual menus, and complimentary digital ordering website.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide Item 2: Custom Client Web Engineering (Active Center) -->
+        <div class="hero-slide-item active-slide shrink-0 w-[300px] sm:w-[540px] lg:w-[700px] bg-slate-950 border-2 border-vgreen-500 rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(34,197,94,0.2)] transition-all duration-500 transform scale-100 z-20">
+          <div class="p-6 bg-gradient-to-r from-navy-900 via-slate-900 to-black border-b border-slate-800 flex justify-between items-center">
+            <span class="text-xs font-mono text-vgreen-400 font-bold uppercase tracking-wider">&gt; TargetedScripts Engine</span>
+            <span class="text-xs font-mono text-slate-400">NZ Wide 🇳🇿</span>
+          </div>
+          <div class="p-6 sm:p-8 space-y-4">
+            <h3 class="text-3xl sm:text-4xl font-black text-white">Tailored Code. Targeted Results.</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              High-performance vertical SaaS, web applications, and automated workflows engineered specifically for New Zealand businesses with zero monthly hosting overhead.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-slate-400">
+              <span class="bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">• High-Speed CDN</span>
+              <span class="bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">• $0 Hosting Fee</span>
+              <span class="bg-slate-900 px-3 py-1 rounded-lg border border-slate-800">• 100% Custom Built</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Item 3: IFGF National Web Portal -->
+        <div class="hero-slide-item shrink-0 w-[280px] sm:w-[500px] lg:w-[650px] bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 transform scale-95 opacity-50">
+          <div class="p-6 bg-gradient-to-r from-navy-900 to-black border-b border-slate-800 flex justify-between items-center">
+            <span class="text-xs font-mono text-vgreen-400 font-bold uppercase tracking-wider">Enterprise Web Portal</span>
+            <span class="text-[10px] bg-white/10 text-slate-300 border border-slate-700 font-extrabold px-2.5 py-0.5 rounded-full">PORTAL</span>
+          </div>
+          <div class="p-6 space-y-3">
+            <h3 class="text-2xl font-black text-white">IFGF New Zealand Portal</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Unified national portal connecting regional organizations across NZ with multi-city directories and regional moderation.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. BOTTOM INFO & SLIDE INDEX (BYHOLM STYLE) -->
+  <div class="max-w-7xl w-full mx-auto flex flex-col sm:flex-row items-start sm:items-end justify-between pt-6 pb-2 gap-4">
+    <div>
+      <div id="hero-slide-index" class="text-xs font-mono text-slate-400 font-bold tracking-widest mb-1">
+        02 / 03
+      </div>
+      <h2 id="hero-slide-title" class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+        TargetedScripts Core
+      </h2>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <a href="#services" class="w-10 h-10 rounded-full bg-slate-900 hover:bg-vgreen-500 text-slate-400 hover:text-black border border-slate-800 flex items-center justify-center transition-all duration-300">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    </a>
+  </div>
+
 </section>
+
+<!-- CAROUSEL ENGINE SCRIPT -->
+<script>
+  let currentSlideIndex = 1;
+  const slideTitles = [
+    "RestoSync SaaS Engine",
+    "TargetedScripts Core",
+    "Enterprise Portals"
+  ];
+
+  function rotateHeroSlide(direction) {
+    const slides = document.querySelectorAll('.hero-slide-item');
+    if (!slides.length) return;
+
+    // Reset current active slide
+    slides[currentSlideIndex].classList.remove('active-slide', 'border-2', 'border-vgreen-500', 'scale-100', 'z-20', 'shadow-[0_0_40px_rgba(34,197,94,0.2)]');
+    slides[currentSlideIndex].classList.add('scale-95', 'opacity-50', 'border', 'border-slate-800');
+
+    // Calculate next slide index
+    currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+
+    // Activate new slide
+    slides[currentSlideIndex].classList.add('active-slide', 'border-2', 'border-vgreen-500', 'scale-100', 'z-20', 'shadow-[0_0_40px_rgba(34,197,94,0.2)]');
+    slides[currentSlideIndex].classList.remove('scale-95', 'opacity-50', 'border-slate-800');
+
+    // Update bottom metadata (Index & Title)
+    document.getElementById('hero-slide-index').textContent = `0${currentSlideIndex + 1} / 0${slides.length}`;
+    document.getElementById('hero-slide-title').textContent = slideTitles[currentSlideIndex];
+  }
+</script>
