@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="dark h-full bg-slate-950">
+<html lang="en" class="dark h-full bg-slate-950">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,15 +34,15 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
 
   <style>
-    /* Custom Styling untuk Rich Text Area & Snippets */
+    /* Custom Styling for Rich Text Area & Snippets */
     .editor-content:focus { outline: none; }
     .editor-content h1 { font-size: 1.75rem; font-weight: 700; color: #f8fafc; margin-top: 1rem; margin-bottom: 0.5rem; }
     .editor-content h2 { font-size: 1.35rem; font-weight: 600; color: #f1f5f9; margin-top: 0.85rem; margin-bottom: 0.4rem; }
     .editor-content h3 { font-size: 1.1rem; font-weight: 600; color: #cbd5e1; margin-top: 0.75rem; margin-bottom: 0.3rem; }
-    .editor-content p { margin-bottom: 0.75rem; color: #cbd5e1; leading-normal: 1.6; }
+    .editor-content p { margin-bottom: 0.75rem; color: #cbd5e1; line-height: 1.6; }
     .editor-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #cbd5e1; }
     .editor-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #cbd5e1; }
-    .editor-content blockquote { border-left: 4px solid #f59e0b; padding-left: 1rem; italic: true; color: #94a3b8; margin: 0.75rem 0; }
+    .editor-content blockquote { border-left: 4px solid #f59e0b; padding-left: 1rem; font-style: italic; color: #94a3b8; margin: 0.75rem 0; }
     
     /* Code Snippet Block */
     .code-block-wrapper { position: relative; margin: 1rem 0; }
@@ -65,16 +65,16 @@
         <i data-lucide="shield-lock" class="w-8 h-8"></i>
       </div>
       <h2 class="text-2xl font-bold text-slate-100 mb-2">TargetedScripts Knowledge Base</h2>
-      <p class="text-slate-400 text-sm mb-6">Dokumentasi & Journal Sistem Private. Masukkan Admin PIN untuk mengakses.</p>
+      <p class="text-slate-400 text-sm mb-6">Private System Documentation & Journal Studio. Enter Admin PIN to access.</p>
       
       <form id="pinForm" onsubmit="handlePinSubmit(event)">
-        <input type="password" id="pinInput" placeholder="Masukkan PIN" maxlength="6" autofocus
+        <input type="password" id="pinInput" placeholder="Enter PIN" maxlength="6" autofocus
           class="w-full text-center text-2xl tracking-[0.5em] bg-slate-950 border border-slate-700 focus:border-amber-500 rounded-xl px-4 py-3 text-slate-100 mb-4 focus:outline-none transition">
         <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
-          <i data-lucide="key" class="w-5 h-5"></i> Buka Akses
+          <i data-lucide="key" class="w-5 h-5"></i> Unlock Access
         </button>
       </form>
-      <p id="pinError" class="text-red-400 text-xs mt-3 hidden">PIN Salah. Akses Ditolak.</p>
+      <p id="pinError" class="text-red-400 text-xs mt-3 hidden">Invalid PIN. Access Denied.</p>
     </div>
   </div>
 
@@ -96,9 +96,9 @@
       </div>
       <div class="flex items-center gap-3">
         <button onclick="openNewModal()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-2 transition shadow-lg shadow-amber-500/10">
-          <i data-lucide="plus" class="w-4 h-4"></i> Catatan Baru
+          <i data-lucide="plus" class="w-4 h-4"></i> New Entry
         </button>
-        <button onclick="lockPortal()" class="text-slate-400 hover:text-red-400 p-2 rounded-lg border border-slate-800 hover:border-red-950 bg-slate-950 transition" title="Kunci Kembali">
+        <button onclick="lockPortal()" class="text-slate-400 hover:text-red-400 p-2 rounded-lg border border-slate-800 hover:border-red-950 bg-slate-950 transition" title="Lock Portal">
           <i data-lucide="log-out" class="w-4 h-4"></i>
         </button>
       </div>
@@ -107,26 +107,26 @@
     <!-- Content Workspace Area -->
     <div class="flex-1 flex overflow-hidden">
       
-      <!-- SIDEBAR FILTER & KRONOLOGI JOURNAL (KIRI) -->
+      <!-- SIDEBAR FILTER & CHRONOLOGICAL TIMELINE (LEFT) -->
       <aside class="w-80 border-r border-slate-800 bg-slate-900/50 flex flex-col shrink-0">
         <!-- Search & Filter Controls -->
         <div class="p-4 border-b border-slate-800 space-y-3">
           <div class="relative">
             <i data-lucide="search" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
-            <input type="text" id="searchInput" oninput="renderJournalList()" placeholder="Cari Judul, Subject, Text..." 
+            <input type="text" id="searchInput" oninput="renderJournalList()" placeholder="Search Title, Subject, Text..." 
               class="w-full pl-9 pr-4 py-2 text-sm bg-slate-950 border border-slate-800 focus:border-amber-500 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none">
           </div>
 
           <div class="grid grid-cols-2 gap-2">
             <select id="projectFilter" onchange="renderJournalList()" class="bg-slate-950 border border-slate-800 text-xs text-slate-300 rounded-lg px-2 py-1.5 focus:outline-none">
-              <option value="ALL">Semua Proyek</option>
+              <option value="ALL">All Projects</option>
               <option value="resto-sync">RestoSync SaaS</option>
               <option value="targetedscripts">TargetedScripts Core</option>
               <option value="client-custom">Client Projects</option>
               <option value="infrastructure">Infrastructure & Server</option>
             </select>
             <select id="statusFilter" onchange="renderJournalList()" class="bg-slate-950 border border-slate-800 text-xs text-slate-300 rounded-lg px-2 py-1.5 focus:outline-none">
-              <option value="ALL">Semua Status</option>
+              <option value="ALL">All Status</option>
               <option value="Active">Active</option>
               <option value="Draft">Draft</option>
               <option value="Deprecated">Deprecated</option>
@@ -136,19 +136,19 @@
 
         <!-- Journal List (Chronological Timeline) -->
         <div id="journalTimelineList" class="flex-1 overflow-y-auto divide-y divide-slate-800/50 p-2 space-y-1">
-          <!-- Item list dinamis di-render via JS -->
+          <!-- Dynamic list items rendered via JS -->
         </div>
       </aside>
 
-      <!-- MAIN READER & VIEWER AREA (KANAN) -->
+      <!-- MAIN READER & VIEWER AREA (RIGHT) -->
       <main class="flex-1 bg-slate-950 overflow-y-auto p-8 flex flex-col">
         <div id="emptyViewState" class="m-auto text-center py-16 text-slate-500">
           <i data-lucide="file-search" class="w-12 h-12 mx-auto mb-3 text-slate-700"></i>
-          <p class="text-sm">Pilih catatan dari sidebar kiri untuk melihat rincian.</p>
+          <p class="text-sm">Select a journal entry from the sidebar to view details.</p>
         </div>
 
         <div id="activeJournalViewer" class="hidden max-w-4xl w-full mx-auto space-y-6">
-          <!-- Metadata Bar & Action -->
+          <!-- Metadata Bar & Actions -->
           <div class="flex items-start justify-between border-b border-slate-800 pb-6">
             <div class="space-y-2">
               <div class="flex items-center gap-2">
@@ -165,7 +165,7 @@
                 <i data-lucide="edit-3" class="w-4 h-4"></i> Edit
               </button>
               <button onclick="openHistoryModal()" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs px-3 py-2 rounded-lg flex items-center gap-1.5 transition">
-                <i data-lucide="history" class="w-4 h-4"></i> Riwayat (<span id="viewVersion">v1</span>)
+                <i data-lucide="history" class="w-4 h-4"></i> History (<span id="viewVersion">v1</span>)
               </button>
             </div>
           </div>
@@ -173,15 +173,15 @@
           <!-- Timestamps Metadata Box -->
           <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 grid grid-cols-2 md:grid-cols-3 gap-4 text-xs">
             <div>
-              <span class="text-slate-500 block mb-1">Dibuat Pertama:</span>
+              <span class="text-slate-500 block mb-1">Created At:</span>
               <span id="viewCreatedAt" class="text-slate-300 font-mono"></span>
             </div>
             <div>
-              <span class="text-slate-500 block mb-1">Terakhir Diperbarui:</span>
+              <span class="text-slate-500 block mb-1">Last Updated:</span>
               <span id="viewUpdatedAt" class="text-slate-300 font-mono"></span>
             </div>
             <div>
-              <span class="text-slate-500 block mb-1">Total Revisi:</span>
+              <span class="text-slate-500 block mb-1">Total Revisions:</span>
               <span id="viewRevisionCount" class="text-slate-300 font-semibold"></span>
             </div>
           </div>
@@ -202,7 +202,7 @@
       
       <!-- Modal Header -->
       <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
-        <h3 id="modalEditorTitle" class="text-lg font-bold text-slate-100">Tambah System Journal Baru</h3>
+        <h3 id="modalEditorTitle" class="text-lg font-bold text-slate-100">Add New System Journal Entry</h3>
         <button onclick="closeEditorModal()" class="text-slate-400 hover:text-slate-200"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
 
@@ -212,7 +212,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Proyek / Domain</label>
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Project / Domain</label>
             <select id="formProject" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
               <option value="resto-sync">RestoSync SaaS</option>
               <option value="targetedscripts">TargetedScripts Core</option>
@@ -221,29 +221,29 @@
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Subject / Topik Utama</label>
-            <input type="text" id="formSubject" placeholder="misal: Firestore Security Rules" 
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Subject / Main Topic</label>
+            <input type="text" id="formSubject" placeholder="e.g. Firestore Security Rules" 
               class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
           </div>
           <div>
             <label class="block text-xs font-semibold text-slate-400 mb-1">Status</label>
             <select id="formStatus" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-              <option value="Active">Active (SOP Berlangsung)</option>
-              <option value="Draft">Draft (Konsep)</option>
-              <option value="Deprecated">Deprecated (Arsip Lama)</option>
+              <option value="Active">Active (Current SOP)</option>
+              <option value="Draft">Draft (Work in Progress)</option>
+              <option value="Deprecated">Deprecated (Legacy Archive)</option>
             </select>
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Judul Dokumentasi</label>
-            <input type="text" id="formTitle" placeholder="misal: Migrasi Unified Document Config V9" 
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Documentation Title</label>
+            <input type="text" id="formTitle" placeholder="e.g. Unified Single Document Migration V9" 
               class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Kategori</label>
-            <input type="text" id="formCategory" placeholder="misal: Architecture, Bugfix, SOP, Deployment" 
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Category</label>
+            <input type="text" id="formCategory" placeholder="e.g. Architecture, Bugfix, SOP, Deployment" 
               class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
           </div>
         </div>
@@ -279,8 +279,8 @@
         </div>
 
         <div id="changeSummaryWrapper" class="hidden">
-          <label class="block text-xs font-semibold text-amber-400 mb-1">Catatan Ringkasan Perubahan (Audit Change Log)</label>
-          <input type="text" id="formChangeSummary" placeholder="misal: Menambahkan skrip Firestore security rules versi 9" 
+          <label class="block text-xs font-semibold text-amber-400 mb-1">Change Summary (Audit Log Note)</label>
+          <input type="text" id="formChangeSummary" placeholder="e.g. Added rate limiting rules to Firestore config" 
             class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
         </div>
       </div>
@@ -289,8 +289,8 @@
       <div class="px-6 py-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between">
         <span id="uploadProgressText" class="text-xs text-emerald-400 font-mono"></span>
         <div class="flex items-center gap-3">
-          <button onclick="closeEditorModal()" class="px-4 py-2 text-sm text-slate-400 hover:text-slate-200">Batal</button>
-          <button onclick="saveJournal()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-2 rounded-lg text-sm transition">Simpan Dokumen</button>
+          <button onclick="closeEditorModal()" class="px-4 py-2 text-sm text-slate-400 hover:text-slate-200">Cancel</button>
+          <button onclick="saveJournal()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-2 rounded-lg text-sm transition">Save Document</button>
         </div>
       </div>
     </div>
@@ -303,7 +303,7 @@
     <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl overflow-hidden">
       <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
         <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
-          <i data-lucide="history" class="w-5 h-5 text-amber-500"></i> Audit History Logs
+          <i data-lucide="history" class="w-5 h-5 text-amber-500"></i> Revision History Logs
         </h3>
         <button onclick="closeHistoryModal()" class="text-slate-400 hover:text-slate-200"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
@@ -400,12 +400,12 @@
 
       const listContainer = document.getElementById("journalTimelineList");
       if (filtered.length === 0) {
-        listContainer.innerHTML = `<div class="p-6 text-center text-xs text-slate-500">Tidak ada jurnal ditemukan.</div>`;
+        listContainer.innerHTML = `<div class="p-6 text-center text-xs text-slate-500">No journals found.</div>`;
         return;
       }
 
       listContainer.innerHTML = filtered.map(item => {
-        const dateStr = item.updatedAt ? formatDate(item.updatedAt.toDate()) : 'Baru saja';
+        const dateStr = item.updatedAt ? formatDate(item.updatedAt.toDate()) : 'Just now';
         const isSelected = currentActiveJournal && currentActiveJournal.id === item.id;
         
         return `
@@ -446,7 +446,7 @@
 
       document.getElementById("viewCreatedAt").innerText = currentActiveJournal.createdAt ? formatDate(currentActiveJournal.createdAt.toDate()) : '-';
       document.getElementById("viewUpdatedAt").innerText = currentActiveJournal.updatedAt ? formatDate(currentActiveJournal.updatedAt.toDate()) : '-';
-      document.getElementById("viewRevisionCount").innerText = `${(currentActiveJournal.historyLogs || []).length + 1} Versi Terrekam`;
+      document.getElementById("viewRevisionCount").innerText = `${(currentActiveJournal.historyLogs || []).length + 1} Revisions Recorded`;
 
       document.getElementById("viewContent").innerHTML = currentActiveJournal.content || '';
       
@@ -470,7 +470,7 @@
       const codeHtml = `
         <div class="code-block-wrapper">
           <button class="copy-btn" onclick="copySnippet(this)">Copy Snippet</button>
-          <pre><code>// Tulis skrip atau konfigurasi di sini...</code></pre>
+          <pre><code>// Write script or configuration here...</code></pre>
         </div><p></p>
       `;
       document.execCommand('insertHTML', false, codeHtml);
@@ -505,7 +505,7 @@
 
     function uploadImageToStorage(file) {
       const progressText = document.getElementById("uploadProgressText");
-      progressText.innerText = "Mengunggah Gambar...";
+      progressText.innerText = "Uploading Image...";
 
       const fileName = `media_${Date.now()}_${file.name || 'paste.png'}`;
       const uploadTask = storage.ref(`targeted_journals_media/${fileName}`).put(file);
@@ -514,13 +514,13 @@
         null, 
         (error) => {
           console.error(error);
-          progressText.innerText = "Gagal Mengunggah Foto";
+          progressText.innerText = "Failed to Upload Photo";
         }, 
         () => {
           uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
             const imgHtml = `<img src="${downloadURL}" alt="Uploaded Image" /><p></p>`;
             document.execCommand('insertHTML', false, imgHtml);
-            progressText.innerText = "Foto Berhasil Terunggah!";
+            progressText.innerText = "Photo Uploaded Successfully!";
             setTimeout(() => progressText.innerText = "", 3000);
           });
         }
@@ -540,7 +540,7 @@
       document.getElementById("editorArea").innerHTML = "";
       document.getElementById("formChangeSummary").value = "";
       
-      document.getElementById("modalEditorTitle").innerText = "Tambah System Journal Baru";
+      document.getElementById("modalEditorTitle").innerText = "Add New System Journal Entry";
       document.getElementById("changeSummaryWrapper").classList.add("hidden");
       document.getElementById("editorModal").classList.remove("hidden");
       lucide.createIcons();
@@ -558,7 +558,7 @@
       document.getElementById("editorArea").innerHTML = currentActiveJournal.content || "";
       document.getElementById("formChangeSummary").value = "";
 
-      document.getElementById("modalEditorTitle").innerText = `Edit Jurnal (${currentActiveJournal.title})`;
+      document.getElementById("modalEditorTitle").innerText = `Edit Journal (${currentActiveJournal.title})`;
       document.getElementById("changeSummaryWrapper").classList.remove("hidden");
       document.getElementById("editorModal").classList.remove("hidden");
       lucide.createIcons();
@@ -579,7 +579,7 @@
       const changeSummary = document.getElementById("formChangeSummary").value.trim();
 
       if (!subject || !title) {
-        alert("Subject dan Judul wajib diisi.");
+        alert("Subject and Title are required.");
         return;
       }
 
@@ -610,9 +610,9 @@
         const historyLogs = oldData.historyLogs || [];
         historyLogs.unshift({
           version: oldData.version || 1,
-          updatedAt: oldData.updatedAt ? formatDate(oldData.updatedAt.toDate()) : 'Awal',
+          updatedAt: oldData.updatedAt ? formatDate(oldData.updatedAt.toDate()) : 'Initial',
           editedBy: "Tedy Sutedja",
-          changeSummary: changeSummary || "Pembaruan dokumen",
+          changeSummary: changeSummary || "Document update",
           contentSnapshot: oldData.content
         });
 
@@ -640,17 +640,17 @@
       const container = document.getElementById("historyLogsList");
 
       if (logs.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Belum ada riwayat pengeditan terdahulu.</p>`;
+        container.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">No previous edit history recorded.</p>`;
       } else {
         container.innerHTML = logs.map(log => `
           <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-amber-400">Versi v${log.version}</span>
+              <span class="font-bold text-amber-400">Version v${log.version}</span>
               <span class="text-slate-500 font-mono">${log.updatedAt}</span>
             </div>
             <p class="text-xs text-slate-300 font-medium">Summary: ${log.changeSummary}</p>
             <details class="text-xs text-slate-400">
-              <summary class="cursor-pointer hover:text-slate-200 mt-1">Lihat Snapshot Konten Versi Ini</summary>
+              <summary class="cursor-pointer hover:text-slate-200 mt-1">View Content Snapshot for this Version</summary>
               <div class="mt-2 p-3 bg-slate-900 border border-slate-800 rounded-lg text-slate-300 editor-content">
                 ${log.contentSnapshot}
               </div>
@@ -670,7 +670,7 @@
     // Helper Date Format
     function formatDate(d) {
       const options = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
-      return d.toLocaleDateString('id-ID', options);
+      return d.toLocaleDateString('en-NZ', options);
     }
   </script>
 </body>
