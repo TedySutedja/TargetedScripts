@@ -34,7 +34,6 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
 
   <style>
-    /* Custom Styling for Rich Text Area & Snippets */
     .editor-content:focus { outline: none; }
     .editor-content h1 { font-size: 1.75rem; font-weight: 700; color: #f8fafc; margin-top: 1rem; margin-bottom: 0.5rem; }
     .editor-content h2 { font-size: 1.35rem; font-weight: 600; color: #f1f5f9; margin-top: 0.85rem; margin-bottom: 0.4rem; }
@@ -44,13 +43,10 @@
     .editor-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 0.75rem; color: #cbd5e1; }
     .editor-content blockquote { border-left: 4px solid #f59e0b; padding-left: 1rem; font-style: italic; color: #94a3b8; margin: 0.75rem 0; }
     
-    /* Code Snippet Block */
     .code-block-wrapper { position: relative; margin: 1rem 0; }
     .code-block-wrapper pre { background-color: #0f172a; border: 1px solid #334155; border-radius: 0.5rem; padding: 1rem; font-family: monospace; font-size: 0.875rem; color: #38bdf8; overflow-x: auto; white-space: pre-wrap; }
     .code-block-wrapper .copy-btn { position: absolute; top: 0.5rem; right: 0.5rem; background: #1e293b; color: #94a3b8; border: 1px solid #475569; padding: 0.25rem 0.5rem; font-size: 0.75rem; border-radius: 0.25rem; cursor: pointer; transition: all 0.2s; }
     .code-block-wrapper .copy-btn:hover { background: #334155; color: #f8fafc; }
-
-    /* Inline Image Preview */
     .editor-content img { max-width: 100%; height: auto; border-radius: 0.5rem; border: 1px solid #334155; margin: 0.75rem 0; cursor: pointer; }
   </style>
 </head>
@@ -91,12 +87,12 @@
         </div>
         <div>
           <h1 class="text-base font-bold text-slate-100 leading-none">TargetedScripts Knowledge Base</h1>
-          <span class="text-xs text-slate-400">System Architecture & SOP Studio</span>
+          <span class="text-xs text-slate-400">System Architecture & Freeform Ideas Studio</span>
         </div>
       </div>
       <div class="flex items-center gap-3">
         <button onclick="openNewModal()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-2 transition shadow-lg shadow-amber-500/10">
-          <i data-lucide="plus" class="w-4 h-4"></i> New Entry
+          <i data-lucide="plus" class="w-4 h-4"></i> Quick Note
         </button>
         <button onclick="lockPortal()" class="text-slate-400 hover:text-red-400 p-2 rounded-lg border border-slate-800 hover:border-red-950 bg-slate-950 transition" title="Lock Portal">
           <i data-lucide="log-out" class="w-4 h-4"></i>
@@ -109,55 +105,45 @@
       
       <!-- SIDEBAR FILTER & CHRONOLOGICAL TIMELINE (LEFT) -->
       <aside class="w-80 border-r border-slate-800 bg-slate-900/50 flex flex-col shrink-0">
-        <!-- Search & Filter Controls -->
         <div class="p-4 border-b border-slate-800 space-y-3">
+          <!-- Search Box -->
           <div class="relative">
             <i data-lucide="search" class="w-4 h-4 absolute left-3 top-3 text-slate-500"></i>
-            <input type="text" id="searchInput" oninput="renderJournalList()" placeholder="Search Title, Subject, Text..." 
+            <input type="text" id="searchInput" oninput="renderJournalList()" placeholder="Search notes, #tags..." 
               class="w-full pl-9 pr-4 py-2 text-sm bg-slate-950 border border-slate-800 focus:border-amber-500 rounded-lg text-slate-200 placeholder-slate-500 focus:outline-none">
           </div>
 
           <div class="grid grid-cols-2 gap-2">
             <select id="projectFilter" onchange="renderJournalList()" class="bg-slate-950 border border-slate-800 text-xs text-slate-300 rounded-lg px-2 py-1.5 focus:outline-none">
               <option value="ALL">All Projects</option>
-              <option value="resto-sync">RestoSync SaaS</option>
-              <option value="targetedscripts">TargetedScripts Core</option>
-              <option value="client-custom">Client Projects</option>
-              <option value="infrastructure">Infrastructure & Server</option>
+              <option value="General">General / Unassigned</option>
             </select>
-            <select id="statusFilter" onchange="renderJournalList()" class="bg-slate-950 border border-slate-800 text-xs text-slate-300 rounded-lg px-2 py-1.5 focus:outline-none">
-              <option value="ALL">All Status</option>
-              <option value="Active">Active</option>
-              <option value="Draft">Draft</option>
-              <option value="Deprecated">Deprecated</option>
+            <select id="tagFilter" onchange="renderJournalList()" class="bg-slate-950 border border-slate-800 text-xs text-slate-300 rounded-lg px-2 py-1.5 focus:outline-none">
+              <option value="ALL">All Tags</option>
             </select>
           </div>
         </div>
 
         <!-- Journal List (Chronological Timeline) -->
-        <div id="journalTimelineList" class="flex-1 overflow-y-auto divide-y divide-slate-800/50 p-2 space-y-1">
-          <!-- Dynamic list items rendered via JS -->
-        </div>
+        <div id="journalTimelineList" class="flex-1 overflow-y-auto divide-y divide-slate-800/50 p-2 space-y-1"></div>
       </aside>
 
       <!-- MAIN READER & VIEWER AREA (RIGHT) -->
       <main class="flex-1 bg-slate-950 overflow-y-auto p-8 flex flex-col">
         <div id="emptyViewState" class="m-auto text-center py-16 text-slate-500">
-          <i data-lucide="file-search" class="w-12 h-12 mx-auto mb-3 text-slate-700"></i>
-          <p class="text-sm">Select a journal entry from the sidebar to view details.</p>
+          <i data-lucide="file-text" class="w-12 h-12 mx-auto mb-3 text-slate-700"></i>
+          <p class="text-sm">Select a note or click "Quick Note" to start writing freely.</p>
         </div>
 
         <div id="activeJournalViewer" class="hidden max-w-4xl w-full mx-auto space-y-6">
-          <!-- Metadata Bar & Actions -->
           <div class="flex items-start justify-between border-b border-slate-800 pb-6">
             <div class="space-y-2">
-              <div class="flex items-center gap-2">
+              <div class="flex flex-wrap items-center gap-2">
                 <span id="viewProjectBadge" class="px-2.5 py-0.5 text-xs font-semibold rounded-md bg-amber-500/10 text-amber-400 border border-amber-500/20"></span>
-                <span id="viewCategoryBadge" class="px-2.5 py-0.5 text-xs font-semibold rounded-md bg-slate-800 text-slate-300 border border-slate-700"></span>
                 <span id="viewStatusBadge" class="px-2.5 py-0.5 text-xs font-semibold rounded-md"></span>
               </div>
               <h2 id="viewTitle" class="text-2xl font-bold text-slate-100"></h2>
-              <p id="viewSubject" class="text-sm font-medium text-amber-500/90"></p>
+              <div id="viewTagsList" class="flex flex-wrap gap-1.5 pt-1"></div>
             </div>
             
             <div class="flex items-center gap-2">
@@ -170,23 +156,19 @@
             </div>
           </div>
 
-          <!-- Timestamps Metadata Box -->
-          <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 grid grid-cols-2 md:grid-cols-3 gap-4 text-xs">
+          <!-- Timestamps -->
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between text-xs">
             <div>
-              <span class="text-slate-500 block mb-1">Created At:</span>
+              <span class="text-slate-500 mr-2">Created:</span>
               <span id="viewCreatedAt" class="text-slate-300 font-mono"></span>
             </div>
             <div>
-              <span class="text-slate-500 block mb-1">Last Updated:</span>
+              <span class="text-slate-500 mr-2">Updated:</span>
               <span id="viewUpdatedAt" class="text-slate-300 font-mono"></span>
-            </div>
-            <div>
-              <span class="text-slate-500 block mb-1">Total Revisions:</span>
-              <span id="viewRevisionCount" class="text-slate-300 font-semibold"></span>
             </div>
           </div>
 
-          <!-- Main Rendered Content -->
+          <!-- Content Viewer -->
           <div id="viewContent" class="editor-content bg-slate-900/40 border border-slate-800/80 rounded-xl p-6 min-h-[300px]"></div>
         </div>
       </main>
@@ -195,56 +177,47 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- 3. MODAL CREATE / EDIT JOURNAL             -->
+  <!-- 3. MODAL FREEFORM EDITOR                   -->
   <!-- ========================================== -->
   <div id="editorModal" class="hidden fixed inset-0 z-40 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
       
-      <!-- Modal Header -->
       <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
-        <h3 id="modalEditorTitle" class="text-lg font-bold text-slate-100">Add New System Journal Entry</h3>
+        <h3 id="modalEditorTitle" class="text-lg font-bold text-slate-100">Write Journal Note</h3>
         <button onclick="closeEditorModal()" class="text-slate-400 hover:text-slate-200"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
 
-      <!-- Modal Body (Form) -->
       <div class="p-6 overflow-y-auto space-y-4 flex-1">
         <input type="hidden" id="editJournalId">
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Project / Domain</label>
-            <select id="formProject" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-              <option value="resto-sync">RestoSync SaaS</option>
-              <option value="targetedscripts">TargetedScripts Core</option>
-              <option value="client-custom">Client Custom Projects</option>
-              <option value="infrastructure">Infrastructure & Server</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Subject / Main Topic</label>
-            <input type="text" id="formSubject" placeholder="e.g. Firestore Security Rules" 
-              class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-          </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Status</label>
-            <select id="formStatus" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
-              <option value="Active">Active (Current SOP)</option>
-              <option value="Draft">Draft (Work in Progress)</option>
-              <option value="Deprecated">Deprecated (Legacy Archive)</option>
-            </select>
-          </div>
+
+        <!-- Title Input (Optional) -->
+        <div>
+          <input type="text" id="formTitle" placeholder="Title (Optional - Auto-generates if empty)" 
+            class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-base text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500">
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Editable / Selectable Project Domain -->
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Documentation Title</label>
-            <input type="text" id="formTitle" placeholder="e.g. Unified Single Document Migration V9" 
+            <label class="block text-xs font-semibold text-slate-400 mb-1">Project / Domain (Optional)</label>
+            <input type="text" id="formProject" placeholder="e.g. RestoSync, TargetedScripts, or leave blank" list="existingProjectsList"
               class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+            <datalist id="existingProjectsList">
+              <option value="RestoSync SaaS">
+              <option value="TargetedScripts Core">
+              <option value="Client Projects">
+              <option value="Infrastructure">
+            </datalist>
           </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Category</label>
-            <input type="text" id="formCategory" placeholder="e.g. Architecture, Bugfix, SOP, Deployment" 
+
+          <!-- Dynamic Hashtags Input with Auto-Suggest -->
+          <div class="relative">
+            <label class="block text-xs font-semibold text-amber-400 mb-1">Hashtags / Tags (Type # to select or create)</label>
+            <input type="text" id="formTags" onkeyup="handleTagTyping(event)" placeholder="e.g. #ideas #firestore #security" 
               class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
+            
+            <!-- Tags Auto-Suggest Popup -->
+            <div id="tagSuggestBox" class="hidden absolute left-0 right-0 top-full mt-1 bg-slate-900 border border-slate-800 rounded-lg shadow-xl z-50 max-h-40 overflow-y-auto p-1 divide-y divide-slate-800"></div>
           </div>
         </div>
 
@@ -255,70 +228,59 @@
             <button type="button" onclick="execCmd('italic')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded" title="Italic"><i data-lucide="italic" class="w-4 h-4"></i></button>
             <button type="button" onclick="execCmd('underline')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded" title="Underline"><i data-lucide="underline" class="w-4 h-4"></i></button>
             <span class="w-px h-4 bg-slate-800 mx-1"></span>
-            <button type="button" onclick="execCmd('formatBlock', '<h1>')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded font-bold text-xs" title="Heading 1">H1</button>
-            <button type="button" onclick="execCmd('formatBlock', '<h2>')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded font-bold text-xs" title="Heading 2">H2</button>
-            <button type="button" onclick="execCmd('formatBlock', '<h3>')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded font-bold text-xs" title="Heading 3">H3</button>
+            <button type="button" onclick="execCmd('formatBlock', '<h1>')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded font-bold text-xs">H1</button>
+            <button type="button" onclick="execCmd('formatBlock', '<h2>')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded font-bold text-xs">H2</button>
+            <button type="button" onclick="execCmd('insertUnorderedList')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded"><i data-lucide="list" class="w-4 h-4"></i></button>
+            <button type="button" onclick="execCmd('insertOrderedList')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded"><i data-lucide="list-ordered" class="w-4 h-4"></i></button>
+            <button type="button" onclick="execCmd('formatBlock', '<blockquote>')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded"><i data-lucide="quote" class="w-4 h-4"></i></button>
             <span class="w-px h-4 bg-slate-800 mx-1"></span>
-            <button type="button" onclick="execCmd('insertUnorderedList')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded" title="Bullet List"><i data-lucide="list" class="w-4 h-4"></i></button>
-            <button type="button" onclick="execCmd('insertOrderedList')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded" title="Numbered List"><i data-lucide="list-ordered" class="w-4 h-4"></i></button>
-            <button type="button" onclick="execCmd('formatBlock', '<blockquote>')" class="p-1.5 text-slate-300 hover:bg-slate-800 rounded" title="Quote"><i data-lucide="quote" class="w-4 h-4"></i></button>
-            <span class="w-px h-4 bg-slate-800 mx-1"></span>
-            <button type="button" onclick="insertCodeSnippetBlock()" class="p-1.5 text-amber-400 hover:bg-slate-800 rounded flex items-center gap-1 text-xs font-semibold" title="Insert Code Block">
+            <button type="button" onclick="insertCodeSnippetBlock()" class="p-1.5 text-amber-400 hover:bg-slate-800 rounded flex items-center gap-1 text-xs font-semibold">
               <i data-lucide="code" class="w-4 h-4"></i> Snippet
             </button>
             
-            <!-- Upload / Take Photo Button -->
-            <label class="p-1.5 text-slate-300 hover:bg-slate-800 rounded cursor-pointer flex items-center gap-1 text-xs" title="Upload or Take Photo">
+            <label class="p-1.5 text-slate-300 hover:bg-slate-800 rounded cursor-pointer flex items-center gap-1 text-xs">
               <i data-lucide="camera" class="w-4 h-4 text-emerald-400"></i> Photo
               <input type="file" id="imageInput" accept="image/*" class="hidden" onchange="handleImageUpload(event)">
             </label>
           </div>
 
-          <!-- Rich Text Content Editable Window -->
           <div id="editorArea" contenteditable="true" class="editor-content p-4 min-h-[260px] max-h-[380px] overflow-y-auto text-slate-200"></div>
         </div>
 
         <div id="changeSummaryWrapper" class="hidden">
-          <label class="block text-xs font-semibold text-amber-400 mb-1">Change Summary (Audit Log Note)</label>
-          <input type="text" id="formChangeSummary" placeholder="e.g. Added rate limiting rules to Firestore config" 
+          <label class="block text-xs font-semibold text-amber-400 mb-1">Audit Change Summary</label>
+          <input type="text" id="formChangeSummary" placeholder="e.g. Updated deployment steps" 
             class="w-full bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500">
         </div>
       </div>
 
-      <!-- Modal Footer -->
       <div class="px-6 py-4 bg-slate-950 border-t border-slate-800 flex items-center justify-between">
         <span id="uploadProgressText" class="text-xs text-emerald-400 font-mono"></span>
         <div class="flex items-center gap-3">
           <button onclick="closeEditorModal()" class="px-4 py-2 text-sm text-slate-400 hover:text-slate-200">Cancel</button>
-          <button onclick="saveJournal()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-2 rounded-lg text-sm transition">Save Document</button>
+          <button onclick="saveJournal()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-5 py-2 rounded-lg text-sm transition">Save Note</button>
         </div>
       </div>
     </div>
   </div>
 
   <!-- ========================================== -->
-  <!-- 4. MODAL VERSION HISTORY AUDIT LOG         -->
+  <!-- 4. MODAL HISTORY AUDIT LOG                 -->
   <!-- ========================================== -->
   <div id="historyModal" class="hidden fixed inset-0 z-40 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl overflow-hidden">
       <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
         <h3 class="text-lg font-bold text-slate-100 flex items-center gap-2">
-          <i data-lucide="history" class="w-5 h-5 text-amber-500"></i> Revision History Logs
+          <i data-lucide="history" class="w-5 h-5 text-amber-500"></i> Revision History
         </h3>
         <button onclick="closeHistoryModal()" class="text-slate-400 hover:text-slate-200"><i data-lucide="x" class="w-5 h-5"></i></button>
       </div>
-
-      <div id="historyLogsList" class="p-6 overflow-y-auto space-y-4 flex-1">
-        <!-- Rendered via JS -->
-      </div>
+      <div id="historyLogsList" class="p-6 overflow-y-auto space-y-4 flex-1"></div>
     </div>
   </div>
 
-  <!-- JavaScript Logic & Firebase Operations -->
+  <!-- JavaScript Operations -->
   <script>
-    // ===================================================
-    // FIREBASE INITIALIZATION (Compat SDK v9.22.0)
-    // ===================================================
     const firebaseConfig = {
       apiKey: "AIzaSyRestoSyncDefaultKeyDummy",
       authDomain: "restosync-saas.firebaseapp.com",
@@ -328,22 +290,19 @@
       appId: "1:1029384756:web:abcd1234efgh"
     };
 
-    if (!firebase.apps.length) {
-      firebase.initializeApp(firebaseConfig);
-    }
+    if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
     const storage = firebase.storage();
     const COLLECTION_NAME = "targeted_system_journals";
 
-    // Application State
     let journalsData = [];
     let currentActiveJournal = null;
+    let globalTagsSet = new Set();
+    let globalProjectsSet = new Set();
 
-    // PIN Gate Authentication (Admin PIN: 1967)
     function handlePinSubmit(e) {
       e.preventDefault();
-      const pin = document.getElementById("pinInput").value;
-      if (pin === "1967") {
+      if (document.getElementById("pinInput").value === "1967") {
         sessionStorage.setItem("ts_knowledge_auth", "true");
         showApp();
       } else {
@@ -363,64 +322,72 @@
       location.reload();
     }
 
-    // Check Authentication on Page Load
     window.addEventListener("DOMContentLoaded", () => {
-      if (sessionStorage.getItem("ts_knowledge_auth") === "true") {
-        showApp();
-      }
+      if (sessionStorage.getItem("ts_knowledge_auth") === "true") showApp();
       setupPasteImageHandler();
     });
 
-    // ===================================================
-    // FIRESTORE DATA FETCHING & RENDERING
-    // ===================================================
     function fetchJournals() {
       db.collection(COLLECTION_NAME).orderBy("updatedAt", "desc").onSnapshot(snapshot => {
-        journalsData = snapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
+        journalsData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        extractGlobalTagsAndProjects();
         renderJournalList();
       });
+    }
+
+    function extractGlobalTagsAndProjects() {
+      globalTagsSet.clear();
+      globalProjectsSet.clear();
+
+      journalsData.forEach(j => {
+        if (j.projectKey) globalProjectsSet.add(j.projectKey);
+        (j.tags || []).forEach(t => globalTagsSet.add(t));
+      });
+
+      // Update Project Filter Options
+      const projSelect = document.getElementById("projectFilter");
+      projSelect.innerHTML = '<option value="ALL">All Projects</option><option value="General">General / Unassigned</option>' +
+        Array.from(globalProjectsSet).map(p => `<option value="${p}">${p}</option>`).join('');
+
+      // Update Tag Filter Options
+      const tagSelect = document.getElementById("tagFilter");
+      tagSelect.innerHTML = '<option value="ALL">All Tags</option>' +
+        Array.from(globalTagsSet).map(t => `<option value="${t}">#${t}</option>`).join('');
     }
 
     function renderJournalList() {
       const search = document.getElementById("searchInput").value.toLowerCase();
       const project = document.getElementById("projectFilter").value;
-      const status = document.getElementById("statusFilter").value;
+      const tag = document.getElementById("tagFilter").value;
 
       const filtered = journalsData.filter(item => {
         const matchesSearch = (item.title || "").toLowerCase().includes(search) || 
-                              (item.subject || "").toLowerCase().includes(search) ||
-                              (item.content || "").toLowerCase().includes(search);
-        const matchesProject = project === "ALL" || item.projectKey === project;
-        const matchesStatus = status === "ALL" || item.status === status;
-        return matchesSearch && matchesProject && matchesStatus;
+                              (item.content || "").toLowerCase().includes(search) ||
+                              (item.tags || []).some(t => t.toLowerCase().includes(search));
+        const matchesProject = project === "ALL" || (item.projectKey || "General") === project;
+        const matchesTag = tag === "ALL" || (item.tags || []).includes(tag);
+        return matchesSearch && matchesProject && matchesTag;
       });
 
       const listContainer = document.getElementById("journalTimelineList");
       if (filtered.length === 0) {
-        listContainer.innerHTML = `<div class="p-6 text-center text-xs text-slate-500">No journals found.</div>`;
+        listContainer.innerHTML = `<div class="p-6 text-center text-xs text-slate-500">No matching notes found.</div>`;
         return;
       }
 
       listContainer.innerHTML = filtered.map(item => {
         const dateStr = item.updatedAt ? formatDate(item.updatedAt.toDate()) : 'Just now';
         const isSelected = currentActiveJournal && currentActiveJournal.id === item.id;
-        
+        const tagsHtml = (item.tags || []).slice(0, 3).map(t => `<span class="text-amber-400">#${t}</span>`).join(' ');
+
         return `
           <div onclick="selectJournal('${item.id}')" class="p-3 rounded-xl border cursor-pointer transition ${isSelected ? 'bg-amber-500/10 border-amber-500/30' : 'bg-slate-900 border-slate-800 hover:border-slate-700'}">
             <div class="flex items-center justify-between text-[11px] mb-1">
               <span class="text-amber-400 font-medium">${item.projectKey || 'General'}</span>
               <span class="text-slate-500 font-mono">${dateStr}</span>
             </div>
-            <h4 class="text-sm font-semibold text-slate-100 line-clamp-1 mb-1">${item.title}</h4>
-            <p class="text-xs text-slate-400 line-clamp-1 mb-2">${item.subject}</p>
-            <div class="flex items-center gap-2 text-[10px]">
-              <span class="px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">${item.category || 'Note'}</span>
-              <span class="px-1.5 py-0.5 rounded ${getStatusBadgeClass(item.status)}">${item.status}</span>
-              <span class="ml-auto text-slate-500 font-mono">v${item.version || 1}</span>
-            </div>
+            <h4 class="text-sm font-semibold text-slate-100 line-clamp-1 mb-1">${item.title || 'Untitled Note'}</h4>
+            <div class="text-[11px] text-slate-400 line-clamp-1 mb-1">${tagsHtml}</div>
           </div>
         `;
       }).join('');
@@ -434,113 +401,107 @@
       document.getElementById("emptyViewState").classList.add("hidden");
       document.getElementById("activeJournalViewer").classList.remove("hidden");
 
-      document.getElementById("viewTitle").innerText = currentActiveJournal.title;
-      document.getElementById("viewSubject").innerText = `Subject: ${currentActiveJournal.subject}`;
-      document.getElementById("viewProjectBadge").innerText = currentActiveJournal.projectKey;
-      document.getElementById("viewCategoryBadge").innerText = currentActiveJournal.category;
+      document.getElementById("viewTitle").innerText = currentActiveJournal.title || 'Untitled Note';
+      document.getElementById("viewProjectBadge").innerText = currentActiveJournal.projectKey || 'General';
       document.getElementById("viewVersion").innerText = `v${currentActiveJournal.version || 1}`;
 
-      const statusBadge = document.getElementById("viewStatusBadge");
-      statusBadge.innerText = currentActiveJournal.status;
-      statusBadge.className = `px-2.5 py-0.5 text-xs font-semibold rounded-md ${getStatusBadgeClass(currentActiveJournal.status)}`;
+      const tagsContainer = document.getElementById("viewTagsList");
+      tagsContainer.innerHTML = (currentActiveJournal.tags || []).map(t => 
+        `<span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-amber-400 border border-slate-700">#${t}</span>`
+      ).join('');
 
       document.getElementById("viewCreatedAt").innerText = currentActiveJournal.createdAt ? formatDate(currentActiveJournal.createdAt.toDate()) : '-';
       document.getElementById("viewUpdatedAt").innerText = currentActiveJournal.updatedAt ? formatDate(currentActiveJournal.updatedAt.toDate()) : '-';
-      document.getElementById("viewRevisionCount").innerText = `${(currentActiveJournal.historyLogs || []).length + 1} Revisions Recorded`;
 
       document.getElementById("viewContent").innerHTML = currentActiveJournal.content || '';
-      
       renderJournalList();
     }
 
-    function getStatusBadgeClass(status) {
-      if (status === 'Active') return 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
-      if (status === 'Draft') return 'bg-amber-500/10 text-amber-400 border border-amber-500/20';
-      return 'bg-red-500/10 text-red-400 border border-red-500/20';
+    // Dynamic Tag Typing & Auto-Suggest
+    function handleTagTyping(e) {
+      const inputVal = e.target.value;
+      const suggestBox = document.getElementById("tagSuggestBox");
+      
+      const words = inputVal.split(" ");
+      const currentWord = words[words.length - 1];
+
+      if (currentWord.startsWith("#")) {
+        const query = currentWord.substring(1).toLowerCase();
+        const matches = Array.from(globalTagsSet).filter(t => t.toLowerCase().includes(query));
+
+        if (matches.length > 0) {
+          suggestBox.innerHTML = matches.map(m => `
+            <div onclick="selectTagSuggest('${m}')" class="px-3 py-1.5 text-xs text-amber-400 hover:bg-slate-800 cursor-pointer flex items-center justify-between">
+              <span>#${m}</span>
+              <span class="text-[10px] text-slate-500">Existing Tag</span>
+            </div>
+          `).join('');
+          suggestBox.classList.remove("hidden");
+          return;
+        }
+      }
+      suggestBox.classList.add("hidden");
     }
 
-    // ===================================================
-    // EDITOR & WYSIWYG CONTROLS
-    // ===================================================
-    function execCmd(command, value = null) {
-      document.execCommand(command, false, value);
+    function selectTagSuggest(tagName) {
+      const input = document.getElementById("formTags");
+      const words = input.value.split(" ");
+      words[words.length - 1] = `#${tagName}`;
+      input.value = words.join(" ") + " ";
+      document.getElementById("tagSuggestBox").classList.add("hidden");
+      input.focus();
     }
+
+    function execCmd(cmd, val = null) { document.execCommand(cmd, false, val); }
 
     function insertCodeSnippetBlock() {
-      const codeHtml = `
-        <div class="code-block-wrapper">
-          <button class="copy-btn" onclick="copySnippet(this)">Copy Snippet</button>
-          <pre><code>// Write script or configuration here...</code></pre>
-        </div><p></p>
-      `;
+      const codeHtml = `<div class="code-block-wrapper"><button class="copy-btn" onclick="copySnippet(this)">Copy Snippet</button><pre><code>// Code or configuration here...</code></pre></div><p></p>`;
       document.execCommand('insertHTML', false, codeHtml);
     }
 
     function copySnippet(btn) {
-      const pre = btn.nextElementSibling;
-      navigator.clipboard.writeText(pre.innerText).then(() => {
+      navigator.clipboard.writeText(btn.nextElementSibling.innerText).then(() => {
         btn.innerText = "Copied!";
         setTimeout(() => btn.innerText = "Copy Snippet", 2000);
       });
     }
 
-    // Paste Screenshot Handler (Ctrl + V)
     function setupPasteImageHandler() {
-      const editorArea = document.getElementById("editorArea");
-      editorArea.addEventListener("paste", (e) => {
+      document.getElementById("editorArea").addEventListener("paste", (e) => {
         const items = (e.clipboardData || e.originalEvent.clipboardData).items;
         for (let item of items) {
           if (item.kind === 'file' && item.type.startsWith('image/')) {
-            const blob = item.getAsFile();
-            uploadImageToStorage(blob);
+            uploadImageToStorage(item.getAsFile());
           }
         }
       });
     }
 
     function handleImageUpload(e) {
-      const file = e.target.files[0];
-      if (file) uploadImageToStorage(file);
+      if (e.target.files[0]) uploadImageToStorage(e.target.files[0]);
     }
 
     function uploadImageToStorage(file) {
       const progressText = document.getElementById("uploadProgressText");
       progressText.innerText = "Uploading Image...";
+      const uploadTask = storage.ref(`targeted_journals_media/img_${Date.now()}_${file.name || 'paste.png'}`).put(file);
 
-      const fileName = `media_${Date.now()}_${file.name || 'paste.png'}`;
-      const uploadTask = storage.ref(`targeted_journals_media/${fileName}`).put(file);
-
-      uploadTask.on('state_changed', 
-        null, 
-        (error) => {
-          console.error(error);
-          progressText.innerText = "Failed to Upload Photo";
-        }, 
-        () => {
-          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-            const imgHtml = `<img src="${downloadURL}" alt="Uploaded Image" /><p></p>`;
-            document.execCommand('insertHTML', false, imgHtml);
-            progressText.innerText = "Photo Uploaded Successfully!";
-            setTimeout(() => progressText.innerText = "", 3000);
-          });
-        }
-      );
+      uploadTask.on('state_changed', null, null, () => {
+        uploadTask.snapshot.ref.getDownloadURL().then(url => {
+          document.execCommand('insertHTML', false, `<img src="${url}" /><p></p>`);
+          progressText.innerText = "Image Uploaded!";
+          setTimeout(() => progressText.innerText = "", 3000);
+        });
+      });
     }
 
-    // ===================================================
-    // CREATE / EDIT & HISTORY LOGIC
-    // ===================================================
     function openNewModal() {
       document.getElementById("editJournalId").value = "";
-      document.getElementById("formProject").value = "resto-sync";
-      document.getElementById("formSubject").value = "";
       document.getElementById("formTitle").value = "";
-      document.getElementById("formCategory").value = "Architecture";
-      document.getElementById("formStatus").value = "Active";
+      document.getElementById("formProject").value = "";
+      document.getElementById("formTags").value = "";
       document.getElementById("editorArea").innerHTML = "";
-      document.getElementById("formChangeSummary").value = "";
-      
-      document.getElementById("modalEditorTitle").innerText = "Add New System Journal Entry";
+      document.getElementById("modalEditorTitle").innerText = "Quick Note";
       document.getElementById("changeSummaryWrapper").classList.add("hidden");
       document.getElementById("editorModal").classList.remove("hidden");
       lucide.createIcons();
@@ -548,17 +509,13 @@
 
     function editCurrentJournal() {
       if (!currentActiveJournal) return;
-
       document.getElementById("editJournalId").value = currentActiveJournal.id;
-      document.getElementById("formProject").value = currentActiveJournal.projectKey || "resto-sync";
-      document.getElementById("formSubject").value = currentActiveJournal.subject || "";
       document.getElementById("formTitle").value = currentActiveJournal.title || "";
-      document.getElementById("formCategory").value = currentActiveJournal.category || "";
-      document.getElementById("formStatus").value = currentActiveJournal.status || "Active";
+      document.getElementById("formProject").value = currentActiveJournal.projectKey || "";
+      document.getElementById("formTags").value = (currentActiveJournal.tags || []).map(t => `#${t}`).join(" ");
       document.getElementById("editorArea").innerHTML = currentActiveJournal.content || "";
-      document.getElementById("formChangeSummary").value = "";
-
-      document.getElementById("modalEditorTitle").innerText = `Edit Journal (${currentActiveJournal.title})`;
+      
+      document.getElementById("modalEditorTitle").innerText = `Edit Note (${currentActiveJournal.title || 'Untitled'})`;
       document.getElementById("changeSummaryWrapper").classList.remove("hidden");
       document.getElementById("editorModal").classList.remove("hidden");
       lucide.createIcons();
@@ -570,29 +527,29 @@
 
     async function saveJournal() {
       const id = document.getElementById("editJournalId").value;
-      const projectKey = document.getElementById("formProject").value;
-      const subject = document.getElementById("formSubject").value.trim();
-      const title = document.getElementById("formTitle").value.trim();
-      const category = document.getElementById("formCategory").value.trim();
-      const status = document.getElementById("formStatus").value;
+      let title = document.getElementById("formTitle").value.trim();
+      const projectKey = document.getElementById("formProject").value.trim() || "General";
+      const tagsText = document.getElementById("formTags").value;
       const content = document.getElementById("editorArea").innerHTML;
       const changeSummary = document.getElementById("formChangeSummary").value.trim();
 
-      if (!subject || !title) {
-        alert("Subject and Title are required.");
-        return;
+      // Auto-title from first line of text if empty
+      if (!title) {
+        const tempDiv = document.createElement("div");
+        tempDiv.innerHTML = content;
+        title = tempDiv.innerText.trim().split("\n")[0].substring(0, 50) || "Untitled Note";
       }
+
+      // Extract Hashtags (#tag)
+      const tags = Array.from(tagsText.matchAll(/#([\w-]+)/g)).map(m => m[1]);
 
       const timestamp = firebase.firestore.FieldValue.serverTimestamp();
 
       if (!id) {
-        // CREATE NEW
         const docRef = await db.collection(COLLECTION_NAME).add({
           projectKey,
-          subject,
           title,
-          category,
-          status,
+          tags,
           content,
           version: 1,
           createdAt: timestamp,
@@ -602,7 +559,6 @@
         closeEditorModal();
         selectJournal(docRef.id);
       } else {
-        // EDIT & RECORD HISTORY
         const docRef = db.collection(COLLECTION_NAME).doc(id);
         const docSnap = await docRef.get();
         const oldData = docSnap.data();
@@ -612,20 +568,18 @@
           version: oldData.version || 1,
           updatedAt: oldData.updatedAt ? formatDate(oldData.updatedAt.toDate()) : 'Initial',
           editedBy: "Tedy Sutedja",
-          changeSummary: changeSummary || "Document update",
+          changeSummary: changeSummary || "Note update",
           contentSnapshot: oldData.content
         });
 
         await docRef.update({
           projectKey,
-          subject,
           title,
-          category,
-          status,
+          tags,
           content,
           version: (oldData.version || 1) + 1,
           updatedAt: timestamp,
-          historyLogs: historyLogs
+          historyLogs
         });
 
         closeEditorModal();
@@ -633,14 +587,13 @@
       }
     }
 
-    // Modal History Audit
     function openHistoryModal() {
       if (!currentActiveJournal) return;
       const logs = currentActiveJournal.historyLogs || [];
       const container = document.getElementById("historyLogsList");
 
       if (logs.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">No previous edit history recorded.</p>`;
+        container.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">No previous edits recorded.</p>`;
       } else {
         container.innerHTML = logs.map(log => `
           <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
@@ -650,15 +603,12 @@
             </div>
             <p class="text-xs text-slate-300 font-medium">Summary: ${log.changeSummary}</p>
             <details class="text-xs text-slate-400">
-              <summary class="cursor-pointer hover:text-slate-200 mt-1">View Content Snapshot for this Version</summary>
-              <div class="mt-2 p-3 bg-slate-900 border border-slate-800 rounded-lg text-slate-300 editor-content">
-                ${log.contentSnapshot}
-              </div>
+              <summary class="cursor-pointer hover:text-slate-200 mt-1">View Content Snapshot</summary>
+              <div class="mt-2 p-3 bg-slate-900 border border-slate-800 rounded-lg text-slate-300 editor-content">${log.contentSnapshot}</div>
             </details>
           </div>
         `).join('');
       }
-
       document.getElementById("historyModal").classList.remove("hidden");
       lucide.createIcons();
     }
@@ -667,10 +617,8 @@
       document.getElementById("historyModal").classList.add("hidden");
     }
 
-    // Helper Date Format
     function formatDate(d) {
-      const options = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
-      return d.toLocaleDateString('en-NZ', options);
+      return d.toLocaleDateString('en-NZ', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
     }
   </script>
 </body>
